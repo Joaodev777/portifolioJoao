@@ -156,8 +156,8 @@ $balance = $total_income - $total_expense;
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-users"></i>
+                <a class="nav-link" href="#" data-toggle="modal" data-target="#alertModal">
+                    <i class="fas fa-bell"></i>
                 </a>
             </li>
         </ul>
