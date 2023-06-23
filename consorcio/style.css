@@ -1,0 +1,367 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,700");
+body::-webkit-scrollbar {
+  width: 7px; /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: rgba(255, 166, 0, 0); /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0); /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid rgb(124, 142, 243); /* creates padding around scroll thumb */
+}
+body {
+  background: url("https://lp.netmak.com.br/wp-content/uploads/2022/11/img-netmak-3.jpg")
+    center center / cover no-repeat rgb(255, 255, 255);
+  font-family: Montserrat, sans-serif;
+  text-align: center;
+  opacity: 1;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#contentModal3 {
+  height: 60%;
+}
+#contentModal5 {
+  height: 48%;
+}
+#contentModal6 {
+  height: 40%;
+}
+.card {
+  background: rgb(255, 255, 255);
+  display: inline-block;
+  box-shadow: rgb(38, 50, 56) 3px 3px 18px -8px;
+  max-width: 300px;
+  padding: 20px;
+  margin: 20px auto;
+  text-align: center;
+  width: 300px;
+  border-radius: 36px !important;
+}
+.modal-open {
+  background: rgb(38, 67, 85);
+  border-radius: 10px;
+  height: 25px;
+  width: auto;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  padding: 6px 30px 8px;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.1s ease-out 0s;
+}
+.modal-open:hover {
+  background: rgb(255, 182, 72);
+  box-shadow: rgba(0, 0, 0, 0.075) 0px 8px 2px 0px;
+  transform: translateY(-2px);
+  transition: all 0.25s ease-out 0s;
+}
+.modal-open:active,
+.modal-open:active {
+  background: rgb(255, 182, 72);
+  box-shadow: rgba(255, 255, 255, 0.25) 0px 1px 0px 0px;
+  transform: translate3d(0px, 1px, 0px);
+  transition: all 0.025s ease-out 0s;
+}
+.modal-label {
+  position: relative;
+}
+.modal-radio {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+}
+.modal {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.25s ease 0s, transform 0.25s ease 0s;
+  z-index: 99;
+}
+.modal2 {
+  transform: scale(0.8) translate(0px, -100%);
+  transition: transform 0.35s ease 0s, opacity 0.35s ease 0s;
+}
+.modal3 {
+  transform: translate(0px, 100%) scale(0.9);
+}
+.modal4 {
+  transform: scale(0) rotate(180deg);
+}
+.modal5 {
+  transform: scale(0) rotate(180deg);
+}
+.modal6 {
+  transform: scale(0) rotate(180deg);
+}
+.modal7 {
+  transform: scale(0) rotate(180deg);
+}
+.modal8 {
+  transform: scale(0) rotate(180deg);
+}
+.modal9 {
+  transform: scale(0) rotate(180deg);
+}
+.modal10 {
+  transform: scale(0) rotate(180deg);
+}
+#modal-open:checked + .modal {
+  opacity: 1;
+  transform: scale(1);
+}
+#modal-open2:checked + .modal2 {
+  transform: scale(1) translate(0px, 0px);
+  opacity: 1;
+}
+#modal-open3:checked + .modal3 {
+  transform: scale(1) translate(0px, 0px);
+  opacity: 1;
+}
+#modal-open4:checked + .modal4 {
+  transform: scale(1) rotate(0deg);
+  opacity: 1;
+}
+#modal-open5:checked + .modal5 {
+  transform: scale(1) rotate(0deg);
+  opacity: 1;
+}
+#modal-open6:checked + .modal6 {
+  transform: scale(1) rotate(0deg);
+  opacity: 1;
+}
+#modal-open7:checked + .modal7 {
+  transform: scale(1) rotate(0deg);
+  opacity: 1;
+}
+#modal-open8:checked + .modal8 {
+  transform: scale(1) rotate(0deg);
+  opacity: 1;
+}
+#modal-open9:checked + .modal9 {
+  transform: scale(1) rotate(0deg);
+  opacity: 1;
+}
+#modal-open10:checked + .modal10 {
+  transform: scale(1) rotate(0deg);
+  opacity: 1;
+}
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(18, 32, 41, 0.9);
+  top: 0px;
+  left: 0px;
+}
+.modal .content {
+  position: absolute;
+  width: 80%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  text-align: center;
+  height: 530px !important;
+  max-height: 530px;
+  top: 7%;
+  left: 8%;
+  background: rgb(255, 255, 255);
+  border-radius: 15px;
+  box-shadow: rgb(34, 34, 34) 0px 3px 15px -2px;
+  padding: 20px;
+}
+.close-btn {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 10px;
+  right: 20px;
+  border-radius: 50%;
+  border: 2px solid rgb(244, 67, 54);
+  cursor: pointer;
+}
+.close-btn::after,
+.close-btn::before {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 2px;
+  background: rgb(244, 67, 54);
+  left: 15%;
+  top: calc(50% - 1px);
+  transform-origin: 50% 50%;
+  transform: rotate(45deg);
+}
+.close-btn::before {
+  transform: rotate(-45deg);
+}
+.action-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: rgb(76, 175, 80);
+  color: rgb(255, 255, 255);
+  border-radius: 15px;
+}
+.flex-container {
+  display: flex;
+  text-align: center;
+  align-items: baseline;
+  width: 85%;
+  max-width: 85%;
+  margin: auto;
+}
+div.card img {
+  max-width: 300px;
+  height: 14rem;
+  border-radius: 20px;
+}
+a.btn {
+  background: rgb(18, 32, 41);
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  padding: 6px 30px 8px;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.1s ease-out 0s;
+}
+a.btn {
+  background: rgb(18, 32, 41);
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 0px 0px;
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  padding: 6px 30px 8px;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.1s ease-out 0s;
+}
+.banner {
+  background: url("https://gurgel.com.br/wp-content/uploads/2022/06/fundo-home-site-gurgel3.jpg")
+    50% 70% no-repeat fixed;
+  height: 20em;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  filter: grayscale(90%);
+}
+.banner-text {
+  color: rgb(255, 255, 255);
+  font-size: 1.25em;
+  left: 0px;
+  position: absolute;
+  top: 40%;
+  text-align: center;
+  text-shadow: rgb(0, 0, 0) 0px 0px 2px;
+  width: 100%;
+}
+.banner h3 {
+  font-size: 50px;
+  line-height: 1.33em;
+  margin: 0px 0px 0.33em;
+  z-index: 2;
+  color: rgb(255, 255, 255) !important;
+}
+.title h2 {
+  font-size: 17px;
+  line-height: 27px;
+  color: rgba(18, 32, 41, 0.8);
+  font-weight: 800;
+  margin: 70px;
+  text-transform: uppercase;
+}
+.title h3 {
+  font-size: 1.85rem;
+  color: rgb(244, 138, 6) !important;
+  font-weight: 800;
+  margin: 50px;
+}
+
+@media (max-width: 500px) {
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .banner h3 {
+    font-size: 35px;
+  }
+
+  .modal .content {
+    padding: 10px;
+  }
+
+  .card-description p,
+  ul,
+  h2,
+  h3 {
+    font-size: 12px !important;
+  }
+}
+
+.card-description p,
+ul,
+h2,
+h3 {
+  font-size: 17px;
+  color: #4b5d67 !important;
+  line-height: 1.9em;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.418);
+  z-index: 99;
+  width: 100%;
+  color: white;
+  text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.479);
+}
+.ul-nav li {
+  list-style: none;
+  color: white;
+  margin-left: 30px;
+}
+.ul-nav {
+  display: flex;
+  padding: 15px;
+}
+a {
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.nav-title {
+  font-size: 25px;
+  padding: 15px;
+}
+
+.oq-e h2 {
+  font-size: 1.85rem;
+  color: rgb(244, 138, 6) !important;
+  font-weight: 800;
+  margin: 50px;
+  text-transform: uppercase;
+}
+.Oque {
+  font-size: 20px;
+  text-align: center;
+  margin-left: 50px;
+  margin-right: 50px;
+}

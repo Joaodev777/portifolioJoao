@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberGen</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body::-webkit-scrollbar {
+      width: 12px; /* largura da barra de rolagem completa */
+    }
+
+    body::-webkit-scrollbar-track {
+      background: rgb(5, 5, 5); /* cor da área de acompanhamento */
+    }
+
+    body::-webkit-scrollbar-thumb {
+      background-color: rgb(255, 255, 255); /* cor do polegar de rolagem */
+      border-radius: 20px; /* arredondamento do polegar de rolagem */
+      border: 3px solid rgb(15, 15, 15); /* cria margem ao redor do polegar de rolagem */
+    }
+
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-family: "Roboto", sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    button {
+      border: none;
+    }
+
+    nav {
+      display: flex;
+      background-color: transparent;
+      width: 100%;
+      font-size: none;
+      top: 0;
+      position: fixed;
+      justify-content: space-between;
+      height: 50px;
+    }
+
+    .nav-title {
+      padding-left: 15px;
+      font-size: 50px;
+      font-family: "Montserrat", sans-serif;
+    }
+
+    .nav-item:hover {
+      border-bottom: 3px solid rgb(218, 63, 102);
+      border-radius: 1px;
+      padding-bottom: 30px;
+    }
+
+    .nav-item {
+      font-size: 22px;
+      text-align: center;
+      color: black;
+      height: 50px;
+      padding: 10px;
+    }
+
+    .banner {
+      margin-top: 50px;
+      background: url("./images/bg3.jpg") no-repeat center;
+      background-size: cover;
+      width: 100%;
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .banner-title {
+      font-size: 40px;
+      font-weight: bold;
+      font-family: "Rubik", sans-serif;
+      color: white;
+      margin-bottom: 30px;
+    }
+
+    .banner-description {
+      font-size: 20px;
+      font-weight: 300;
+      font-family: "Rubik", sans-serif;
+      color: white;
+      margin-bottom: 30px;
+    }
+
+    .banner-button {
+      padding: 10px 25px;
+      border-radius: 30px;
+      font-size: 18px;
+      font-family: "Rubik", sans-serif;
+      background-color: rgb(218, 63, 102);
+      color: white;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .banner-button:hover {
+      background-color: rgb(166, 48, 77);
+    }
+
+    .section {
+      padding: 100px 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .section-title {
+      font-size: 32px;
+      font-weight: bold;
+      font-family: "Rubik", sans-serif;
+      color: rgb(218, 63, 102);
+      margin-bottom: 30px;
+    }
+
+    .section-description {
+      font-size: 18px;
+      font-weight: 300;
+      font-family: "Rubik", sans-serif;
+      text-align: center;
+      color: black;
+      margin-bottom: 30px;
+    }
+
+    .feature {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .feature-icon {
+      font-size: 40px;
+      color: rgb(218, 63, 102);
+      margin-bottom: 20px;
+    }
+
+    .feature-title {
+      font-size: 24px;
+      font-weight: bold;
+      font-family: "Rubik", sans-serif;
+      color: rgb(218, 63, 102);
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .feature-description {
+      font-size: 16px;
+      font-weight: 300;
+      font-family: "Rubik", sans-serif;
+      text-align: center;
+      color: black;
+    }
+
+    .footer {
+      background-color: rgb(218, 63, 102);
+      color: white;
+      padding: 20px 50px;
+      text-align: center;
+      font-family: "Rubik", sans-serif;
+    }
+
+    .footer-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .footer-description {
+      font-size: 14px;
+      font-weight: 300;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-title">CyberGen</div>
+    <div>
+      <button class="nav-item">Início</button>
+      <button class="nav-item">Sobre</button>
+      <button class="nav-item">Recursos</button>
+      <button class="nav-item">Contato</button>
+    </div>
+  </nav>
+
+  <div class="banner">
+    <h1 class="banner-title">Bem-vindo ao CyberGen</h1>
+    <p class="banner-description">A plataforma definitiva para cibersegurança</p>
+    <a href="#" class="banner-button">Saiba mais</a>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Sobre nós</h2>
+    <p class="section-description">Somos uma equipe dedicada à proteção e segurança digital. Nossa missão é fornecer
+      soluções eficazes para garantir a integridade e a privacidade dos seus dados. Conte com a gente para proteger o seu
+      mundo digital.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Recursos</h2>
+    <div class="feature">
+      <i class="feature-icon">1</i>
+      <h3 class="feature-title">Proteção avançada</h3>
+      <p class="feature-description">Utilizamos as mais recentes tecnologias de segurança para garantir a proteção dos seus
+        dados contra ameaças cibernéticas.</p>
+    </div>
+    <div class="feature">
+      <i class="feature-icon">2</i>
+      <h3 class="feature-title">Monitoramento em tempo real</h3>
+      <p class="feature-description">Nosso sistema realiza monitoramento constante para identificar e responder a qualquer
+        atividade suspeita.</p>
+    </div>
+    <div class="feature">
+      <i class="feature-icon">3</i>
+      <h3 class="feature-title">Backup automático</h3>
+      <p class="feature-description">Realizamos backups automáticos dos seus dados, para que você possa recuperá-los em
+        caso de perda ou falha.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <h2 class="footer-title">CyberGen</h2>
+    <p class="footer-description">Protegendo o seu mundo digital</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+    integrity="sha384-jT2/kOtjxojLqNhoCvQHkxyAMwUB/EmH5/dCZ6apv8UkGoXOWimS1Iq25RA02vq2" crossorigin="anonymous"></script>
+</body>
+
+</html>

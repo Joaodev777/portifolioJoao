@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Ionic App</title>
+  <base href="/" />
+</head>
+
+<body>
+    <ion-header>
+        <ion-toolbar>
+          <ion-title>CyberGen</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      
+      <ion-content>
+        <div class="slider">
+          <div class="container">
+            <div class="text">
+              <h1 class="text-white">Welcome to CyberGen</h1>
+              <p class="h5">We provide cutting-edge solutions for your cybersecurity needs.</p>
+              <ion-button expand="block" color="primary">Contact Us</ion-button>
+              <ion-button expand="block" color="primary">Learn More</ion-button>
+            </div>
+          </div>
+        </div>
+      
+        <div class="container">
+          <h1>Our Services</h1>
+          <ion-row>
+            <ion-col size="12" size-md="4">
+              <ion-card>
+                <ion-card-header>
+                  <ion-card-title>Service 1</ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+            <ion-col size="12" size-md="4">
+              <ion-card>
+                <ion-card-header>
+                  <ion-card-title>Service 2</ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </ion-card-content>
+      
+</body>
+
+</html>

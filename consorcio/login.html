@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário de Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form {
+            background-color: #ffffff;
+            width: 400px;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            height: 40px;
+            padding: 5px;
+            font-size: 16px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+        }
+
+        .form-group .password-toggle {
+            position: relative;
+        }
+
+        .form-group .password-toggle button {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            outline: none;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            height: 40px;
+            font-size: 16px;
+            background-color: #4d7ee7;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #5786ec;
+            transition: 0.65s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form class="form">
+            <h2 class="form-title">Login</h2>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+                <label for="password">Senha:</label>
+                <div class="password-toggle">
+                    <input type="password" id="password" name="password" required />
+                    <button onmousedown="togglePasswordVisibility()">
+                        <i class="fas fa-eye eye-icon"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" onclick="login(event)">Enviar</button>
+            </div>
+        </form>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById("password");
+            var passwordToggleBtn = document.querySelector(
+                ".password-toggle button"
+            );
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                passwordToggleBtn.innerHTML = '<i class="fas fa-eye-slash eye-icon"></i>';
+            } else {
+                passwordInput.type = "password";
+                passwordToggleBtn.innerHTML = '<i class="fas fa-eye eye-icon"></i>';
+            }
+        }
+
+        function login(event) {
+            event.preventDefault();
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            alert(
+                "Login efetuado com sucesso\n\nEmail: " +
+                email +
+                "\nSenha: " +
+                password
+            );
+        }
+    </script>
+</body>
+
+</html>
