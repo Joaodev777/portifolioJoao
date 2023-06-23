@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exemplo de Botão</title>
+</head>
+<body>
+	<button id="botao">Mostrar valor</button>
+	<p id="valor"></p>
+
+	<script>
+    const botao = document.getElementById('botao');
+const valor = document.getElementById('valor');
+
+botao.addEventListener('click', () => {
+  valor.textContent = '10';
+});
+
+  </script>
+</body>
+</html>

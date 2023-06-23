@@ -1,0 +1,694 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+html {
+  scroll-behavior: auto;
+  scroll-behavior: smooth;
+
+  /* Valores globais */
+  scroll-behavior: inherit;
+  scroll-behavior: initial;
+  scroll-behavior: unset;
+}
+body::-webkit-scrollbar {
+  width: 12px;
+  /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.514);
+  /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(0, 0, 0);
+  /* color of the scroll thumb */
+  border-radius: 20px;
+  /* roundness of the scroll thumb */
+  border: 3px solid rgb(131, 131, 131);
+  /* creates padding around scroll thumb */
+}
+
+body {
+  font-family: "Poppins";
+  overflow-x: hidden;
+  display: block;
+}
+button {
+  border: none;
+}
+.title {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  margin-left: 15px;
+  padding-top: 18px;
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  color: #ffffff;
+  font-size: 22px;
+  margin-bottom: 25px;
+  letter-spacing: 0px;
+  text-decoration: none;
+  text-indent: 0px;
+  cursor: pointer;
+}
+
+.name1 {
+  color: #d19b6f;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.486);
+  transition: background-color 1.2s ease-in-out;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-nav li {
+  margin-left: 40px;
+  padding-top: 18px;
+  padding-bottom: 3px;
+}
+
+.menu-nav {
+  display: flex;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: white;
+}
+
+.line {
+  color: rgb(255, 255, 255);
+  position: relative;
+}
+
+.line:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.line:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.line:hover {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+.boot {
+  margin-right: 50px;
+}
+
+.welcome_section {
+  width: 100%;
+  height: 800px;
+  background-color: rgba(0, 0, 0, 0.95);
+  background-image: -webkit-linear-gradient(
+      270deg,
+      rgba(0, 0, 0, 0.35) 20%,
+      rgba(0, 0, 0, 0.16)
+    ),
+    url(img/welcome.png);
+  background-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.35) 20%,
+      rgba(0, 0, 0, 0.16)
+    ),
+    url(img/welcome.png);
+  background-position: 0px 0px, 50% 50%;
+  background-size: auto, cover;
+  background-repeat: repeat, no-repeat;
+  background-attachment: scroll, scroll;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.welcome {
+  font-size: 58px;
+  font-family: "Marck Script", cursive;
+  color: #d19b6f;
+}
+
+.title-wel {
+  font-size: 28px;
+}
+
+.result {
+  font-size: 24px;
+}
+
+#janela {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 300px;
+  background-color: white;
+  border: 1px solid black;
+  z-index: 999;
+}
+
+.cont {
+  border: none;
+  color: white;
+  background-color: transparent;
+}
+
+/* Estilos para a janela modal */
+.modal p {
+  text-align: center;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  overflow-y: hidden;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Conteúdo da janela modal */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%;
+  height: 450px;
+}
+
+/* Botão para fechar a janela modal */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-contato a img {
+  float: right;
+  height: 40px;
+  margin-top: 5px;
+  margin-right: 10px;
+}
+
+.btn-contato a {
+  width: 35%;
+  display: block;
+  border: none;
+  height: 50px;
+  border-radius: 10px;
+  color: white;
+  margin: auto;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 25px;
+}
+
+.whatApp {
+  background-color: rgb(20, 161, 20);
+}
+
+.telephone {
+  background-color: rgb(21, 82, 214);
+}
+
+#body {
+  position: relative;
+  color: black;
+  margin-left: 0;
+  margin-right: 0;
+  height: 480px;
+  display: flex;
+}
+
+.title-apresentation {
+  font-family: "Marck Script", cursive;
+  color: #d19b6f;
+  font-size: 46px;
+}
+.img-location-now {
+  width: 440px;
+  display: block;
+}
+.location-apresente {
+  margin-left: 100px;
+  margin-right: 100px;
+  width: 500px;
+  height: 100px;
+}
+
+.chamada {
+  font-size: 18px;
+  margin-left: 20px;
+  font-family: "Raleway", sans-serif;
+}
+.title-location {
+  font-size: 25px;
+  font-family: "Kanit", sans-serif;
+  margin-left: 120px;
+}
+.instagram {
+  background: #f09433;
+  background: -moz-linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+}
+.facebook {
+  background-color: #3b5998;
+}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  justify-content: space-between;
+  left: 0;
+  background-color: #1d1c1b;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
+
+.side {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #ffffff;
+  display: block;
+  transition: 0.3s;
+  border-bottom: 1px solid #d19b6f;
+  text-align: center;
+  margin-top: 35px;
+}
+
+/* When you mouse over the navigation links, change their color */
+.side:hover {
+  color: #f1f1f1;
+}
+.closebtn {
+  color: rgb(255, 255, 255);
+}
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openNav {
+  display: none;
+}
+.space {
+  margin-top: 150px;
+}
+
+.img-location {
+  width: 50px;
+  height: 50px;
+  margin-top: 20px;
+  margin-left: 12rem;
+}
+.btn-location {
+  display: block;
+}
+
+.location {
+  margin-left: 20px;
+  margin-top: 15px;
+}
+
+.btn-cha {
+  background-color: #37ee5e;
+  color: rgb(255, 255, 255);
+  border-radius: 15px;
+  height: 50px;
+  width: 150px;
+  border: none;
+  margin-left: 9rem;
+}
+.iframe {
+  position: relative;
+}
+.display-conteiner {
+  display: flex;
+  color: white;
+  height: 700px;
+  width: 100%;
+  position: relative;
+}
+
+.display {
+  height: 100%;
+  width: 100%;
+}
+.recipes_section {
+  height: 670px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  background-image: -webkit-linear-gradient(
+      270deg,
+      rgba(0, 0, 0, 0.35) 20%,
+      rgba(0, 0, 0, 0.16)
+    ),
+    url(img/image-section.png);
+  background-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.35) 20%,
+      rgba(0, 0, 0, 0.16)
+    ),
+    url(img/image-section.png);
+  background-size: cover;
+  background-attachment: fixed;
+}
+.titleDisplay {
+  font-size: 25px;
+  text-align: center;
+  position: relative;
+  color: #ebb990;
+  font-family: "Lobster", cursive;
+}
+.button-section,
+.titleDisplay,
+.textConteiner {
+  opacity: 10;
+  margin-top: 35px;
+}
+.textConteiner {
+  font-size: 15px;
+  margin-left: 20px;
+}
+.cont {
+  margin-top: 250px;
+}
+.conteudo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.display button {
+  background-color: #37ee5e;
+  padding: 5px;
+  margin-top: 15rem;
+  border-radius: 15px;
+}
+
+/* cardapio */
+
+.title-cardapio {
+  font-size: 35px;
+  color: #e6c6a2;
+  text-decoration: underline;
+  font-family: "Merriweather", serif;
+  margin-top: 20px;
+padding: 15px;
+}
+
+.preco-sim{
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  display: flex;
+  width: 150px;
+  margin: auto;
+}
+.cardapio {
+  height: 700px;
+  margin-top: 25px;
+  justify-content: center;
+  align-items: center;
+}
+.background {
+  margin-right: 250px;
+  width: 800px;
+  background:linear-gradient(to right, rgba(240, 144, 80, 0.733), #d19b6f);
+  height: 550px;
+  margin-top: 15px;
+  border-radius: 15px;
+}
+.cardapio-flex{
+  justify-content: space-between;
+  height: 98vh;
+  background-color: rgba(0, 0, 0, 0.95);
+  background-image: -webkit-linear-gradient(
+      270deg,
+      rgba(0, 0, 0, 0.35) 20%,
+      rgba(0, 0, 0, 0.16)
+    ),
+    url(image.jpg);
+  background-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.35) 20%,
+      rgba(0, 0, 0, 0.16)
+    ),
+    url(image.jpg);
+  background-size: cover;
+}
+.button-section{
+  float: left;
+  margin-left: 50px;
+}
+.precos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Define 4 colunas iguais */
+  grid-gap: 10px; /* Espaçamento entre as colunas */
+  height: 500px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.btn-suc{
+  margin-top: 30px;
+}
+.box {
+  background-color: #d19b6f;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 1px  2px 3px rgba(0, 0, 0, 0.486);
+}
+
+
+@media (min-width: 1330px) {
+  .conteudo {
+    justify-content: center;
+  }
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+
+@media screen and (max-width: 710px) {
+  .title {
+    padding-top: 10px;
+  }
+  .modal-content a {
+    width: 60%;
+  }
+  .btn-contato {
+    margin-top: 150px;
+  }
+  .modal-content {
+    width: 100%;
+    height: 100%;
+  }
+  nav li {
+    display: none;
+  }
+  nav a {
+    font-size: 18px;
+  }
+  .openNav {
+    display: block;
+  }
+  .iframe {
+    display: none;
+  }
+  .openNav img {
+    margin-top: 20px;
+    margin-right: 35px;
+  }
+  .title-apresentation {
+    font-size: 37px;
+    margin-left: 20px;
+  }
+  .location-apresente {
+    margin-left: 0;
+    margin-right: 5px;
+    flex-direction: column;
+  }
+  .btn-cha {
+    margin: 0 auto;
+  }
+  .img-location {
+    margin: 0 auto;
+    margin-top: 15px;
+  }
+  .img-location-now {
+    width: 100%;
+    display: block;
+  }
+  .title-location {
+    margin: auto;
+  }
+  .chamada {
+    text-align: center;
+    font-size: 15px;
+  }
+  #body {
+    margin-bottom: 50%;
+    object-fit: scale-down;
+    color: black;
+    text-align: center;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .display-conteiner {
+    display: block;
+  }
+  .dv {
+    margin-top: 0;
+    height: 2000px;
+  }
+
+  .cont {
+    margin: 0;
+  }
+  .recipes_section {
+    background: none;
+  }
+  .displayone {
+    background-color: rgba(0, 0, 0, 0.95);
+    background-image: -webkit-linear-gradient(
+        270deg,
+        rgba(0, 0, 0, 0.35) 20%,
+        rgba(0, 0, 0, 0.16)
+      ),
+      url(img/image-section-mobile.png);
+    background-image: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.35) 20%,
+        rgba(0, 0, 0, 0.16)
+      ),
+      url(img/image-section-mobile.png);
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  .displaytwo {
+    background-color: rgba(0, 0, 0, 0.95);
+    background-image: -webkit-linear-gradient(
+        270deg,
+        rgba(0, 0, 0, 0.35) 20%,
+        rgba(0, 0, 0, 0.16)
+      ),
+      url(img/image-section-mobile2.png);
+    background-image: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.35) 20%,
+        rgba(0, 0, 0, 0.16)
+      ),
+      url(img/image-section-mobile2.png);
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  .displaytree {
+    background-color: rgba(0, 0, 0, 0.95);
+    background-image: -webkit-linear-gradient(
+        270deg,
+        rgba(0, 0, 0, 0.35) 20%,
+        rgba(0, 0, 0, 0.16)
+      ),
+      url(img/image-section-mobile3.png);
+    background-image: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.35) 20%,
+        rgba(0, 0, 0, 0.16)
+      ),
+      url(img/image-section-mobile3.png);
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  .button-section,
+  .titleDisplay,
+  .textConteiner {
+    opacity: 10;
+    margin-top: 0;
+    padding: 55px;
+  }
+  .textConteiner {
+    font-size: 20px;
+  }
+  .titleDisplay {
+    font-size: 35px;
+  }
+
+  .cardapio-flex{
+    z-index: 99;
+  }
+}
