@@ -304,7 +304,7 @@
                             <a href="https://t.me/cybergenn" target="_blank"><img src="img/icons8-telegram-48.png"
                                     alt=""></a>
                             <a href="" target="_blank"><img src="img/icons8-instagram-94.png" alt=""></a>
-                            <a href="https://github.com/Joao-Soaress" target="_blank"><img
+                            <a href="https://github.com/Joaodev777" target="_blank"><img
                                     src="img/icons8-github-48.png" alt=""></a>
                         </div>
                         <div class="div">
