@@ -234,6 +234,35 @@ $balance = $total_income - $total_expense;
             </form>
         </div>
     </div>
+<!-- Modal -->
+<div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="alertModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="alertModalLabel">Alertas</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <?php
+                $currentDate = date('Y-m-d');
+                foreach ($_SESSION['transactions'] as $transaction) {
+                    if ($transaction['type'] == 'Receita' && $transaction['date'] <= $currentDate) {
+                        echo '<div class="alert alert-success" role="alert">';
+                        echo 'Você tem uma receita a receber: ' . $transaction['description'] . ' - Valor: R$ ' . $transaction['amount'];
+                        echo '</div>';
+                    } elseif ($transaction['type'] == 'Despesa' && $transaction['date'] <= $currentDate) {
+                        echo '<div class="alert alert-danger" role="alert">';
+                        echo 'Você tem uma despesa a pagar: ' . $transaction['description'] . ' - Valor: R$ ' . $transaction['amount'];
+                        echo '</div>';
+                    }
+                }
+                ?>
+            </div>
+        </div>
+    </div>
+</div>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
