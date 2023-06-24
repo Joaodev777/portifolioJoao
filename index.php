@@ -797,7 +797,6 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/fc1c19f0f3.js" crossorigin="anonymous"></script>
-
 </body>
 
 </html>
