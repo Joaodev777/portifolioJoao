@@ -29,8 +29,6 @@
     <link rel="shortcut icon" href="icons8-código-fonte-100.png" type="image/x-icon">
     <title>CyberGen.</title>
     <style>
-
-
         .whatsapp-fixed {
             position: fixed;
             bottom: 40px;
@@ -271,8 +269,7 @@
             <a href="index.php" class="line text-nav" onclick="linkOpenNav('secao1')">Home</a>
             <a href="#about" class="line text-nav" onclick="linkOpenNav('secao2')">O que Fazemos</a>
             <a href="#modelo" class="line text-nav" onclick="linkOpenNav('secao3')">Modelos</a>
-            <a href="https://wa.me/5537999066606" class="line text-nav" onclick="linkOpenNav('secao4')"
-                target="_blank">Contato</a>
+            <a href="#contato" class="line text-nav" onclick="linkOpenNav('secao4')">Contato</a>
         </div>
     </nav>
 
@@ -304,16 +301,16 @@
                             <a href="https://t.me/cybergenn" target="_blank"><img src="img/icons8-telegram-48.png"
                                     alt=""></a>
                             <a href="" target="_blank"><img src="img/icons8-instagram-94.png" alt=""></a>
-                            <a href="https://github.com/Joaodev777" target="_blank"><img
-                                    src="img/icons8-github-48.png" alt=""></a>
+                            <a href="https://github.com/Joaodev777" target="_blank"><img src="img/icons8-github-48.png"
+                                    alt=""></a>
                         </div>
                         <div class="div">
-                            <div class="btn-gtx gradient-border mb-5 btn-side">
+                            <div data-bs-toggle="modal" data-bs-target="#modalsaiba" class="btn-gtx gradient-border mb-5 btn-side">
                                 <button class="btn-dark btn-general-m1 text-light"><a data-bs-toggle="modal"
-                                    data-bs-target="#modalsaiba">Saiba
+                                        data-bs-target="#modalsaiba">Saiba
                                         mais</a></button>
                             </div>
-                            <div class=" btn-gtx gradient-border mb-5 btn-con btn-side btn-si">
+                            <div href="#contato" class=" btn-gtx gradient-border mb-5 btn-con btn-side btn-si">
                                 <button class="btn-dark btn-general-m1 text-light"><a href="#contato">Faça seu
                                         orçamento</a></button>
                             </div>
@@ -399,7 +396,8 @@
                             class="card-img-top">
                     </div>
                     <button class="btn-portifolio btn-dark" style="font-family: 'Poppins', sans-serif;">
-                        <a href="" class="text-decoration-none">Entre em contato</a>
+                        <a href="http://api.whatsapp.com/send?1=pt_BR&amp;phone=5537999066606"" class="
+                            text-decoration-none">Entre em contato</a>
                     </button>
                 </div>
                 <div class="col-lg-5 col-md-12 display-teste">
@@ -462,60 +460,70 @@
             <div class="models">
                 <div class=" align-self-center text-center">
                     <h2 class="title-section models-title">Meus Projetos</h2>
-                    <div class="grid__projetos">
-                        <div class="box__models">
-                            <div class="content-text-hover"><a href="restaurante-exemplo/index.html">
-                                    <div class="content-text">
-                                        <img src="img/page-down-restaurante.png" alt="">
+                    <div class="grid__projetos" style="flex-direction: column;">
+                        <div class="row-cont">
+                            <div class="box__models">
+                                <div class="content-text-hover"><a href="restaurante-exemplo/index.html">
+                                        <div class="content-text">
+                                            <img src="img/page-down-restaurante.png" alt="">
 
-                                        <div class="text-card">
-                                            <h2 class="h2-card">Restaurante</h2>
-                                            <span>Este é um site foi desenvolvido para restaurantes, com uma página
-                                                inicial atraente. Logo
-                                                abaixo, você encontrará informações de localização e um sistema onde os
-                                                pedido são enviados
-                                                diretamente à cozinha.</span><br>
-                                </a>
+                                            <div class="text-card">
+                                                <h2 class="h2-card">Restaurante</h2>
+                                                <span>Este é um site foi desenvolvido para restaurantes, com uma página
+                                                    inicial atraente. Logo
+                                                    abaixo, você encontrará informações de localização e um sistema onde
+                                                    os
+                                                    pedido são enviados
+                                                    diretamente à cozinha.</span><br>
+                                    </a>
 
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="box__models">
-                    <div class="content-text-hover"><a href="loja-cell-new/index.php"">
+                    <div class="box__models">
+                        <div class="content-text-hover"><a href="loja-cell-new/index.php"">
               <div class=" content-text">
-                            <img src="img/pagamento.png" alt="">
+                                <img src="img/pagamento.png" alt="">
 
-                            <div class="text-card">
-                                <h2 class="h2-card">Controle de Financeiro</h2>
-                                <span>Esse site em especifico, foi ultilizado um sistema para lhe ajudar a organizar
-                                    suas finanças no
-                                    dia a dia, tanto para pagamentos quanto à recebimentos. </span>
-                        </a>
+                                <div class="text-card">
+                                    <h2 class="h2-card">Controle de Financeiro</h2>
+                                    <span>Esse site em especifico, foi ultilizado um sistema para lhe ajudar a organizar
+                                        suas finanças no
+                                        dia a dia, tanto para pagamentos quanto à recebimentos. </span>
+                            </a>
+
+                        </div>
 
                     </div>
+                </div>
+            </div>
+            <div class="box__models">
+                <div class="content-text-hover"><a href="consorcio/index.html" target="_blank">
+                        <div class="content-text">
+                            <img src="img/consorcio.png" alt="">
+
+                            <div class="text-card">
+                                <h2 class="h2-card">Consórcio</h2>
+                                <span>A estrutura do site é excelente, facilitando a navegação. A combinação de cores
+                                    transmite
+                                    profissionalismo e destaca os pontos-chave do seu negócio.</span>
+                    </a>
 
                 </div>
             </div>
         </div>
-        <div class="box__models">
-            <div class="content-text-hover"><a href="consorcio/index.html" target="_blank">
-                    <div class="content-text">
-                        <img src="img/consorcio.png" alt="">
-
-                        <div class="text-card">
-                            <h2 class="h2-card">Consórcio</h2>
-                            <span>A estrutura do site é excelente, facilitando a navegação. A combinação de cores
-                                transmite
-                                profissionalismo e destaca os pontos-chave do seu negócio.</span>
-                </a>
-
-            </div>
-        </div>
     </div>
     </div>
+    <button class="btn  hover-btn" onclick="modeModal()" style="margin-left: auto;margin-right: auto;">Clique para
+        mais</button>
+    <div id="moreModel ">
 
+
+    </div>
+
+    </div>
     </div>
 
     <!-- Modal -->
@@ -797,7 +805,10 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/fc1c19f0f3.js" crossorigin="anonymous"></script>
+    <script>
+        // modal aparecencimaneto
 
+    </script>
 </body>
 
 </html>
