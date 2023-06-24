@@ -1099,9 +1099,14 @@ a {
     margin-left: auto;
     margin-right: auto;
   }
+  .login-box{
+    margin: 0;
+  }
+
   .img-foo {
     margin: auto;
   }
+
 }
 
 .modal {
