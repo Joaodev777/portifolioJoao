@@ -849,6 +849,7 @@ a {
   display: flex;
   background-color: rgb(61, 61, 61);
   margin: 15px;
+  margin-top: 30%;
 }
 .apre {
   width: 100%;
