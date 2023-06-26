@@ -258,6 +258,9 @@
         .collapse:not(.show) {
             display: block;
         }
+        
+.modal-content{    background-image: linear-gradient(226deg, rgb(0, 204, 255) ,rgb(112 115 243) , rgb(109, 250, 238) );}
+        
     </style>
 
 </head>
