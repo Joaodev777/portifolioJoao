@@ -285,7 +285,7 @@
         </div>
     </div>
 
-
+<div class="cont-wi" style="width: 100%;">
 
     <div class="container d-block gtx-aport text-center ">
         <div class="row">
@@ -307,13 +307,13 @@
                         <div class="div">
                             <div data-bs-toggle="modal" data-bs-target="#modalsaiba"
                                 class="btn-gtx gradient-border mb-5 btn-side">
-                                <button class="btn-dark btn-general-m1 text-light" style="width: 100;"><a
-                                        data-bs-toggle="modal" data-bs-target="#modalsaiba">Saiba
+                                <button class="btn-dark btn-general-m1 text-light" style="width: 100;padding: 10px;"><a
+                                        data-bs-toggle="modal" data-bs-target="#modalsaiba" style="text-align: center;">Saiba
                                         mais</a></button>
                             </div>
                             <div href="#contato" class=" btn-gtx gradient-border mb-5 btn-con btn-side btn-si">
-                                <button class="btn-dark btn-general-m1 text-light" style="width: 100;"><a
-                                        href="#contato">Faça seu
+                                <button class="btn-dark btn-general-m1 text-light" style="width: 100;padding: 10px;"><a
+                                        href="#contato" style="text-align: center;">Faça seu
                                         orçamento</a></button>
                             </div>
 
@@ -795,7 +795,7 @@
             </div>
         </div>
     </div>
-
+</div>
     <script src="https://cdn.emailjs.com/sdk/2.6.4/email.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
