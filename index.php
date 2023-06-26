@@ -464,7 +464,8 @@
                     <h2 class="title-section models-title">Meus Projetos</h2>
                     <div class="grid__projetos">
                         <div class="box__models">
-                            <div class="content-text-hover"><a href="restaurante-exemplo/index.html">
+                            <div class="content-text-hover">
+                                <a href="restaurante-exemplo/index.html" target="_blank">
                                     <div class="content-text">
                                         <img src="img/page-down-restaurante.png" alt="">
 
@@ -484,7 +485,7 @@
                 </div>
 
                 <div class="box__models">
-                    <div class="content-text-hover"><a href="loja-cell-new/index.php"">
+                    <div class="content-text-hover"><a href="loja-cell-new/index.php" target="_blank">
               <div class=" content-text">
                             <img src="img/pagamento.png" alt="">
 
