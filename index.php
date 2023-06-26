@@ -674,10 +674,14 @@
                     <button type="button" class="btn-close text-light" data-bs-dismiss="modal"
                         aria-label="Fechar"></button>
                 </div>
-                <div class="modal-body" style="max-height: 560px; overflow-y: auto;">
-                    <div class="before_name">Bem Vindo!</div><br>
+                <div class="modal-body" style="max-height: 560px; overflow-y: auto;justify-content: center;
+                display: flex;
+                flex-direction: column;">
+                    <div class="before_name" style="    margin-left: auto;
+                    text-align: center;
+                    margin-right: auto;">Bem Vindo!</div><br>
                     <img src="img/logo.png" alt=""
-                        style="margin-right: auto;height: 150px;margin-top: 10px;margin-bottom: 10px;">
+                        style="margin-right: auto;margin-left: auto;height: 150px;margin-top: 10px;margin-bottom: 10px;">
                     <div class="d-flex text-dark">
                         <div class="d-block CONT">
                             <div class="d-flex">
