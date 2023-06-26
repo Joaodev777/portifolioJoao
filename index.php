@@ -669,7 +669,7 @@
 
     <div class="modal fade" id="modalsaiba" tabindex="-1" aria-labelledby="meuModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content modal-co bg-dark text-light">
+  <div class="modal-content modal-co  text-light" style="background-image: linear-gradient(to top, rgb(27, 27, 27), rgb(54, 54, 54));">
                 <div class="modal-header">
                     <h5 class="modal-title" id="meuModalLabel">Minhas Estatísticas</h5>
                     <button type="button" class="btn-close text-light" data-bs-dismiss="modal"
