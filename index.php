@@ -578,7 +578,7 @@
             <i id="contato"></i>
             <img src="img/logo-brando.png" alt="" class="img-foo">
             <div class="login-box">
-                <form data-aos="fade-left" data-aos-delay="700" data-aos-easing="ease-in" data-aos-duration="1000"
+                               <form data-aos="fade-left" data-aos-delay="700" data-aos-easing="ease-in" data-aos-duration="1000"
                     action="https://formsubmit.co/joaosocial1704@gmail.com" method="POST">
                     <input type="text" name="name" class="inputs"
                         style="width:100%;border: none;outline: none;color: #1e1d2a;" placeholder="Seu nome"
