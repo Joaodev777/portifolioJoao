@@ -360,7 +360,7 @@
                     </div>
                     <div class="content font-5 mt-3">
                         <p>Olá, meu nome é <span class="Joao">João Guilherme</span>, um desenvolvedor web apaixonado
-                            pelo que faço. Desde 2015, tenho me dedicado incansavelmente a aprimorar minhas habilidades
+                            pelo que faço. Desde 2016, tenho me dedicado incansavelmente a aprimorar minhas habilidades
                             e conhecimentos nesse campo em constante evolução </p>
                     </div>
                     <div class="button gradient-border animationhover mb-5">
