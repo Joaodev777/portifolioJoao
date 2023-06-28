@@ -334,7 +334,7 @@
 
 
                     <div class="main">
-                        <a href="index.php" target="_blank">
+                        <a href="index.php">
 
                             <img src="img/svgviewer-output (8).png " class="img-abrend"
                                 style="  margin-top: 20vh;    height: 35vh; " alt="">
