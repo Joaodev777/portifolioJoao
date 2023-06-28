@@ -582,6 +582,7 @@
                                <form data-aos="fade-left" data-aos-delay="700" data-aos-easing="ease-in" data-aos-duration="1000"
                     action="https://formsubmit.co/joaosocial1704@gmail.com" method="POST">
                     <input type="text" name="name" class="inputs"
+                        
                         style="width:100%;border: none;outline: none;color: #1e1d2a;" placeholder="Seu nome"
                         required=""><br>
                     <input type="email" name="email" class="inputs"
