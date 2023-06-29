@@ -311,9 +311,9 @@
                         <div class="div">
                             <div data-bs-toggle="modal" data-bs-target="#modalsaiba"
                                 class="btn-gtx gradient-border mb-5 btn-side">
-                                <button class="btn-dark btn-general-m1 text-light" style="width: 250px"><a
-                                        data-bs-toggle="modal" data-bs-target="#modalsaiba" style="text-align: center;">Saiba
-                                        mais</a></button>
+                                <a
+                                        data-bs-toggle="modal" data-bs-target="#modalsaiba" style="text-align: center;"><button class="btn-dark btn-general-m1 text-light" style="width: 250px">Saiba
+                                        mais</button></a>
                             </div>
                             <div href="#contato" class=" btn-gtx gradient-border mb-5 btn-con btn-side btn-si">
                                 <button class="btn-dark btn-general-m1 text-light" style="width: 250px;"><a
