@@ -259,9 +259,10 @@
         .collapse:not(.show) {
             display: block;
         }
-        
-.modal-content{  background-image: linear-gradient(226deg, rgb(0, 204, 255) ,rgb(182 253 216) , rgb(109, 250, 238) );}
-        
+
+        .modal-content {
+            background-image: linear-gradient(226deg, rgb(0, 204, 255), rgb(182 253 216), rgb(109, 250, 238));
+        }
     </style>
 
 </head>
@@ -289,237 +290,244 @@
         </div>
     </div>
 
-<div class="cont-wi" style="width: 100%;">
+    <div class="cont-wi" style="width: 100%;">
 
-    <div class="container d-block gtx-aport text-center ">
-        <div class="row">
-            <div class=" mt-5">
-                <div class=" d-flex">
-                    <div class="d-block gtx">
-                        <div class="before_name ">Olá, meu nome é</div><br>
-                        <div class="name">
-                            <div class=" joaoname"><span class="nameone"> João</span> <span
-                                    class="nametwo">Guilherme</span> </div>
-                        </div>
-                        <div class="icons">
-                            <a href="https://t.me/cybergenn" target="_blank"><img src="img/icons8-telegram-48.png"
-                                    alt=""></a>
-                            <a href="https://www.instagram.com/cybergen.web/ " target="_blank"><img src="img/icons8-instagram-94.png" alt=""></a>
-                            <a href="https://github.com/Joaodev777" target="_blank"><img src="img/icons8-github-48.png"
-                                    alt=""></a>
-                        </div>
-                        <div class="div">
-                            <div data-bs-toggle="modal" data-bs-target="#modalsaiba"
-                                class="btn-gtx gradient-border mb-5 btn-side">
-                                <a
-                                        data-bs-toggle="modal" data-bs-target="#modalsaiba" style="text-align: center;"><button class="btn-dark btn-general-m1 text-light" style="width: 250px">Saiba
-                                        mais</button></a>
-                            </div>
-                            <div href="#contato" class=" btn-gtx gradient-border mb-5 btn-con btn-side btn-si">
-                                <button class="btn-dark btn-general-m1 text-light" style="width: 250px;"><a
-                                        href="#contato" style="text-align: center;">Faça seu
-                                        orçamento</a></button>
-                            </div>
-
-                        </div>
-                        <a href="#about">
-                            <div class="scroll-arrows">
-
-                                <i class="fas fa-chevron-down text-light"></i>
-                                <i class="fas fa-chevron-down  text-light"></i>
-                            </div>
-                        </a>
-
-                    </div>
-
-
-                    <div class="main">
-                        <a href="index.php">
-
-                            <img src="img/svgviewer-output (8).png " class="img-abrend"
-                                style="  margin-top: 20vh;    height: 35vh; " alt="">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <i id="about"></i>
-    <div class="d-block">
-
-        <br>
-        <div class="conteiner apre">
-            <div class="apresentacao d-flex" style="width: 100%;background-color: rgb(37, 37, 37);">
-                <div class="img-joao-gtx"><img class="border-img"
-                        src="https://img.icons8.com/ios/100/000000/user--v1.png" alt="user--v1" /
-                        style="border-radius: 50%;" alt="">
-                </div>
-                <div class="text-apre-gtx1 text-center mt-1">
-                    <div class="text-center">
-                        <h1>Me conhecendo</h1>
-                    </div>
-                    <div class="content font-5 mt-3">
-                        <p>Olá, meu nome é <span class="Joao">João Guilherme</span>, um desenvolvedor web apaixonado
-                            pelo que faço. Desde 2016, tenho me dedicado incansavelmente a aprimorar minhas habilidades
-                            e conhecimentos nesse campo em constante evolução </p>
-                    </div>
-                    <div class="button gradient-border animationhover mb-5">
-
-                        <button class="btn-dark text-light text " type="button" data-bs-toggle="modal"
-                            data-bs-target="#modalsaiba">Saiba Mais</button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    <div class="container-block">
-        <div class="container-fluid" id="secao1">
+        <div class="container d-block gtx-aport text-center ">
             <div class="row">
-                <div class="col-lg-6 col-md-12 align-self-center text-center" style="margin: 0 auto;">
-                    <h2 class="title-section">O que Fazemos</h2>
-                    <p class="description-section">
-                        Somos uma agência de desenvolvimento web especializada na criação de sites personalizados para
-                        empresas e empreendedores. Nossa missão é ajudar nossos clientes a alcançar seus objetivos de
-                        negócio
-                        através da criação de uma presença online impactante e eficaz.
-                    </p>
-                    <p class="description-section">
-                        Durante minha jornada como desenvolvedor de software, mergulhei em diversos desafios e
-                        oportunidades de
-                        aprendizado que me permitiram aprimorar minhas habilidades e me tornar um especialista nessas
-                        áreas. Ao
-                        longo dos anos, tenho me dedicado intensamente a dominar as seguintes tecnologias:
-                    </p>
-                    <div class="img-cont">
-                        <img src="img/icons8-html-96.png" alt="" class="card-img-top">
-                        <img src="img/icons8-css-96.png" alt="" class="card-img-top">
-                        <img src="img/icons8-js-96.png" alt="" class="card-img-top">
-                        <img src="img/icons8-vue-js-96.png" alt="" class="card-img-top">
-                        <img src="img/png-clipart-batch-file-computer-icons-computer-file-ms-dos-cmd-icon-electronics-commandline-interface.png"
-                            alt="" class="card-img-top">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" alt=""
-                            class="card-img-top">
-                    </div>
-                    <button class="btn-portifolio btn-dark" style="font-family: 'Poppins', sans-serif;">
-                        <a href="http://api.whatsapp.com/send?1=pt_BR&amp;phone=5537999066606"" class="
-                            text-decoration-none">Entre em contato</a>
-                    </button>
-                </div>
-                <div class="col-lg-5 col-md-12 display-teste">
-                    <div class="row">
-                        <div class="col-md-4 col-sm-6">
-                            <div class="card bg-dark">
-                                <img src="img/icons8-html-96.png" alt="" class="card-img-top">
-                                <button class="bnt cont-btn" type="button" data-bs-toggle="modal"
-                                    data-bs-target="#modalhtml">HTML</button>
+                <div class=" mt-5">
+                    <div class=" d-flex">
+                        <div class="d-block gtx">
+                            <div class="before_name ">Olá, meu nome é</div><br>
+                            <div class="name">
+                                <div class=" joaoname"><span class="nameone"> João</span> <span
+                                        class="nametwo">Guilherme</span> </div>
                             </div>
+                            <div class="icons">
+                                <a href="https://t.me/cybergenn" target="_blank"><img src="img/icons8-telegram-48.png"
+                                        alt=""></a>
+                                <a href="https://www.instagram.com/cybergen.web/ " target="_blank"><img
+                                        src="img/icons8-instagram-94.png" alt=""></a>
+                                <a href="https://github.com/Joaodev777" target="_blank"><img
+                                        src="img/icons8-github-48.png" alt=""></a>
+                            </div>
+                            <div class="div">
+                                <div data-bs-toggle="modal" data-bs-target="#modalsaiba"
+                                    class="btn-gtx gradient-border mb-5 btn-side">
+                                    <a data-bs-toggle="modal" data-bs-target="#modalsaiba"
+                                        style="text-align: center;"><button class="btn-dark btn-general-m1 text-light"
+                                            style="width: 250px">Saiba
+                                            mais</button></a>
+                                </div>
+                                <div href="#contato" class=" btn-gtx gradient-border mb-5 btn-con btn-side btn-si">
+                                    <a href="#contato" style="text-align: center;"><button
+                                            class="btn-dark btn-general-m1 text-light" style="width: 250px;">Faça seu
+                                            orçamento</button></a>
+                                </div>
+
+                            </div>
+                            <a href="#about">
+                                <div class="scroll-arrows">
+
+                                    <i class="fas fa-chevron-down text-light"></i>
+                                    <i class="fas fa-chevron-down  text-light"></i>
+                                </div>
+                            </a>
+
                         </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="card bg-dark">
-                                <img src="img/icons8-css-96.png" alt="" class="card-img-top">
-                                <button class="bnt cont-btn" type="button" data-bs-toggle="modal"
-                                    data-bs-target="#modalcss">CSS</button>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="card bg-dark">
-                                <img src="img/icons8-js-96.png" alt="" class="card-img-top">
-                                <button class="bnt cont-btn" type="button" data-bs-toggle="modal"
-                                    data-bs-target="#meujs">JavaScript</button>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="card bg-dark">
-                                <img src="img/icons8-vue-js-96.png" alt="" class="card-img-top">
-                                <button class="bnt cont-btn" type="button" data-bs-toggle="modal"
-                                    data-bs-target="#meuvue">Vue.js</button>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="card bg-dark">
-                                <img src="img/png-clipart-batch-file-computer-icons-computer-file-ms-dos-cmd-icon-electronics-commandline-interface.png"
-                                    alt="" class="card-img-top">
-                                <button class="bnt cont-btn" type="button" data-bs-toggle="modal"
-                                    data-bs-target="#modalpython">Batch</button>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="card bg-dark">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg"
-                                    alt="" class="card-img-top">
-                                <button class="bnt cont-btn" data-bs-toggle="modal"
-                                    data-bs-target="#modalscss">Sass</button>
-                            </div>
+
+
+                        <div class="main">
+                            <a href="index.php">
+
+                                <img src="img/svgviewer-output (8).png " class="img-abrend"
+                                    style="  margin-top: 20vh;    height: 35vh; " alt="">
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div> <i id="modelo"></i>
+        <i id="about"></i>
+        <div class="d-block">
 
+            <br>
+            <div class="conteiner apre">
+                <div class="apresentacao d-flex" style="width: 100%;background-color: rgb(37, 37, 37);">
+                    <div class="img-joao-gtx"><img class="border-img"
+                            src="https://img.icons8.com/ios/100/000000/user--v1.png" alt="user--v1" /
+                            style="border-radius: 50%;" alt="">
+                    </div>
+                    <div class="text-apre-gtx1 text-center mt-1">
+                        <div class="text-center">
+                            <h1>Me conhecendo</h1>
+                        </div>
+                        <div class="content font-5 mt-3">
+                            <p>Olá, meu nome é <span class="Joao">João Guilherme</span>, um desenvolvedor web apaixonado
+                                pelo que faço. Desde 2016, tenho me dedicado incansavelmente a aprimorar minhas
+                                habilidades
+                                e conhecimentos nesse campo em constante evolução </p>
+                        </div>
+                        <div class="button gradient-border animationhover mb-5">
 
-
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="models">
-                <div class=" align-self-center text-center">
-                    <h2 class="title-section models-title">Meus Projetos</h2>
-                    <div class="grid__projetos">
-                        <div class="box__models">
-                            <div class="content-text-hover">
-                                <a href="restaurante-exemplo/index.html" target="_blank">
-                                    <div class="content-text">
-                                        <img src="img/page-down-restaurante.png" alt="">
-
-                                        <div class="text-card">
-                                            <h2 class="h2-card">Restaurante</h2>
-                                            <span>Este é um site foi desenvolvido para restaurantes, com uma página
-                                                inicial atraente. Logo
-                                                abaixo, você encontrará informações de localização e um sistema onde
-                                                os
-                                                pedido são enviados
-                                                diretamente à cozinha.</span><br>
-                                </a>
-
-                            </div>
+                            <button class="btn-dark text-light text " type="button" data-bs-toggle="modal"
+                                data-bs-target="#modalsaiba">Saiba Mais</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="box__models">
-                    <div class="content-text-hover"><a href="loja-cell-new/index.php" target="_blank">
-              <div class=" content-text">
-                            <img src="img/pagamento.png" alt="">
+            </div>
+        </div>
+        <div class="container-block">
+            <div class="container-fluid" id="secao1">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 align-self-center text-center" style="margin: 0 auto;">
+                        <h2 class="title-section">O que Fazemos</h2>
+                        <p class="description-section">
+                            Somos uma agência de desenvolvimento web especializada na criação de sites personalizados
+                            para
+                            empresas e empreendedores. Nossa missão é ajudar nossos clientes a alcançar seus objetivos
+                            de
+                            negócio
+                            através da criação de uma presença online impactante e eficaz.
+                        </p>
+                        <p class="description-section">
+                            Durante minha jornada como desenvolvedor de software, mergulhei em diversos desafios e
+                            oportunidades de
+                            aprendizado que me permitiram aprimorar minhas habilidades e me tornar um especialista
+                            nessas
+                            áreas. Ao
+                            longo dos anos, tenho me dedicado intensamente a dominar as seguintes tecnologias:
+                        </p>
+                        <div class="img-cont">
+                            <img src="img/icons8-html-96.png" alt="" class="card-img-top">
+                            <img src="img/icons8-css-96.png" alt="" class="card-img-top">
+                            <img src="img/icons8-js-96.png" alt="" class="card-img-top">
+                            <img src="img/icons8-vue-js-96.png" alt="" class="card-img-top">
+                            <img src="img/png-clipart-batch-file-computer-icons-computer-file-ms-dos-cmd-icon-electronics-commandline-interface.png"
+                                alt="" class="card-img-top">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" alt=""
+                                class="card-img-top">
+                        </div>
+                        <button class="btn-portifolio btn-dark" style="font-family: 'Poppins', sans-serif;">
+                            <a href="http://api.whatsapp.com/send?1=pt_BR&amp;phone=5537999066606"" class="
+                                text-decoration-none">Entre em contato</a>
+                        </button>
+                    </div>
+                    <div class="col-lg-5 col-md-12 display-teste">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6">
+                                <div class="card bg-dark">
+                                    <img src="img/icons8-html-96.png" alt="" class="card-img-top">
+                                    <button class="bnt cont-btn" type="button" data-bs-toggle="modal"
+                                        data-bs-target="#modalhtml">HTML</button>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <div class="card bg-dark">
+                                    <img src="img/icons8-css-96.png" alt="" class="card-img-top">
+                                    <button class="bnt cont-btn" type="button" data-bs-toggle="modal"
+                                        data-bs-target="#modalcss">CSS</button>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <div class="card bg-dark">
+                                    <img src="img/icons8-js-96.png" alt="" class="card-img-top">
+                                    <button class="bnt cont-btn" type="button" data-bs-toggle="modal"
+                                        data-bs-target="#meujs">JavaScript</button>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <div class="card bg-dark">
+                                    <img src="img/icons8-vue-js-96.png" alt="" class="card-img-top">
+                                    <button class="bnt cont-btn" type="button" data-bs-toggle="modal"
+                                        data-bs-target="#meuvue">Vue.js</button>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <div class="card bg-dark">
+                                    <img src="img/png-clipart-batch-file-computer-icons-computer-file-ms-dos-cmd-icon-electronics-commandline-interface.png"
+                                        alt="" class="card-img-top">
+                                    <button class="bnt cont-btn" type="button" data-bs-toggle="modal"
+                                        data-bs-target="#modalpython">Batch</button>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <div class="card bg-dark">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg"
+                                        alt="" class="card-img-top">
+                                    <button class="bnt cont-btn" data-bs-toggle="modal"
+                                        data-bs-target="#modalscss">Sass</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <i id="modelo"></i>
+
+
+
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="models">
+                    <div class=" align-self-center text-center">
+                        <h2 class="title-section models-title">Meus Projetos</h2>
+                        <div class="grid__projetos">
+                            <div class="box__models">
+                                <div class="content-text-hover">
+                                    <a href="restaurante-exemplo/index.html" target="_blank">
+                                        <div class="content-text">
+                                            <img src="img/page-down-restaurante.png" alt="">
+
+                                            <div class="text-card">
+                                                <h2 class="h2-card">Restaurante</h2>
+                                                <span>Este é um site foi desenvolvido para restaurantes, com uma página
+                                                    inicial atraente. Logo
+                                                    abaixo, você encontrará informações de localização e um sistema onde
+                                                    os
+                                                    pedido são enviados
+                                                    diretamente à cozinha.</span><br>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box__models">
+                        <div class="content-text-hover"><a href="loja-cell-new/index.php" target="_blank">
+                                <div class=" content-text">
+                                    <img src="img/pagamento.png" alt="">
+
+                                    <div class="text-card">
+                                        <h2 class="h2-card">Controle de Financeiro</h2>
+                                        <span>Esse site em especifico, foi ultilizado um sistema para lhe ajudar a
+                                            organizar
+                                            suas finanças no
+                                            dia a dia, tanto para pagamentos quanto à recebimentos. </span>
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="box__models">
+                <div class="content-text-hover"><a href="consorcio/index.html" target="_blank">
+                        <div class="content-text">
+                            <img src="img/consorcio.png" alt="">
 
                             <div class="text-card">
-                                <h2 class="h2-card">Controle de Financeiro</h2>
-                                <span>Esse site em especifico, foi ultilizado um sistema para lhe ajudar a organizar
-                                    suas finanças no
-                                    dia a dia, tanto para pagamentos quanto à recebimentos. </span>
-                        </a>
-
-                    </div>
+                                <h2 class="h2-card">Consórcio</h2>
+                                <span>A estrutura do site é excelente, facilitando a navegação. A combinação de cores
+                                    transmite
+                                    profissionalismo e destaca os pontos-chave do seu negócio.</span>
+                    </a>
 
                 </div>
             </div>
         </div>
-        <div class="box__models">
-            <div class="content-text-hover"><a href="consorcio/index.html" target="_blank">
-                    <div class="content-text">
-                        <img src="img/consorcio.png" alt="">
-
-                        <div class="text-card">
-                            <h2 class="h2-card">Consórcio</h2>
-                            <span>A estrutura do site é excelente, facilitando a navegação. A combinação de cores
-                                transmite
-                                profissionalismo e destaca os pontos-chave do seu negócio.</span>
-                </a>
-
-            </div>
-        </div>
-    </div>
     </div>
 
 
@@ -579,10 +587,9 @@
             <i id="contato"></i>
             <img src="img/logo-brando.png" alt="" class="img-foo">
             <div class="login-box">
-                               <form data-aos="fade-left" data-aos-delay="700" data-aos-easing="ease-in" data-aos-duration="1000"
+                <form data-aos="fade-left" data-aos-delay="700" data-aos-easing="ease-in" data-aos-duration="1000"
                     action="https://formsubmit.co/joaosocial1704@gmail.com" method="POST">
                     <input type="text" name="name" class="inputs"
-                        
                         style="width:100%;border: none;outline: none;color: #1e1d2a;" placeholder="Seu nome"
                         required=""><br>
                     <input type="email" name="email" class="inputs"
@@ -600,7 +607,8 @@
             <h6>Trabalhando para oferecer o melhor para você.</h6>
             <div class="icons">
                 <a href="https://t.me/cybergenn" target="_blank"><img src="img/icons8-telegram-48.png" alt=""></a>
-                <a href="https://www.instagram.com/cybergen.web/" target="_blank"><img src="img/icons8-instagram-94.png" alt=""></a>
+                <a href="https://www.instagram.com/cybergen.web/" target="_blank"><img src="img/icons8-instagram-94.png"
+                        alt=""></a>
                 <a href="https://github.com/Joaodev777" target="_blank"><img src="img/icons8-github-48.png" alt=""></a>
             </div>
         </div>
@@ -674,7 +682,8 @@
 
     <div class="modal fade" id="modalsaiba" tabindex="-1" aria-labelledby="meuModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-  <div class="modal-content modal-co  text-light" style="background-image: linear-gradient(to top, rgb(27, 27, 27), rgb(54, 54, 54));">
+            <div class="modal-content modal-co  text-light"
+                style="background-image: linear-gradient(to top, rgb(27, 27, 27), rgb(54, 54, 54));">
                 <div class="modal-header">
                     <h5 class="modal-title" id="meuModalLabel">Minhas Estatísticas</h5>
                     <button type="button" class="btn-close text-light" data-bs-dismiss="modal"
@@ -801,7 +810,7 @@
             </div>
         </div>
     </div>
-</div>
+    </div>
     <script src="https://cdn.emailjs.com/sdk/2.6.4/email.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
