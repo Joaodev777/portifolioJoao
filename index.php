@@ -304,7 +304,7 @@
                         <div class="icons">
                             <a href="https://t.me/cybergenn" target="_blank"><img src="img/icons8-telegram-48.png"
                                     alt=""></a>
-                            <a href="https://www.instagram.com/invites/contact/?i=j53tpxzboh40&utm_content=rp6ek83 " target="_blank"><img src="img/icons8-instagram-94.png" alt=""></a>
+                            <a href="https://www.instagram.com/cybergen.web/ " target="_blank"><img src="img/icons8-instagram-94.png" alt=""></a>
                             <a href="https://github.com/Joaodev777" target="_blank"><img src="img/icons8-github-48.png"
                                     alt=""></a>
                         </div>
@@ -600,7 +600,7 @@
             <h6>Trabalhando para oferecer o melhor para você.</h6>
             <div class="icons">
                 <a href="https://t.me/cybergenn" target="_blank"><img src="img/icons8-telegram-48.png" alt=""></a>
-                <a href=" https://www.instagram.com/invites/contact/?i=j53tpxzboh40&utm_content=rp6ek83  " target="_blank"><img src="img/icons8-instagram-94.png" alt=""></a>
+                <a href="https://www.instagram.com/cybergen.web/" target="_blank"><img src="img/icons8-instagram-94.png" alt=""></a>
                 <a href="https://github.com/Joaodev777" target="_blank"><img src="img/icons8-github-48.png" alt=""></a>
             </div>
         </div>
