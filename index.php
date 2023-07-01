@@ -502,10 +502,7 @@
 
                                     <div class="text-card">
                                         <h2 class="h2-card">Controle de Financeiro</h2>
-                                        <span>Esse site em especifico, foi ultilizado um sistema para lhe ajudar a
-                                            organizar
-                                            suas finanças no
-                                            dia a dia, tanto para pagamentos quanto à recebimentos. </span>
+                                        <span>Transforme sua vida financeira com nossa plataforma de gerenciamento de transações e controle financeiro pessoal e empresarial. A solução perfeita para alcançar estabilidade financeira e prosperidade. </span>
                             </a>
 
                         </div>
