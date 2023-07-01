@@ -482,12 +482,7 @@
 
                                             <div class="text-card">
                                                 <h2 class="h2-card">Restaurante</h2>
-                                                <span>Este é um site foi desenvolvido para restaurantes, com uma página
-                                                    inicial atraente. Logo
-                                                    abaixo, você encontrará informações de localização e um sistema onde
-                                                    os
-                                                    pedido são enviados
-                                                    diretamente à cozinha.</span><br>
+                                                <span>Descubra as incríveis possibilidades com nosso produto, projetado para simplificar sua vida e oferecer soluções eficientes. Desfrute de recursos avançados, desempenho excepcional e qualidade superior, tornando-o uma escolha imperdível para todos que buscam praticidade e excelência.</span><br>
                                     </a>
 
                                 </div>
