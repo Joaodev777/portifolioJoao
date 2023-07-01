@@ -405,22 +405,22 @@ $balance = $totalIncome - $totalExpense;
                 </div>
                 <div class="modal-body" style="height:70vh">
                     <div class="question">
-                        <h6>Como imprimir somente um mês ou data específica?</h6>
+                        <h6>Como imprimir somente um mês ou data específica?</h6><br>
                         <div class="cont-block">Você irá clicar em filtrar por mês ou por dia e vai selecionar a data de sua escolha, depois você irá clicar na lupa, isso fará o conteúdo do dia ou mês que selecionou aparecer nos botões, depois é só clicar no botão da impressora.</div>
                     </div>
 
                     <div class="question">
-                        <h6>Como posso saber o quanto de gastos ou recebimentos tive no mês de fevereiro?</h6>
+                        <h6>Como posso saber o quanto de gastos ou recebimentos tive no mês de fevereiro?</h6><br>
                         <div class="cont-block">Você irá selecionar o "Filtro por mês" e vai selecionar o mês de fevereiro, quando tiver selecionado o mês pode clicar no botão vermelho, na parte de cima onde está a logo, isso fará você ir à parte de resumo, lá estará o seu saldo atual, suas receitas e suas despesas.</div>
                     </div>
 
                     <div class="question">
-                        <h6>Quero pesquisar por um pagamento específico, como faço?</h6>
+                        <h6>Quero pesquisar por um pagamento específico, como faço?</h6><br>
                         <div class="cont-block">Na área acima da tabela há vários tipos de botões, e em um deles está escrito "Buscar por descrição". Você irá digitar o pagamento que você gostaria de localizar e vai clicar na lupa, logo irá aparecer todas as linhas correspondentes. Caso queira por dia específico, você pode selecionar também a data, isso fará buscar por data e pela descrição.</div>
                     </div>
 
                     <div class="question">
-                        <h6>Quero ver quanto me sobrou no ano, quanto gastei e quanto ganhei, como faço isso?</h6>
+                        <h6>Quero ver quanto me sobrou no ano, quanto gastei e quanto ganhei, como faço isso?</h6><br>
                         <div class="cont-block">Na área acima da tabela há vários tipos de botões, e em um deles está escrito "Filtrar por mês". Lá você pode colocar em "todos". Assim que você selecionar, clique na lupa. Após fazer isso, pode clicar no botão vermelho na área preta perto da logo. Se passar o mouse em cima, irá dizer "Ver Resumo". Clique em cima e assim você terá o valor que você gastou, o valor que você ganhou e o valor que sobrou.</div>
                     </div>
 
