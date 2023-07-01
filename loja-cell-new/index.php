@@ -257,7 +257,7 @@ $balance = $totalIncome - $totalExpense;
 <body>
     <nav class="navbar navbar-expand-lg position-fixed" id="nav" style="width: 100%;top:0;z-index: 9999;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="logo.png" alt="" style="height:70px;"></a>
+            <a class="navbar-brand" href="#">CyberGen</a>
 
             <div class="navbar-collapse" style="justify-content: center;display: flex;" id="navbarNavAltMarkup">
                 <a class="nav-link btn a btn-info " aria-current="page" href="index.php"><i class="fas fa-home home-icon"></i><span class="text ">Voltar</span></a>
