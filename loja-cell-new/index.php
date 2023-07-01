@@ -403,7 +403,7 @@ $balance = $totalIncome - $totalExpense;
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" style="width:50vh">
                     <div class="question">
                         <h6>Como imprimir somente um mês ou data específica?</h6>
                         <div class="cont-block">Você irá clicar em filtrar por mês ou por dia e vai selecionar a data de sua escolha, depois você irá clicar na lupa, isso fará o conteúdo do dia ou mês que selecionou aparecer nos botões, depois é só clicar no botão da impressora.</div>
