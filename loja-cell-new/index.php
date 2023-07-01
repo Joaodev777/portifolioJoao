@@ -394,9 +394,9 @@ $balance = $totalIncome - $totalExpense;
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top: 100px;">
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top: 100px;style="height:50vh"">
         <div class="modal-dialog modal-xl" role="document">
-            <div class="modal-content bg-dark text-light">
+            <div class="modal-content bg-dark text-light" style="height:50vh">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Tirando suas duvidas</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
