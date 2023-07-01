@@ -396,14 +396,14 @@ $balance = $totalIncome - $totalExpense;
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top: 100px;style="height:50vh"">
         <div class="modal-dialog modal-xl" role="document">
-            <div class="modal-content bg-dark text-light" style="height:50vh">
+            <div class="modal-content bg-dark text-light" style="height:90vh">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Tirando suas duvidas</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body" style="height:50vh">
+                <div class="modal-body" style="height:90vh">
                     <div class="question">
                         <h6>Como imprimir somente um mês ou data específica?</h6>
                         <div class="cont-block">Você irá clicar em filtrar por mês ou por dia e vai selecionar a data de sua escolha, depois você irá clicar na lupa, isso fará o conteúdo do dia ou mês que selecionou aparecer nos botões, depois é só clicar no botão da impressora.</div>
