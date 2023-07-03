@@ -341,7 +341,7 @@ $balance = $totalIncome - $totalExpense;
         </div>
 
         <div class="mt-4  print-section">
-            <h2>Transações -CyberGen</h2>
+            <h2>Transações - CyberGen</h2>
             <?php if (count($filteredTransactions) > 0) : ?>
                 <table class="table" id="trans">
                     <thead>
