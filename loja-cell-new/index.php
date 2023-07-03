@@ -89,6 +89,7 @@ foreach ($filteredTransactions as $transaction) {
 $balance = $totalIncome - $totalExpense;
 
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -268,7 +269,9 @@ $balance = $totalIncome - $totalExpense;
                 <a class="nav-link btn a btn-warning" data-toggle="modal" data-target="#myModal">
                     <i class="fas fa-question"></i><span class="text text-dark">Tire Suas Duvidas</span>
                 </a>
+                <a class="nav-link btn a btn-warning" data-toggle="modal" data-target="#myModal">
 
+                </a>
             </div>
         </div>
     </nav><br><br><br>
@@ -292,6 +295,7 @@ $balance = $totalIncome - $totalExpense;
                     <select class="form-control" id="type" name="type" required>
                         <option value="Receita">Receita</option>
                         <option value="Despesa">Despesa</option>
+                        <option value="Anotação">Anotação</option>
                     </select>
                 </div><br>
                 <div class="col-md-2 mb-3">
@@ -396,7 +400,7 @@ $balance = $totalIncome - $totalExpense;
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top: 100px;style="height:50vh"">
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top: 100px;height:50vh"">
         <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content bg-dark text-light" style="height:70vh">
                 <div class="modal-header">
