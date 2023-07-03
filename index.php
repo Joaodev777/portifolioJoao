@@ -311,13 +311,11 @@
                                         src="img/icons8-github-48.png" alt=""></a>
                             </div>
                             <div class="div">
-                                <div data-bs-toggle="modal" data-bs-target="#modalsaiba"
-                                    class="btn-gtx gradient-border mb-5 btn-side">
+                               
                                     <a data-bs-toggle="modal" data-bs-target="#modalsaiba"
-                                        style="text-align: center;"><button class="btn-dark btn-general-m1 text-light"
+                                        style="text-align: center;"><button class="btn-dark btn-general-m1 btn-gtx gradient-border mb-5 btn-side text-light"
                                             style="width: 250px">Saiba
                                             mais</button></a>
-                                </div>
                                 <div href="#contato" class=" btn-gtx gradient-border mb-5 btn-con btn-side btn-si">
                                     <a href="#contato" style="text-align: center;"><button
                                             class="btn-dark btn-general-m1 text-light" style="width: 250px;">Faça seu
