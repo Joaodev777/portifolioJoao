@@ -311,18 +311,19 @@
                                         src="img/icons8-github-48.png" alt=""></a>
                             </div>
                             <div class="div">
-                                                              <div class="text-center"    >
+                                
+                                <div class="text-center text-light">
                                     <a data-bs-toggle="modal" data-bs-target="#modalsaiba"
-                                        style="text-align: center;"><button class="btn-dark btn-general-m1 btn-gtx gradient-border mb-5 btn-side text-light"
+                                        style="text-align: center;"><button
+                                            class="btn-dark btn-general-m1 "
                                             style="width: 250px">Saiba
                                             mais</button></a>
-                                 </div>
-                              <div class="text-center"    >
+                                </div>
+                                <div class="text-center text-light">
                                     <a href="#contato" style="text-align: center;"><button
                                             class="btn-dark btn-general-m1 text-light" style="width: 250px;">Faça seu
                                             orçamento</button></a>
                                 </div>
-
                             </div>
                             <a href="#about">
                                 <div class="scroll-arrows">
