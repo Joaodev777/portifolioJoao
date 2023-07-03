@@ -102,9 +102,13 @@ $balance = $totalIncome - $totalExpense;
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-        <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
 
     <style>
+        .bg-dark {
+            background-image: linear-gradient(to right, rgb(54, 56, 54), rgb(61, 61, 61));
+        }
+
         * {
             transition: 1s;
             margin: 0;
@@ -233,7 +237,7 @@ $balance = $totalIncome - $totalExpense;
         }
 
         .question {
-            height: 100px;
+            height: auto;
             width: 100%;
             font-size: 15px;
             border-top: 2px solid #cc1d1d;
@@ -269,8 +273,8 @@ $balance = $totalIncome - $totalExpense;
                 <a class="nav-link btn a btn-warning" data-toggle="modal" data-target="#myModal">
                     <i class="fas fa-question"></i><span class="text text-dark">Tire Suas Duvidas</span>
                 </a>
-                <a class="nav-link btn a btn-warning" data-toggle="modal" data-target="#myModal">
-
+                <a class="nav-link btn a btn-primary" data-toggle="modal" data-target="#mycont">
+                    <i class="fas fa-envelope contact-icon"></i>
                 </a>
             </div>
         </div>
@@ -400,13 +404,13 @@ $balance = $totalIncome - $totalExpense;
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top: 100px;height:50vh"">
-        <div class="modal-dialog modal-xl" role="document">
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top: 100px;height:70vh;">
+        <div class=" modal-dialog modal-xl" role="document">
             <div class="modal-content bg-dark text-light" style="height:70vh">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Tirando suas duvidas</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                    <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"> <i class="fas fa-times x-icon"></i></span>
                     </button>
                 </div>
                 <div class="modal-body" style="height:70vh">
@@ -435,6 +439,28 @@ $balance = $totalIncome - $totalExpense;
         </div>
     </div>
 
+    <div class="modal fade" id="mycont" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top: 100px;height:70vh"">
+        <div class=" modal-dialog" role="document">
+        <div class="modal-content bg-dark text-light">
+            <div class="modal-header">
+                <h5 class="modal-title text-success-emphasisr" id="exampleModalLabel">Entre em contato!</h5>
+                <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"> <i class="fas fa-times x-icon"></i></span>
+                </button>
+            </div>
+            <div class="modal-body d-block" style="height:70vh">
+            <div class="js" style="display: flex;flex-direction: column;justify-content: center;align-items: center;margin-top: 5vh;">
+                <a href="https://www.instagram.com/cybergen.web/" target="_blank"><button class="btn " style=" background: linear-gradient(to right,rgb(250, 155, 143), rgb(235, 147, 162));width: 200px;">
+                 <i class="fab fa-instagram icon"></i> Instagram</button></a><br>
+                <a href="https://t.me/cybergenn" target="_blank"><button class="btn " style=" background: linear-gradient(to right, rgb(143, 243, 250), rgb(147, 207, 235));width: 200px;">
+                 <i class="fab fa-telegram icon"></i> Telegram </button></a><br>
+                <a href="http://api.whatsapp.com/send?1=pt_BR&phone=5537999066606" target="_blank"><button class="btn" style=" background: linear-gradient(to right,rgb(143 250 181), rgb(147 235 193));width: 200px;">
+                <i class="fab fa-whatsapp icon"></i> WhatsApp </button></a></div>
+            </div>
+
+        </div>
+    </div>
+    </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
