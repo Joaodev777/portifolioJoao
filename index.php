@@ -28,7 +28,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="img/logo-teste-250.png" type="image/x-icon">
 
-    <title>DigitalSolutions</title>
+    <title>SystemXpert</title>
     <style>
         .whatsapp-fixed {
             position: fixed;
