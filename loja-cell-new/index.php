@@ -352,7 +352,7 @@ $balance = $totalIncome - $totalExpense;
 
     <nav class="navbar navbar-expand-lg position-fixed" id="nav" style="width: 100%;top:0;z-index: 9999;">
         <div class="container-fluid">
-            <a class="navbar-brand text-light" style="font-size:30px" href="#home"><?php echo $_SESSION['usuario'] ?></a>
+            <a class="navbar-brand text-light" style="font-size:30px" href="#home">CyberGen</a>
 
             <div class="navbar-collapse" style="justify-content: center;display: flex;" id="navbarNavAltMarkup">
                 <a class="nav-link btn a btn-info " aria-current="page" href="#home"><i class="fas fa-home home-icon"></i><span class="text text-light">Voltar</span></a>
@@ -379,7 +379,7 @@ $balance = $totalIncome - $totalExpense;
     <i id="home"></i>
 
     <div class="container  bg-light text-dark">
-        <h1 class="mb-4 font">Sistema Financeiro <?php echo $_SESSION['usuario'] ?? '' ?></h1>
+        <h1 class="mb-4 font">Sistema Financeiro - Cybergen</h1>
 
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" style="display: block;flex-direction: column;">
             <div class="form-row d-flex">
