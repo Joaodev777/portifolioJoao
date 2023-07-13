@@ -224,7 +224,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .nav-title {
-  font-size: 40px;
+  font-size: 35px;
   color: white;
   text-align: center;
   padding-top: 5px;
@@ -237,7 +237,7 @@ body::-webkit-scrollbar-thumb {
   -webkit-text-fill-color: transparent;
 
   background-size: 200% auto;
-  font: 700 50px/1 Poppins;
+  font: 700 40px/1 Poppins;
 }
 @keyframes move {
   to {
