@@ -1,12 +1,5 @@
 <?php
-if (!isset($_SESSION)) {
-    session_start();
-}
-
-// Se quiser exigir que esteja logado
-if (!isset($_SESSION['usuario'])) {
-    header('location: index.php');
-}
+    session_start()
 
 
 if (!isset($_SESSION['transactions'])) {
