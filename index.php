@@ -338,7 +338,7 @@
                             <a href="index.php">
 
                                 <img src="img/logo-white.png " class="img-abrend"
-                                    style="  margin-top: 20vh;    height: 35vh; " alt="">
+                                    style="  margin-top: 20vh;  " alt="">
                             </a>
                         </div>
                     </div>
