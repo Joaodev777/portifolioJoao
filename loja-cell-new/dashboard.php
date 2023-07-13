@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $date = isset($_POST['date']) ? $_POST['date'] : '';
 
     $transaction = [
-        'description' => $description,
+        'description' => $description;
         'amount' => $amount,
         'type' => $type,
         'payer_receiver' => $payer_receiver,
