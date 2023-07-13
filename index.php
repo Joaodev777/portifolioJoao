@@ -575,7 +575,7 @@
             contato</h4>
         <div class="respo">
             <i id="contato"></i>
-            <div style="padding:15px">
+            <div style="padding:20px;margin-block:auto;">
                 <img src="img/logo-white.png" alt="" class="img-foo">
             </div>
             <div class="login-box">
