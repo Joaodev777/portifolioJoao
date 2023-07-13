@@ -1,19 +1,18 @@
 <?php
 if (!isset($_SESSION)) {
     session_start();
- }
+}
 
- // Se quiser exigir que esteja logado
- if (!isset($_SESSION['user'])) {
+// Se quiser exigir que esteja logado
+if (!isset($_SESSION['usuario'])) {
     header('location: index.php');
- }
+}
 
-// Verifica se a sessão de transações existe e a cria caso não exista
+
 if (!isset($_SESSION['transactions'])) {
     $_SESSION['transactions'] = [];
 }
 
-// Verifica se o formulário foi enviado via método POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $description = isset($_POST['description']) ? $_POST['description'] : '';
     $amount = isset($_POST['amount']) ? floatval($_POST['amount']) : 0;
@@ -21,7 +20,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $payer_receiver = isset($_POST['payer_receiver']) ? $_POST['payer_receiver'] : '';
     $date = isset($_POST['date']) ? $_POST['date'] : '';
 
-    // Cria um array com os dados da transação
     $transaction = [
         'description' => $description,
         'amount' => $amount,
@@ -30,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'date' => $date
     ];
 
-    // Verifica se a transação já existe na sessão antes de adicioná-la
+    // Check if the transaction already exists in the session before adding it
     $transactionExists = false;
     foreach ($_SESSION['transactions'] as $existingTransaction) {
         if ($existingTransaction == $transaction) {
@@ -44,45 +42,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// Verifica se o botão de resetar foi clicado
 if (isset($_POST['reset'])) {
     $_SESSION['transactions'] = [];
     header("Location: {$_SERVER['PHP_SELF']}");
     exit;
 }
 
-// Verifica se o botão de deletar uma transação foi clicado
 if (isset($_POST['delete_index'])) {
     $index = $_POST['delete_index'];
     if (isset($_SESSION['transactions'][$index])) {
         unset($_SESSION['transactions'][$index]);
-        $_SESSION['transactions'] = array_values($_SESSION['transactions']); // Reindexa o array após a exclusão
+        $_SESSION['transactions'] = array_values($_SESSION['transactions']); // Reindex the array after deletion
     }
 }
 
-// Obtém os filtros selecionados
 $selectedMonth = isset($_GET['month']) ? $_GET['month'] : '';
 $searchTerm = isset($_GET['search']) ? $_GET['search'] : '';
 $selectedDate = isset($_GET['date']) ? $_GET['date'] : '';
 
-// Aplica os filtros às transações
 $filteredTransactions = $_SESSION['transactions'];
 
-// Filtra as transações pelo mês selecionado
+// Filter transactions by the selected month
 if ($selectedMonth !== '') {
     $filteredTransactions = array_filter($filteredTransactions, function ($transaction) use ($selectedMonth) {
         return date('m', strtotime($transaction['date'])) === $selectedMonth;
     });
 }
 
-// Filtra as transações pelo termo de busca
+// Filter transactions by the search term
 if ($searchTerm !== '') {
     $filteredTransactions = array_filter($filteredTransactions, function ($transaction) use ($searchTerm) {
         return stripos($transaction['description'], $searchTerm) !== false;
     });
 }
 
-// Filtra as transações pela data selecionada
+// Filter transactions by the selected date
 if ($selectedDate !== '') {
     $filteredTransactions = array_filter($filteredTransactions, function ($transaction) use ($selectedDate) {
         return $transaction['date'] === $selectedDate;
@@ -92,7 +86,6 @@ if ($selectedDate !== '') {
 $totalIncome = 0;
 $totalExpense = 0;
 
-// Calcula o total de receitas e despesas
 foreach ($filteredTransactions as $transaction) {
     if ($transaction['type'] == 'Receita') {
         $totalIncome += $transaction['amount'];
@@ -101,9 +94,13 @@ foreach ($filteredTransactions as $transaction) {
     }
 }
 
-$balance = $totalIncome - $totalExpense;
-?>
 
+
+$balance = $totalIncome - $totalExpense;
+
+
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -120,6 +117,18 @@ $balance = $totalIncome - $totalExpense;
     <link rel="shortcut icon" href="logo.png" type="image/x-icon">
 
     <style>
+        .color-green {
+            color: green;
+        }
+
+        .color-red {
+            color: red;
+        }
+
+        .color-black {
+            color: black;
+        }
+
         .bg-dark {
             background-image: linear-gradient(to right, rgb(54, 56, 54), rgb(61, 61, 61));
         }
@@ -235,9 +244,9 @@ $balance = $totalIncome - $totalExpense;
         .text {
             position: absolute;
             bottom: -5px;
-            color: black;
+            color: white;
             display: none;
-            background-color: #89eedd;
+            background-color: #924de0ab;
             border-radius: 10px;
             color: white;
             transition: 0.5s;
@@ -248,14 +257,14 @@ $balance = $totalIncome - $totalExpense;
         }
 
         .question h6 {
-            color: orange;
+            color: rgba(111, 245, 223, 0.856);
         }
 
         .question {
             height: auto;
             width: 100%;
             font-size: 15px;
-            border-top: 2px solid #cc1d1d;
+            border-top: 2px solid rgba(111, 218, 245, 0.856);
         }
 
         .bnt:hover {
@@ -265,7 +274,6 @@ $balance = $totalIncome - $totalExpense;
 
         .bnt {
             background-image: linear-gradient(to right, rgba(195, 97, 240, 0.526), rgba(103, 255, 227, 0.654));
-
             border: purple;
             transition: 0.2s;
         }
@@ -273,31 +281,109 @@ $balance = $totalIncome - $totalExpense;
         .color {
             color: green;
         }
+
+        .alert {
+            width: 55%;
+            position: fixed;
+        }
+
+        .center {
+            margin-left: 20%;
+            margin-right: 20%;
+            margin-top: 20%;
+            position: absolute;
+        }
+
+        .alertas {
+            width: 100%;
+            display: none;
+            position: fixed;
+            height: 100vh;
+            z-index: 999;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+
+            }
+
+            .font {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .a {
+                margin: 10px;
+            }
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: transparent;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
     </style>
 </head>
 
-<body>
+<body><!-- Barra lateral -->
+
+
     <nav class="navbar navbar-expand-lg position-fixed" id="nav" style="width: 100%;top:0;z-index: 9999;">
         <div class="container-fluid">
-            <a class="navbar-brand text-light" style="font-size:30px" href="#">CyberGen</a>
+            <a class="navbar-brand text-light" style="font-size:30px" href="#home"><?php echo $_SESSION['usuario'] ?></a>
 
             <div class="navbar-collapse" style="justify-content: center;display: flex;" id="navbarNavAltMarkup">
-                <a class="nav-link btn a btn-info " aria-current="page" href="index.php"><i class="fas fa-home home-icon"></i><span class="text ">Voltar</span></a>
-                <a class="nav-link btn a btn-success" href="#trans"><i class="fas fa-exchange-alt"></i><span class="text text-dark">Ver Transações</span></a>
-                <a class="nav-link btn a btn-danger" href="#res"><i class="fas fa-chart-bar"></i><span class="text text-dark">Ver Resumo</span></a>
-                <a class="nav-link btn a btn-warning" data-toggle="modal" data-target="#myModal">
-                    <i class="fas fa-question"></i><span class="text text-dark">Tire Suas Duvidas</span>
-                </a>
-                <a class="nav-link btn a btn-primary" data-toggle="modal" data-target="#mycont">
-                    <i class="fas fa-envelope contact-icon"></i>
+                <a class="nav-link btn a btn-info " aria-current="page" href="#home"><i class="fas fa-home home-icon"></i><span class="text text-light">Voltar</span></a>
+                <a class="nav-link btn a btn-success" href="#trans"><i class="fas fa-exchange-alt"></i><span class="text text-light">Ver Transações</span></a>
+                <a class="nav-link btn a btn-danger" href="#res"><i class="fas fa-chart-bar"></i><span class="text text-light">Ver Resumo</span></a>
+                <a class="nav-link btn a btn-warning" data-toggle="modal" data-target="#duvida">
+                    <i class="fas fa-question"></i><span class="text text-light">Tire Suas Duvidas</span>
                 </a>
             </div>
-        </div>
-    </nav><br><br><br>
+            <div class="config">
+                <div class="dropdown">
+                    <button class="dropbtn btn btn-dark">Configurações</button>
+                    <div class="dropdown-content">
+                        <button style="width: 100%;" class="btn btn-warning" onclick="alerta()">Alterar Dados</button>
+                        <button style=" width: 100%;border:none;padding: 10px;" class="btn btn-info" data-toggle="modal" data-target="#ticket">Abrir Ticket <i class="fas fa-ticket-alt"></i></button>
+                        <button class="btn btn-danger nav-link" style="width: 100%;" onclick="voltar()"> Sair <i class="fas fa-sign-out-alt"></i>
+                    </div>
+                </div>
+            </div>
+    </nav>
+        <div class="center">
 
+    </div><br><br><br><br>
+    <i id="home"></i>
 
-    <div class="container mt-5 bg-light text-dark">
-        <h1 class="mb-4">Sistema Financeiro <?php echo $_SESSION['usuario'] ?? '' ?></h1>
+    <div class="container  bg-light text-dark">
+        <h1 class="mb-4 font">Sistema Financeiro <?php echo $_SESSION['usuario'] ?? '' ?></h1>
 
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" style="display: block;flex-direction: column;">
             <div class="form-row d-flex">
@@ -364,7 +450,7 @@ $balance = $totalIncome - $totalExpense;
         </div>
 
         <div class="mt-4  print-section">
-            <h2>Transações - CyberGen</h2>
+            <h2>Transações - <?php echo $_SESSION['usuario'] ?></h2>
             <?php if (count($filteredTransactions) > 0) : ?>
                 <table class="table" id="trans">
                     <thead>
@@ -412,129 +498,144 @@ $balance = $totalIncome - $totalExpense;
             <h2>Resumo Financeiro</h2>
             <p>Total de Receitas: R$ <?php echo number_format($totalIncome, 2, ',', '.'); ?></p>
             <p>Total de Despesas: R$ <?php echo number_format($totalExpense, 2, ',', '.'); ?></p>
-            <p class="color">Saldo: R$ <?php echo number_format($balance, 2, ',', '.'); ?></p>
+            <p>Saldo: <span id="colorr">R$ <?php echo number_format($balance, 2, ',', '.'); ?></span></p>
 
         </div>
 
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top: 100px;height:70vh;">
+    <div class="modal fade" id="duvida" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top: 100px;">
         <div class=" modal-dialog modal-xl" role="document">
-            <div class="modal-content bg-dark text-light" style="height:70vh">
+            <div class="modal-content  text-light" style="background-color: #353636;" </div>
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Tirando suas duvidas</h5>
                     <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true"> <i class="fas fa-times x-icon"></i></span>
                     </button>
                 </div>
-                <div class="modal-body" style="height:70vh">
+                <div class="modal-body">
                     <div class="question">
                         <h6>Como imprimir somente um mês ou data específica?</h6>
-                        <div class="cont-block">Você irá clicar em filtrar por mês ou por dia e vai selecionar a data de sua escolha, depois você irá clicar na lupa, isso fará o conteúdo do dia ou mês que selecionou aparecer nos botões, depois é só clicar no botão da impressora.</div>
+                        <div class="cont-block">Você irá clicar em filtrar por mês ou por dia e vai selecionar a data de sua escolha, depois você irá clicar na lupa, isso fará o conteúdo do dia ou mês que selecionou aparecer nos botões, depois é só clicar no botão da impressora.</div><br>
                     </div>
 
                     <div class="question">
                         <h6>Como posso saber o quanto de gastos ou recebimentos tive no mês de fevereiro?</h6>
-                        <div class="cont-block">Você irá selecionar o "Filtro por mês" e vai selecionar o mês de fevereiro, quando tiver selecionado o mês pode clicar no botão vermelho, na parte de cima onde está a logo, isso fará você ir à parte de resumo, lá estará o seu saldo atual, suas receitas e suas despesas.</div>
+                        <div class="cont-block">Você irá selecionar o "Filtro por mês" e vai selecionar o mês de fevereiro, quando tiver selecionado o mês pode clicar no botão vermelho, na parte de cima onde está a logo, isso fará você ir à parte de resumo, lá estará o seu saldo atual, suas receitas e suas despesas.</div><br>
                     </div>
 
                     <div class="question">
                         <h6>Quero pesquisar por um pagamento específico, como faço?</h6>
-                        <div class="cont-block">Na área acima da tabela há vários tipos de botões, e em um deles está escrito "Buscar por descrição". Você irá digitar o pagamento que você gostaria de localizar e vai clicar na lupa, logo irá aparecer todas as linhas correspondentes. Caso queira por dia específico, você pode selecionar também a data, isso fará buscar por data e pela descrição.</div>
+                        <div class="cont-block">Na área acima da tabela há vários tipos de botões, e em um deles está escrito "Buscar por descrição". Você irá digitar o pagamento que você gostaria de localizar e vai clicar na lupa, logo irá aparecer todas as linhas correspondentes. Caso queira por dia específico, você pode selecionar também a data, isso fará buscar por data e pela descrição.</div><br>
                     </div>
 
                     <div class="question">
                         <h6>Quero ver quanto me sobrou no ano, quanto gastei e quanto ganhei, como faço isso?</h6>
-                        <div class="cont-block">Na área acima da tabela há vários tipos de botões, e em um deles está escrito "Filtrar por mês". Lá você pode colocar em "todos". Assim que você selecionar, clique na lupa. Após fazer isso, pode clicar no botão vermelho na área preta perto da logo. Se passar o mouse em cima, irá dizer "Ver Resumo". Clique em cima e assim você terá o valor que você gastou, o valor que você ganhou e o valor que sobrou.</div>
+                        <div class="cont-block">Na área acima da tabela há vários tipos de botões, e em um deles está escrito "Filtrar por mês". Lá você pode colocar em "todos". Assim que você selecionar, clique na lupa. Após fazer isso, pode clicar no botão vermelho na área preta perto da logo. Se passar o mouse em cima, irá dizer "Ver Resumo". Clique em cima e assim você terá o valor que você gastou, o valor que você ganhou e o valor que sobrou.</div><br>
                     </div>
 
                 </div>
             </div>
         </div>
     </div>
+    <div class="modal fade" id="ticket" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top: 100px;">
+        <div class=" modal-dialog modal-xl" role="document">
+            <div class="modal-content  text-dark" style="background:rgb(230, 230, 230)">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Abrindo seu Ticket</h5>
+                    <button type="button" class="close text-dark" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"> <i class="fas fa-times x-icon"></i></span>
+                    </button>
+                </div>
+                <div class="modal-body d-flex">
+                    <div class="d-block">
+                        <h5>Para que serve o Ticket?</h5>
+                        <div class="text-aling" style="width: 60vh;font-size: 15px;">
+                            <p> ticket é uma ferramenta fundamental para facilitar o contato e a comunicação entre empresas e seus clientes. Ele serve como um registro formal de uma solicitação, dúvida, reclamação ou qualquer outro tipo de interação que o cliente precise fazer com a empresa.</p>
+                            <p> Ao criar um ticket, o cliente fornece informações relevantes sobre sua necessidade, como o assunto em questão, detalhes específicos e, às vezes, até mesmo anexos relevantes. Essas informações são essenciais para que a empresa possa entender completamente o problema e fornecer uma resposta adequada.</p>
+                            <p> Além disso, o ticket também serve como um mecanismo de acompanhamento e rastreamento do status da solicitação do cliente. Ele permite que a empresa registre a data e hora de abertura do ticket, bem como todas as interações subsequentes, como respostas, atualizações e soluções fornecidas. Isso ajuda a garantir que todas as solicitações dos clientes sejam tratadas de maneira adequada e em tempo hábil.</p>
+                        </div>
+                    </div>
 
-    <div class="modal fade" id="mycont" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top: 100px;height:70vh"">
-        <div class=" modal-dialog" role="document">
-        <div class="modal-content bg-dark text-light">
-            <div class="modal-header">
-                <h5 class="modal-title text-success-emphasisr" id="exampleModalLabel">Entre em contato!</h5>
-                <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true"> <i class="fas fa-times x-icon"></i></span>
-                </button>
-            </div>
-            <div class="modal-body d-block" style="height:70vh">
-            <div class="js" style="display: flex;flex-direction: column;justify-content: center;align-items: center;margin-top: 5vh;">
-                <a href="https://www.instagram.com/cybergen.web/" target="_blank"><button class="btn " style=" background: linear-gradient(to right,rgb(250, 155, 143), rgb(235, 147, 162));width: 200px;">
-                 <i class="fab fa-instagram icon"></i> Instagram</button></a><br>
-                <a href="https://t.me/cybergenn" target="_blank"><button class="btn " style=" background: linear-gradient(to right, rgb(143, 243, 250), rgb(147, 207, 235));width: 200px;">
-                 <i class="fab fa-telegram icon"></i> Telegram </button></a><br>
-                <a href="http://api.whatsapp.com/send?1=pt_BR&phone=5537999066606" target="_blank"><button class="btn" style=" background: linear-gradient(to right,rgb(143 250 181), rgb(147 235 193));width: 200px;">
-                <i class="fab fa-whatsapp icon"></i> WhatsApp </button></a></div>
-            </div>
 
+                    <div class="form text-light" style="width: 30%;height: 350px;  justify-content: right;margin-left: auto;margin-right: 5vh;background: #363b41;border-radius: 10px; margin-top:auto;margin-bottom: auto;">
+                        <div style="width:90% ;margin-left: auto;margin-right: auto;">
+                            <br>
+                            <div>
+                                <label for="motivo">Motivo*</label>
+                                <input type="text" class="form-control" id="motivo" name="motivo" required style="height: 80px;">
+                            </div>
+                            <br>
+                            <div>
+                                <label for="email">Email*</label>
+                                <input type="email" placeholder="E-mail" class="form-control" id="email" name="email" required>
+                            </div>
+                            <br>
+                            <input type="submit" class="btn btn-success" style="width: 100%;">
+                            <br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            let p = document.querySelector(".color");
-            let saldo = parseFloat(p.textContent.replace("R$", "").replace(".", "").replace(",", "."));
 
-            if (saldo < 0) {
-                p.style.color = "red";
-            } else {
-                p.style.color = "green";
-            }
-        });
 
-        // Obtém os valores dos campos de filtro
-        var month = document.getElementById('month').value;
-        var date = document.getElementById('date').value;
-        var search = document.getElementById('search').value;
 
-        // Aplica a lógica de filtragem
-        var filteredTransactions = transactions;
-
-        if (month) {
-            filteredTransactions = filteredTransactions.filter(function(transaction) {
-                return transaction.month === month;
-            });
-        }
-
-        if (date) {
-            filteredTransactions = filteredTransactions.filter(function(transaction) {
-                return transaction.date === date;
-            });
-        }
-
-        if (search) {
-            filteredTransactions = filteredTransactions.filter(function(transaction) {
-                return transaction.description.includes(search);
-            });
-        }
-
-        function printTransactions() {
-            // Ocultar todos os elementos, exceto a tabela de transações
-            var elementsToHide = document.querySelectorAll('body > *:not(.container):not(script)');
-            for (var i = 0; i < elementsToHide.length; i++) {
-                elementsToHide[i].style.display = 'none';
+        <script>
+            function voltar() {
+                location = "index.php"
             }
 
-            // Imprimir a tabela de transações
-            window.print();
 
-            // Restaurar a exibição dos elementos ocultos
-            for (var i = 0; i < elementsToHide.length; i++) {
-                elementsToHide[i].style.display = '';
+
+            // Obtém os valores dos campos de filtro
+            var month = document.getElementById('month').value;
+            var date = document.getElementById('date').value;
+            var search = document.getElementById('search').value;
+
+            // Aplica a lógica de filtragem
+            var filteredTransactions = transactions;
+
+            if (month) {
+                filteredTransactions = filteredTransactions.filter(function(transaction) {
+                    return transaction.month === month;
+                });
             }
-        }
-    </script>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            if (date) {
+                filteredTransactions = filteredTransactions.filter(function(transaction) {
+                    return transaction.date === date;
+                });
+            }
+
+            if (search) {
+                filteredTransactions = filteredTransactions.filter(function(transaction) {
+                    return transaction.description.includes(search);
+                });
+            }
+
+            function printTransactions() {
+                // Ocultar todos os elementos, exceto a tabela de transações
+                var elementsToHide = document.querySelectorAll('body > *:not(.container):not(script)');
+                for (var i = 0; i < elementsToHide.length; i++) {
+                    elementsToHide[i].style.display = 'none';
+                }
+
+                // Imprimir a tabela de transações
+                window.print();
+
+                // Restaurar a exibição dos elementos ocultos
+                for (var i = 0; i < elementsToHide.length; i++) {
+                    elementsToHide[i].style.display = '';
+                }
+            }
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 
