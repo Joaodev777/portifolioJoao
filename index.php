@@ -688,7 +688,7 @@
                     text-align: center;
                     margin-right: auto;">Bem Vindo!</div><br>
                     <img src="img/logo-white.png" alt=""
-                        style="margin-right: auto;margin-left: auto;height: 150px;margin-top: 10px;margin-bottom: 10px;">
+                        style="margin-right: auto;margin-left: auto;height:auto;margin-bottom: 10px;padding:20px">
                     <div class="d-flex text-dark">
                         <div class="d-block CONT">
                             <div class="d-flex">
