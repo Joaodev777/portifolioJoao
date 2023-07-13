@@ -687,7 +687,7 @@
                     <div class="before_name" style="    margin-left: auto;
                     text-align: center;
                     margin-right: auto;">Bem Vindo!</div><br>
-                    <img src="img/logo.png" alt=""
+                    <img src="img/logo-white.png" alt=""
                         style="margin-right: auto;margin-left: auto;height: 150px;margin-top: 10px;margin-bottom: 10px;">
                     <div class="d-flex text-dark">
                         <div class="d-block CONT">
