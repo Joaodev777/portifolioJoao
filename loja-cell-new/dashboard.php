@@ -1,5 +1,12 @@
 <?php
-    session_start()
+if (!isset($_SESSION)) {
+    session_start();
+}
+
+// Se quiser exigir que esteja logado
+if (!isset($_SESSION['usuario'])) {
+    header('location: index.php');
+}
 
 
 if (!isset($_SESSION['transactions'])) {
@@ -14,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $date = isset($_POST['date']) ? $_POST['date'] : '';
 
     $transaction = [
-        'description' => $description;
+        'description' => $description,
         'amount' => $amount,
         'type' => $type,
         'payer_receiver' => $payer_receiver,
