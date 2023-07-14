@@ -312,13 +312,13 @@
                             </div>
                             <div class="div">
                                 
-                                 <div data-bs-toggle="modal" data-bs-target="#modalsaiba" class="btn-gtx gradient-border mb-5 btn-side">
-                                <button class="btn-dark btn-general-m1 text-light"><a data-bs-toggle="modal"
+                                 <div data-bs-toggle="modal" style="padding:6px" data-bs-target="#modalsaiba" class="btn-gtx gradient-border mb-5 btn-side">
+                                <button class="btn-dark btn-general-m1 text-light" style="padding:5px"><a data-bs-toggle="modal"
                                         data-bs-target="#modalsaiba">Saiba
                                         mais</a></button>
                             </div>
-                            <div href="#contato" class=" btn-gtx gradient-border mb-5 btn-con btn-side btn-si">
-                                <button class="btn-dark btn-general-m1 text-light"><a href="#contato">Faça seu
+                            <div href="#contato" style="padding:6px" class=" btn-gtx gradient-border mb-5 btn-con btn-side btn-si">
+                                <button style="padding:5px" class="btn-dark btn-general-m1 text-light"><a href="#contato">Faça seu
                                         orçamento</a></button>
                             </div>
 
@@ -357,7 +357,7 @@
                     </div>
                     <div class="text-apre-gtx1 text-center mt-1">
                         <div class="text-center">
-                            <h1>Me conhecendo</h1>
+                            <h1>Sobre mim</h1>
                         </div>
                         <div class="content font-5 mt-3">
                             <p>Olá, meu nome é <span class="Joao">João Guilherme</span>, um desenvolvedor web apaixonado
@@ -365,10 +365,10 @@
                                 habilidades
                                 e conhecimentos nesse campo em constante evolução </p>
                         </div>
-                        <div class="button gradient-border animationhover mb-5">
+                        <div class="button gradient-border animationhover mb-5" style="padding:6px">
 
                             <button class="btn-dark text-light text " type="button" data-bs-toggle="modal"
-                                data-bs-target="#modalsaiba">Saiba Mais</button>
+                                data-bs-target="#modalsaiba" style="padding:5px">Saiba Mais</button>
                         </div>
                     </div>
                 </div>
