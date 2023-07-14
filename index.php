@@ -261,7 +261,8 @@
         }
 
         .modal-content {
-            background-image: linear-gradient(226deg, rgb(0, 204, 255), rgb(182 253 216), rgb(109, 250, 238));
+            background: rgb(34 34 36) ;
+            color:white;
         }
         .img-foo{
             height:15vh;
