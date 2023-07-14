@@ -354,7 +354,7 @@
             <br>
             <div class="conteiner apre">
                 <div class="apresentacao d-flex" style="width: 100%;">
-                    <div class="img-joao-gtx"><img class="border-img"
+                    <div class="img-joao-gtx" style="margin-left:auto;margin-right:auto;margin-top:5vh;"><img class="border-img"
                             src="img/logo-icon.png" 
                             style="border-radius: 50%;heigth:250px" alt="">
                     </div>
