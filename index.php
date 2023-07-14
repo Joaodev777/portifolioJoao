@@ -269,7 +269,7 @@
 
 <body style="background:#1e1d2a; color: white;">
     <nav class="nav" id="nav">
-        <div class="nav-title" id="title-nav"><a href="index.html" style="text-decoration: none;font-size:45px">SystemXpert</a></div>
+        <div class="nav-title" id="title-nav"><a href="index.html" style="text-decoration: none;font-size:45px">WebDream.</a></div>
         <div class="d-flex justify-content-center nav-menu">
             <a href="index.php" class="line text-nav" onclick="linkOpenNav('secao1')">Home</a>
             <a href="#about" class="line text-nav" onclick="linkOpenNav('secao2')">O que Fazemos</a>
@@ -337,7 +337,7 @@
                         <div class="main">
                             <a href="index.php">
 
-                                <img src="img/logo-white.png " class="img-abrend"
+                                <img src="img/logo.png " class="img-abrend"
                                     style="  margin-top: 20vh;  " alt="">
                             </a>
                         </div>
@@ -576,7 +576,7 @@
         <div class="respo">
             <i id="contato"></i>
             <div style="padding:20px;margin-block:auto;">
-                <img src="img/logo-white.png" alt="" class="img-foo">
+                <img src="img/logo.png" alt="" class="img-foo">
             </div>
             <div class="login-box">
                 <form data-aos="fade-left" data-aos-delay="700" data-aos-easing="ease-in" data-aos-duration="1000"
