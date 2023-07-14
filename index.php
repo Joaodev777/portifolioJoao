@@ -26,7 +26,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="https://github.com/Joaodev777/portifolioJoao/blob/deploy/logo.png?raw=true" type="image/x-icon">
+    <link rel="shortcut icon" href="img/logo-icon.png" type="image/x-icon">
 
     <title>SystemXpert</title>
     <style>
@@ -337,8 +337,8 @@
                         <div class="main">
                             <a href="index.php">
 
-                                <img src="https://github.com/Joaodev777/portifolioJoao/blob/deploy/logo.png?raw=true" class="img-abrend"
-                                    style="  margin-top: 20vh;  " alt="">
+                                <img src="img/logo-icon.png" class="img-abrend"
+                                    style="  margin-top: 20vh;heigth:20vh  " alt="">
                             </a>
                         </div>
                     </div>
