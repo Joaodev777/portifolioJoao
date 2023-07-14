@@ -370,7 +370,7 @@ $balance = $totalIncome - $totalExpense;
     <!-- Barra lateral -->
     <nav class="navbar navbar-expand-lg position-fixed" id="nav" style="width: 100%; top: 0; z-index: 9999;">
         <div class="container-fluid">
-            <a class="navbar-brand text-light" style="font-size: 30px" href="#home"><?php echo $_SESSION['usuario'] ?></a>
+            <a class="navbar-brand text-light" style="font-size: 30px" href="#home"><img src="logo.png"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
@@ -408,21 +408,21 @@ $balance = $totalIncome - $totalExpense;
     <i id="home"></i>
 
     <div class="container bg-light text-dark">
-        <h1 class="mb-4 font">Sistema Financeiro <?php echo $_SESSION['usuario'] ?? '' ?></h1>
+        <h1 class="mb-4 font">Controle de Finanças</h1>
 
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" style="display: block;flex-direction: column;">
             <div class="form-row d-flex">
                 <div class="col-md-3 mb-3">
 
-                    <label for="description">Descrição<span class="text-danger">*</span>:</label>
+                    <label for="description">Descrição <span class="text-danger">*</span>:</label>
                     <input type="text" class="form-control" id="description" name="description" required>
                 </div><br>
                 <div class="col-md-2 mb-3">
-                    <label for="amount">Valor<span class="text-danger">*</span>:</label>
+                    <label for="amount">Valor <span class="text-danger">*</span>:</label>
                     <input type="number" class="form-control" id="amount" name="amount" step="0.01" required>
                 </div><br>
                 <div class="col-md-2 mb-3">
-                    <label for="type">Tipo<span class="text-danger">*</span>:</label>
+                    <label for="type">Tipo <span class="text-danger">*</span>:</label>
                     <select class="form-control" id="type" name="type" required>
                         <option value="Receita">Receita</option>
                         <option value="Despesa">Despesa</option>
@@ -430,11 +430,13 @@ $balance = $totalIncome - $totalExpense;
                     </select>
                 </div><br>
                 <div class="col-md-2 mb-3">
-                    <label for="payer_receiver">Pagador/Recebedor<span class="text-danger">*</span>:</label>
+                    <label for="payer_receiver">Pagador/Recebedor <span class="text-danger">*</span>:</label>
                     <input type="text" class="form-control" id="payer_receiver" name="payer_receiver" required>
                 </div><br>
                 <div class="col-md-2 mb-3">
-                    <label for="date">Data<span class="text-danger">*</span>:</label>
+                    <label for="date">Data el-checkbox-group v-model="">
+                      <el-checkbox label=""></el-checkbox>
+                    </el-checkbox-group><span class="text-danger">*</span>:</label>
                     <input type="date" class="form-control" id="date" name="date" required>
                 </div><br>
             </div>
@@ -475,7 +477,7 @@ $balance = $totalIncome - $totalExpense;
         </div>
 
         <div class="mt-4 print-section">
-            <h2>Transações - <?php echo $_SESSION['usuario'] ?></h2>
+            <h2>Transações -  <img src="/logo.png"></h2>
             <?php if (count($filteredTransactions) > 0) : ?>
 
                 <table class="table" id="trans">
