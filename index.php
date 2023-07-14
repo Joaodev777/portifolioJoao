@@ -26,7 +26,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
 
     <title>SystemXpert</title>
     <style>
@@ -337,7 +337,7 @@
                         <div class="main">
                             <a href="index.php">
 
-                                <img src="img/logo.png " class="img-abrend"
+                                <img src="logo.png " class="img-abrend"
                                     style="  margin-top: 20vh;  " alt="">
                             </a>
                         </div>
@@ -576,7 +576,7 @@
         <div class="respo">
             <i id="contato"></i>
             <div style="padding:20px;margin-block:auto;">
-                <img src="img/logo.png" alt="" class="img-foo">
+                <img src="logo.png" alt="" class="img-foo">
             </div>
             <div class="login-box">
                 <form data-aos="fade-left" data-aos-delay="700" data-aos-easing="ease-in" data-aos-duration="1000"
@@ -687,7 +687,7 @@
                     <div class="before_name" style="    margin-left: auto;
                     text-align: center;
                     margin-right: auto;">Bem Vindo!</div><br>
-                    <img src="img/logo-white.png" alt=""
+                    <img src="logo.png" alt=""
                         style="margin-right: auto;margin-left: auto;height:auto;margin-bottom: 10px;padding:20px">
                     <div class="d-flex text-dark">
                         <div class="d-block CONT">
