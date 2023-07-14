@@ -3,6 +3,8 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
+// Se quiser exigir que esteja logado
+
 
 
 if (!isset($_SESSION['transactions'])) {
@@ -97,7 +99,6 @@ $balance = $totalIncome - $totalExpense;
 
 
 ?>
-
 <!DOCTYPE html>
 <html>
 
@@ -160,7 +161,7 @@ $balance = $totalIncome - $totalExpense;
 
             .print-section,
             .tables,
-            .tites,
+            .titles,
             .print-section * {
                 visibility: visible;
             }
@@ -199,7 +200,6 @@ $balance = $totalIncome - $totalExpense;
                 opacity: 1;
                 position: fixed;
             }
-
         }
 
         .tables {
@@ -303,7 +303,6 @@ $balance = $totalIncome - $totalExpense;
                 width: 100%;
                 height: 100%;
                 margin: 0;
-
             }
 
             .font {
@@ -316,9 +315,18 @@ $balance = $totalIncome - $totalExpense;
             }
         }
 
+        button {
+            padding: 15px;
+        }
+
         .dropdown {
             position: relative;
             display: inline-block;
+        }
+
+        .a {
+            width: 50px;
+            margin-left: 10vh;
         }
 
         .dropdown-content {
@@ -344,55 +352,77 @@ $balance = $totalIncome - $totalExpense;
         .dropdown-content a:hover {
             background-color: #f1f1f1;
         }
+
+        .collapse {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .container-fluid {
+            justify-content: space-between;
+        }
     </style>
 </head>
 
-<body><!-- Barra lateral -->
+<body>
+    <!-- Barra lateral -->
 
-
-    <nav class="navbar navbar-expand-lg position-fixed" id="nav" style="width: 100%;top:0;z-index: 9999;">
+    <!-- Barra lateral -->
+    <nav class="navbar navbar-expand-lg position-fixed" id="nav" style="width: 100%; top: 0; z-index: 9999;">
         <div class="container-fluid">
-            <a class="navbar-brand text-light" style="font-size:30px" href="#home">CyberGen</a>
+            <a class="navbar-brand text-light" style="font-size: 30px" href="#home"><?php echo $_SESSION['usuario'] ?></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link btn a btn-info" aria-current="page" href="#home">
+                        <i class="fas fa-home home-icon"></i><span class="text text-light">Voltar</span>
+                    </a>
+                    <a class="nav-link btn a btn-success" href="#trans">
+                        <i class="fas fa-exchange-alt"></i><span class="text text-light">Ver Transações</span>
+                    </a>
+                    <a class="nav-link btn a btn-danger" href="#res">
+                        <i class="fas fa-chart-bar"></i><span class="text text-light">Ver Resumo</span>
+                    </a>
+                    <a class="nav-link btn a btn-warning" data-toggle="modal" data-target="#duvida">
+                        <i class="fas fa-question"></i><span class="text text-light">Tire Suas Duvidas</span>
+                    </a>
 
-            <div class="navbar-collapse" style="justify-content: center;display: flex;" id="navbarNavAltMarkup">
-                <a class="nav-link btn a btn-info " aria-current="page" href="#home"><i class="fas fa-home home-icon"></i><span class="text text-light">Voltar</span></a>
-                <a class="nav-link btn a btn-success" href="#trans"><i class="fas fa-exchange-alt"></i><span class="text text-light">Ver Transações</span></a>
-                <a class="nav-link btn a btn-danger" href="#res"><i class="fas fa-chart-bar"></i><span class="text text-light">Ver Resumo</span></a>
-                <a class="nav-link btn a btn-warning" data-toggle="modal" data-target="#duvida">
-                    <i class="fas fa-question"></i><span class="text text-light">Tire Suas Duvidas</span>
-                </a>
-            </div>
-            <div class="config">
-                <div class="dropdown">
-                    <button class="dropbtn btn btn-dark">Configurações</button>
-                    <div class="dropdown-content">
-                        <button style="width: 100%;" class="btn btn-warning" onclick="alerta()">Alterar Dados</button>
-                        <button style=" width: 100%;border:none;padding: 10px;" class="btn btn-info" data-toggle="modal" data-target="#ticket">Abrir Ticket <i class="fas fa-ticket-alt"></i></button>
-                        <button class="btn btn-danger nav-link" style="width: 100%;" onclick="voltar()"> Sair <i class="fas fa-sign-out-alt"></i>
-                    </div>
                 </div>
             </div>
+        </div>
+        <div class="dropdown  ">
+            <button class="dropbtn btn btn-dark d-flex">Configurações<i style="font-size: 1rem;margin-top: 5px;" class="fas fa-cog settings-icon"></i></button>
+            <div class="dropdown-content">
+                <button style="width: 100%;" class="btn btn-warning" onclick="alerta()">Alterar Dados</button>
+                <button style="width: 100%;border: none;padding: 10px;" class="btn btn-info" data-toggle="modal" data-target="#ticket">
+                    Abrir Ticket <i class="fas fa-ticket-alt"></i>
+                </button>
+                <button class="btn btn-danger nav-link" style="width: 100%;" onclick="voltar()">Sair <i class="fas fa-sign-out-alt"></i></button>
+            </div>
+        </div>
     </nav>
-        <div class="center">
 
-    </div><br><br><br><br>
+    <div class="center"></div><br><br><br><br>
     <i id="home"></i>
 
-    <div class="container  bg-light text-dark">
-        <h1 class="mb-4 font">Sistema Financeiro - Cybergen</h1>
+    <div class="container bg-light text-dark">
+        <h1 class="mb-4 font">Sistema Financeiro <?php echo $_SESSION['usuario'] ?? '' ?></h1>
 
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" style="display: block;flex-direction: column;">
             <div class="form-row d-flex">
                 <div class="col-md-3 mb-3">
-                    <label for="description">Descrição:</label>
+
+                    <label for="description">Descrição<span class="text-danger">*</span>:</label>
                     <input type="text" class="form-control" id="description" name="description" required>
                 </div><br>
                 <div class="col-md-2 mb-3">
-                    <label for="amount">Valor:</label>
+                    <label for="amount">Valor<span class="text-danger">*</span>:</label>
                     <input type="number" class="form-control" id="amount" name="amount" step="0.01" required>
                 </div><br>
                 <div class="col-md-2 mb-3">
-                    <label for="type">Tipo:</label>
+                    <label for="type">Tipo<span class="text-danger">*</span>:</label>
                     <select class="form-control" id="type" name="type" required>
                         <option value="Receita">Receita</option>
                         <option value="Despesa">Despesa</option>
@@ -400,15 +430,15 @@ $balance = $totalIncome - $totalExpense;
                     </select>
                 </div><br>
                 <div class="col-md-2 mb-3">
-                    <label for="payer_receiver">Pagador/Recebedor:</label>
+                    <label for="payer_receiver">Pagador/Recebedor<span class="text-danger">*</span>:</label>
                     <input type="text" class="form-control" id="payer_receiver" name="payer_receiver" required>
                 </div><br>
                 <div class="col-md-2 mb-3">
-                    <label for="date">Data:</label>
+                    <label for="date">Data<span class="text-danger">*</span>:</label>
                     <input type="date" class="form-control" id="date" name="date" required>
                 </div><br>
             </div>
-            <button class="btn btn-primary bnt" type="submit">Adicionar</button>
+            <button class="btn btn-primary" type="submit">Adicionar</button>
         </form>
 
         <div class="mt-4">
@@ -435,7 +465,6 @@ $balance = $totalIncome - $totalExpense;
                     <label for="date">Filtrar por data:</label>
                     <input type="date" class="form-control ml-2" id="date" name="date">
                 </div>
-
                 <div class="form-group mr-2">
                     <label for="search">Buscar por descrição:</label>
                     <input type="text" class="form-control ml-2" id="search" name="search">
@@ -445,9 +474,10 @@ $balance = $totalIncome - $totalExpense;
             </form>
         </div>
 
-        <div class="mt-4  print-section">
+        <div class="mt-4 print-section">
             <h2>Transações - <?php echo $_SESSION['usuario'] ?></h2>
             <?php if (count($filteredTransactions) > 0) : ?>
+
                 <table class="table" id="trans">
                     <thead>
                         <tr>
@@ -475,7 +505,6 @@ $balance = $totalIncome - $totalExpense;
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
-
                 </table>
             <?php else : ?>
                 <p>Nenhuma transação encontrada.</p>
@@ -485,9 +514,7 @@ $balance = $totalIncome - $totalExpense;
                 <p>Total de Receitas: R$ <?php echo number_format($totalIncome, 2, ',', '.'); ?></p>
                 <p>Total de Despesas: R$ <?php echo number_format($totalExpense, 2, ',', '.'); ?></p>
                 <p class="color">Saldo: R$ <?php echo number_format($balance, 2, ',', '.'); ?></p>
-
             </div>
-
         </div>
         <i id="res"></i>
         <div class="mt-4">
@@ -495,143 +522,165 @@ $balance = $totalIncome - $totalExpense;
             <p>Total de Receitas: R$ <?php echo number_format($totalIncome, 2, ',', '.'); ?></p>
             <p>Total de Despesas: R$ <?php echo number_format($totalExpense, 2, ',', '.'); ?></p>
             <p>Saldo: <span id="colorr">R$ <?php echo number_format($balance, 2, ',', '.'); ?></span></p>
-
         </div>
 
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="duvida" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top: 100px;">
-        <div class=" modal-dialog modal-xl" role="document">
-            <div class="modal-content  text-light" style="background-color: #353636;" </div>
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Tirando suas duvidas</h5>
-                    <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"> <i class="fas fa-times x-icon"></i></span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="question">
-                        <h6>Como imprimir somente um mês ou data específica?</h6>
-                        <div class="cont-block">Você irá clicar em filtrar por mês ou por dia e vai selecionar a data de sua escolha, depois você irá clicar na lupa, isso fará o conteúdo do dia ou mês que selecionou aparecer nos botões, depois é só clicar no botão da impressora.</div><br>
+        <!-- Modal de Dúvidas -->
+        <div class="modal bg-dark fade" id="duvida" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top: 100px;">
+            <div class="modal-dialog  bg-darkk modal-lg" style="background-color: #303030;" role="document">
+                <div class="modal-content bg-dark text-light">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Dúvidas Frequentes</h5>
+                        <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                            <i class="fas fa-times close-icon"></i>
+                        </button>
                     </div>
-
-                    <div class="question">
-                        <h6>Como posso saber o quanto de gastos ou recebimentos tive no mês de fevereiro?</h6>
-                        <div class="cont-block">Você irá selecionar o "Filtro por mês" e vai selecionar o mês de fevereiro, quando tiver selecionado o mês pode clicar no botão vermelho, na parte de cima onde está a logo, isso fará você ir à parte de resumo, lá estará o seu saldo atual, suas receitas e suas despesas.</div><br>
-                    </div>
-
-                    <div class="question">
-                        <h6>Quero pesquisar por um pagamento específico, como faço?</h6>
-                        <div class="cont-block">Na área acima da tabela há vários tipos de botões, e em um deles está escrito "Buscar por descrição". Você irá digitar o pagamento que você gostaria de localizar e vai clicar na lupa, logo irá aparecer todas as linhas correspondentes. Caso queira por dia específico, você pode selecionar também a data, isso fará buscar por data e pela descrição.</div><br>
-                    </div>
-
-                    <div class="question">
-                        <h6>Quero ver quanto me sobrou no ano, quanto gastei e quanto ganhei, como faço isso?</h6>
-                        <div class="cont-block">Na área acima da tabela há vários tipos de botões, e em um deles está escrito "Filtrar por mês". Lá você pode colocar em "todos". Assim que você selecionar, clique na lupa. Após fazer isso, pode clicar no botão vermelho na área preta perto da logo. Se passar o mouse em cima, irá dizer "Ver Resumo". Clique em cima e assim você terá o valor que você gastou, o valor que você ganhou e o valor que sobrou.</div><br>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="ticket" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top: 100px;">
-        <div class=" modal-dialog modal-xl" role="document">
-            <div class="modal-content  text-dark" style="background:rgb(230, 230, 230)">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Abrindo seu Ticket</h5>
-                    <button type="button" class="close text-dark" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"> <i class="fas fa-times x-icon"></i></span>
-                    </button>
-                </div>
-                <div class="modal-body d-flex">
-                    <div class="d-block">
-                        <h5>Para que serve o Ticket?</h5>
-                        <div class="text-aling" style="width: 60vh;font-size: 15px;">
-                            <p> ticket é uma ferramenta fundamental para facilitar o contato e a comunicação entre empresas e seus clientes. Ele serve como um registro formal de uma solicitação, dúvida, reclamação ou qualquer outro tipo de interação que o cliente precise fazer com a empresa.</p>
-                            <p> Ao criar um ticket, o cliente fornece informações relevantes sobre sua necessidade, como o assunto em questão, detalhes específicos e, às vezes, até mesmo anexos relevantes. Essas informações são essenciais para que a empresa possa entender completamente o problema e fornecer uma resposta adequada.</p>
-                            <p> Além disso, o ticket também serve como um mecanismo de acompanhamento e rastreamento do status da solicitação do cliente. Ele permite que a empresa registre a data e hora de abertura do ticket, bem como todas as interações subsequentes, como respostas, atualizações e soluções fornecidas. Isso ajuda a garantir que todas as solicitações dos clientes sejam tratadas de maneira adequada e em tempo hábil.</p>
+                    <div class="modal-body">
+                        <div class="question mt-2">
+                            <h6 class="font">Como adicionar uma transação?</h6>
+                            <p class="des">Para adicionar uma transação, preencha o formulário acima com a descrição, valor, tipo (receita, despesa ou anotação), pagador/recebedor e data da transação. Clique em "Adicionar" para salvar a transação.</p>
+                        </div>
+                        <div class="question mt-2">
+                            <h6 class="font">Como filtrar as transações?</h6>
+                            <p class="des">Você pode filtrar as transações por mês, data e descrição. Basta selecionar as opções desejadas nos filtros acima e clicar no botão de pesquisa.</p>
+                        </div>
+                        <div class="question mt-2">
+                            <h6 class="font">Como excluir uma transação?</h6>
+                            <p class="des">Para excluir uma transação, clique no botão de lixeira na coluna "Ações" da tabela de transações. Será exibida uma mensagem de confirmação antes de excluir a transação.</p>
+                        </div>
+                        <div class="question mt-2">
+                            <h6 class="font">Como imprimir as transações?</h6>
+                            <p class="des">Para imprimir as transações, clique no botão de impressão acima da tabela de transações. Será aberta uma janela de impressão com as transações e o resumo financeiro.</p>
                         </div>
                     </div>
-
-
-                    <div class="form text-light" style="width: 30%;height: 350px;  justify-content: right;margin-left: auto;margin-right: 5vh;background: #363b41;border-radius: 10px; margin-top:auto;margin-bottom: auto;">
-                        <div style="width:90% ;margin-left: auto;margin-right: auto;">
-                            <br>
-                            <div>
-                                <label for="motivo">Motivo*</label>
-                                <input type="text" class="form-control" id="motivo" name="motivo" required style="height: 80px;">
-                            </div>
-                            <br>
-                            <div>
-                                <label for="email">Email*</label>
-                                <input type="email" placeholder="E-mail" class="form-control" id="email" name="email" required>
-                            </div>
-                            <br>
-                            <input type="submit" class="btn btn-success" style="width: 100%;">
-                            <br><br>
-                        </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- Modal de Alerta -->
+        <div class="alertas" id="alerta">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Atenção!</strong> Esta função ainda não está implementada.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Modal de Ticket -->
+        <div class="modal fade" id="ticket" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Abrir Ticket</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                            <div class="form-group">
+                                <label for="ticket_subject">Assunto:</label>
+                                <input type="text" class="form-control" id="ticket_subject" name="ticket_subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="ticket_message">Mensagem:</label>
+                                <textarea class="form-control" id="ticket_message" name="ticket_message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Função para imprimir as transações
+        function printTransactions() {
+            window.print();
+        }
+
+        // Função para exibir alerta
+        function alerta() {
+            var mensagem = "Atenção! Para modificar seus dados entre em contato com a empresa. ";
+            mensagem += "Entre em contato pelo ";
+            mensagem += "<a href='https://wa.me/5537999066606' target='_blank'>WhatsApp</a>.";
+
+            var alertDiv = document.createElement('div');
+            alertDiv.innerHTML = mensagem;
+
+            var alerta = alert(alertDiv.innerText);
+
+            if (alerta) {
+                window.open("https://wa.me/5537999066606", "_blank");
+            }
+        }
+
+        // Função para voltar para a página inicial
+        function voltar() {
+            window.location.href = "logout.php";
+        }
 
 
+        // Obtém os valores dos campos de filtro
+        var month = document.getElementById('month').value;
+        var date = document.getElementById('date').value;
+        var search = document.getElementById('search').value;
 
-        <script>
-            function voltar() {
-                location = "index.php"
+        // Aplica a lógica de filtragem
+        var filteredTransactions = transactions;
+
+        if (month) {
+            filteredTransactions = filteredTransactions.filter(function(transaction) {
+                return transaction.month === month;
+            });
+        }
+
+        if (date) {
+            filteredTransactions = filteredTransactions.filter(function(transaction) {
+                return transaction.date === date;
+            });
+        }
+
+        if (search) {
+            filteredTransactions = filteredTransactions.filter(function(transaction) {
+                return transaction.description.includes(search);
+            });
+        }
+
+        function printTransactions() {
+            // Ocultar todos os elementos, exceto a tabela de transações
+            var elementsToHide = document.querySelectorAll('body > *:not(.container):not(script)');
+            for (var i = 0; i < elementsToHide.length; i++) {
+                elementsToHide[i].style.display = 'none';
             }
 
+            // Imprimir a tabela de transações
+            window.print();
 
-
-            // Obtém os valores dos campos de filtro
-            var month = document.getElementById('month').value;
-            var date = document.getElementById('date').value;
-            var search = document.getElementById('search').value;
-
-            // Aplica a lógica de filtragem
-            var filteredTransactions = transactions;
-
-            if (month) {
-                filteredTransactions = filteredTransactions.filter(function(transaction) {
-                    return transaction.month === month;
-                });
+            // Restaurar a exibição dos elementos ocultos
+            for (var i = 0; i < elementsToHide.length; i++) {
+                elementsToHide[i].style.display = '';
             }
+        }
+    </script>
 
-            if (date) {
-                filteredTransactions = filteredTransactions.filter(function(transaction) {
-                    return transaction.date === date;
-                });
-            }
 
-            if (search) {
-                filteredTransactions = filteredTransactions.filter(function(transaction) {
-                    return transaction.description.includes(search);
-                });
-            }
 
-            function printTransactions() {
-                // Ocultar todos os elementos, exceto a tabela de transações
-                var elementsToHide = document.querySelectorAll('body > *:not(.container):not(script)');
-                for (var i = 0; i < elementsToHide.length; i++) {
-                    elementsToHide[i].style.display = 'none';
-                }
 
-                // Imprimir a tabela de transações
-                window.print();
-
-                // Restaurar a exibição dos elementos ocultos
-                for (var i = 0; i < elementsToHide.length; i++) {
-                    elementsToHide[i].style.display = '';
-                }
-            }
-        </script>
-
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 
