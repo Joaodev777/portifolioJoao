@@ -337,7 +337,7 @@
                         <div class="main">
                             <a href="index.php">
 
-                                <img src="logo.png " class="img-abrend"
+                                <img src="https://github.com/Joaodev777/portifolioJoao/blob/deploy/logo.png?raw=true" class="img-abrend"
                                     style="  margin-top: 20vh;  " alt="">
                             </a>
                         </div>
@@ -350,9 +350,9 @@
 
             <br>
             <div class="conteiner apre">
-                <div class="apresentacao d-flex" style="width: 100%;background-color: rgb(37, 37, 37);">
+                <div class="apresentacao d-flex" style="width: 100%;">
                     <div class="img-joao-gtx"><img class="border-img"
-                            src="https://img.icons8.com/ios/100/000000/user--v1.png" alt="user--v1" /
+                            src="https://github.com/Joaodev777/portifolioJoao/blob/deploy/logo.png?raw=true" alt="user--v1" /
                             style="border-radius: 50%;" alt="">
                     </div>
                     <div class="text-apre-gtx1 text-center mt-1">
@@ -576,7 +576,7 @@
         <div class="respo">
             <i id="contato"></i>
             <div style="padding:20px;margin-block:auto;">
-                <img src="logo.png" alt="" class="img-foo">
+                <img src="https://github.com/Joaodev777/portifolioJoao/blob/deploy/logo.png?raw=true" alt="" class="img-foo">
             </div>
             <div class="login-box">
                 <form data-aos="fade-left" data-aos-delay="700" data-aos-easing="ease-in" data-aos-duration="1000"
@@ -687,7 +687,7 @@
                     <div class="before_name" style="    margin-left: auto;
                     text-align: center;
                     margin-right: auto;">Bem Vindo!</div><br>
-                    <img src="logo.png" alt=""
+                    <img src="https://github.com/Joaodev777/portifolioJoao/blob/deploy/logo.png?raw=true" alt=""
                         style="margin-right: auto;margin-left: auto;height:auto;margin-bottom: 10px;padding:20px">
                     <div class="d-flex text-dark">
                         <div class="d-block CONT">
