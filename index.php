@@ -263,6 +263,9 @@
         .modal-content {
             background-image: linear-gradient(226deg, rgb(0, 204, 255), rgb(182 253 216), rgb(109, 250, 238));
         }
+        .img-foo{
+            height:15vh;
+        }
     </style>
 
 </head>
@@ -352,7 +355,7 @@
             <div class="conteiner apre">
                 <div class="apresentacao d-flex" style="width: 100%;">
                     <div class="img-joao-gtx"><img class="border-img"
-                            src="" alt="user--v1" /
+                            src="img/logo-icon.png" 
                             style="border-radius: 50%;heigth:250px" alt="">
                     </div>
                     <div class="text-apre-gtx1 text-center mt-1">
@@ -576,7 +579,7 @@
         <div class="respo">
             <i id="contato"></i>
             <div style="padding:20px;margin-block:auto;">
-                <img src="https://github.com/Joaodev777/portifolioJoao/blob/deploy/logo.png?raw=true" alt="" class="img-foo">
+                <img src="img/logo-icon.png" alt="" class="img-foo">
             </div>
             <div class="login-box">
                 <form data-aos="fade-left" data-aos-delay="700" data-aos-easing="ease-in" data-aos-duration="1000"
@@ -687,7 +690,7 @@
                     <div class="before_name" style="    margin-left: auto;
                     text-align: center;
                     margin-right: auto;">Bem Vindo!</div><br>
-                    <img src="https://github.com/Joaodev777/portifolioJoao/blob/deploy/logo.png?raw=true" alt=""
+                    <img src="img/logo-icon.png" alt=""
                         style="margin-right: auto;margin-left: auto;height:auto;margin-bottom: 10px;padding:20px">
                     <div class="d-flex text-dark">
                         <div class="d-block CONT">
