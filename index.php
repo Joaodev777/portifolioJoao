@@ -491,7 +491,7 @@
                     <div class="box__models">
                         <div class="content-text-hover"><a href="loja-cell-new/index.php" target="_blank">
                                 <div class=" content-text">
-                                    <img src="img/2023-07-01_09-31.png" alt="">
+                                    <img src="img/2023-07-13_20-54.png" alt="">
 
                                     <div class="text-card">
                                         <h2 class="h2-card">Controle de Financeiro</h2>
