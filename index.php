@@ -352,8 +352,8 @@
             <div class="conteiner apre">
                 <div class="apresentacao d-flex" style="width: 100%;">
                     <div class="img-joao-gtx"><img class="border-img"
-                            src="https://github.com/Joaodev777/portifolioJoao/blob/deploy/logo.png?raw=true" alt="user--v1" /
-                            style="border-radius: 50%;" alt="">
+                            src="" alt="user--v1" /
+                            style="border-radius: 50%;heigth:250px" alt="">
                     </div>
                     <div class="text-apre-gtx1 text-center mt-1">
                         <div class="text-center">
@@ -368,7 +368,7 @@
                         <div class="button gradient-border animationhover mb-5" style="padding:6px">
 
                             <button class="btn-dark text-light text " type="button" data-bs-toggle="modal"
-                                data-bs-target="#modalsaiba" style="padding:5px">Saiba Mais</button>
+                                data-bs-target="#modalsaiba" style="padding:5px;height: 37px;">Saiba Mais</button>
                         </div>
                     </div>
                 </div>
