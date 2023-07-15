@@ -341,7 +341,7 @@
                         <div class="main">
                             <a href="index.php">
 
-                                <img src="img/logo-icon.png" class="img-abrend"
+                                <img src="img/logo-off.png" class="img-abrend"
                                     style="  margin-top: 20vh;heigth:20vh  " alt="">
                             </a>
                         </div>
