@@ -392,16 +392,6 @@ $balance = $totalIncome - $totalExpense;
                 </div>
             </div>
         </div>
-        <div class="dropdown  ">
-            <button class="dropbtn btn btn-dark d-flex">Configurações<i style="font-size: 1rem;margin-top: 5px;" class="fas fa-cog settings-icon"></i></button>
-            <div class="dropdown-content">
-                <button style="width: 100%;" class="btn btn-warning" onclick="alerta()">Alterar Dados</button>
-                <button style="width: 100%;border: none;padding: 10px;" class="btn btn-info" data-toggle="modal" data-target="#ticket">
-                    Abrir Ticket <i class="fas fa-ticket-alt"></i>
-                </button>
-                <button class="btn btn-danger nav-link" style="width: 100%;" onclick="voltar()">Sair <i class="fas fa-sign-out-alt"></i></button>
-            </div>
-        </div>
     </nav>
 
     <div class="center"></div><br><br><br><br>
