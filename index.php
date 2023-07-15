@@ -523,7 +523,20 @@
             </div>
         </div>
     </div>
+                <div class="box__models">
+                <div class="content-text-hover"><a href="consorcio/index.html" target="_blank">
+                        <div class="content-text">
+                            <img src="img/consorcio.png" alt="">
 
+                            <div class="text-card">
+                                <h2 class="h2-card">Controle de Estoque</h2>
+                                <span>O sistema de Controle de Estoque é uma ferramenta prática e intuitiva que permite gerenciar seus itens armazenados de forma eficiente. Com ele, você pode adicionar, editar e remover produtos com facilidade. Além disso, você pode buscar itens específicos usando o campo de busca. O sistema também fornece informações úteis, como valor total gasto no estoque. Simplifique seu gerenciamento de estoque com essa solução completa.</span>
+                        </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
 
     </div>
     </div>
