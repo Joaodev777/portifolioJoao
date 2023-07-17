@@ -341,7 +341,7 @@
                         <div class="main">
                             <a href="index.php">
 
-                                <img src="img/logo-off.png" class="img-abrend"
+                                <img src="img/logo-off.png.png" class="img-abrend"
                                     style="  margin-top: 20vh;heigth:20vh  " alt="">
                             </a>
                         </div>
@@ -580,7 +580,7 @@
         <div class="respo">
             <i id="contato"></i>
             <div style="padding:20px;margin-block:auto;">
-                <img src="img/logo-icon.png" alt="" class="img-foo">
+                <img src="img/logo-off.png.png" alt="" class="img-foo">
             </div>
             <div class="login-box">
                 <form data-aos="fade-left" data-aos-delay="700" data-aos-easing="ease-in" data-aos-duration="1000"
