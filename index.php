@@ -28,7 +28,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="img/logo-icon.png" type="image/x-icon">
 
-    <title>SystemXpert</title>
+    <title>Cybrix Corporation</title>
     <style>
         .whatsapp-fixed {
             position: fixed;
@@ -273,7 +273,7 @@
 
 <body style="background:#1e1d2a; color: white;">
     <nav class="nav" id="nav">
-        <div class="nav-title" id="title-nav"><a href="index.html" style="text-decoration: none;font-size:45px">WebDream.</a></div>
+        <div class="nav-title" id="title-nav"><a href="index.html" style="text-decoration: none;font-size:45px"><img scr="img/logo-off.png"></a></div>
         <div class="d-flex justify-content-center nav-menu">
             <a href="index.php" class="line text-nav" onclick="linkOpenNav('secao1')">Home</a>
             <a href="#about" class="line text-nav" onclick="linkOpenNav('secao2')">O que Fazemos</a>
