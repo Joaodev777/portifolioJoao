@@ -366,7 +366,7 @@ $balance = $totalIncome - $totalExpense;
     <!-- Barra lateral -->
     <nav class="navbar navbar-expand-lg position-fixed" id="nav" style="width: 100%; top: 0; z-index: 9999;">
         <div class="container-fluid">
-            <a class="navbar-brand text-light" style="font-size: 30px" href="#home"><img src="logo.png"></a>
+            <a class="navbar-brand text-light" style="font-size: 30px" href="#home"><img style="height:50px" src="logo.png"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
@@ -461,7 +461,7 @@ $balance = $totalIncome - $totalExpense;
         </div>
 
         <div class="mt-4 print-section">
-            <h2>Transações -  <img src="logo.png"></h2>
+            <h2>Transações -  <img src="logo.png" style="height:50px"></h2>
             <?php if (count($filteredTransactions) > 0) : ?>
 
                 <table class="table" id="trans">
