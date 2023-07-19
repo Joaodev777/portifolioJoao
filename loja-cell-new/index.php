@@ -364,7 +364,7 @@ $balance = $totalIncome - $totalExpense;
     <!-- Barra lateral -->
 
     <!-- Barra lateral -->
-    <nav class="navbar navbar-expand-lg position-fixed" id="nav" style="width: 100%; top: 0; z-index: 9999;">
+    <nav class="navbar navbar-expand-lg position-fixed" id="nav" style="width: 100%;background:#efefef; top: 0; z-index: 9999;">
         <div class="container-fluid">
             <a class="navbar-brand text-light" style="font-size: 30px" href="#home"><img style="height:50px" src="logo.png"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
