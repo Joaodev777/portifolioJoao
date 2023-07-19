@@ -147,7 +147,7 @@ $balance = $totalIncome - $totalExpense;
         }
 
         .navbar {
-            background-image: linear-gradient(to right, rgb(39, 39, 39), rgb(51, 51, 51));
+box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         }
 
         @media print {
