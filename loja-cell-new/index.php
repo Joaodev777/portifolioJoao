@@ -5,8 +5,6 @@ if (!isset($_SESSION)) {
 
 // Se quiser exigir que esteja logado
 
-
-
 if (!isset($_SESSION['transactions'])) {
     $_SESSION['transactions'] = [];
 }
@@ -35,7 +33,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    if (!$transactionExists) {
+    // Limit the number of transactions to 5
+    if (!$transactionExists && count($_SESSION['transactions']) < 5) {
         $_SESSION['transactions'][] = $transaction;
     }
 }
@@ -92,13 +91,10 @@ foreach ($filteredTransactions as $transaction) {
     }
 }
 
-
-
 $balance = $totalIncome - $totalExpense;
 
-
-
 ?>
+
 <!DOCTYPE html>
 <html>
 
