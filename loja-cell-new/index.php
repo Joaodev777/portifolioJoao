@@ -461,7 +461,7 @@ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         </div>
 
         <div class="mt-4 print-section">
-            <h2>Transações -  <img src="logo.png" style="height:50px"></h2>
+            <h2>Transações -  <img src="logo.png" style="height:30px"></h2>
             <?php if (count($filteredTransactions) > 0) : ?>
 
                 <table class="table" id="trans">
