@@ -586,11 +586,48 @@ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         </div>
     </div>
 
+<!-- Modal de Alerta com as Informações do Sistema -->
+<div class="modal" id="rulesModal" tabindex="-1" role="dialog" style="margin-top: 50px;">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Avisos do Sistema</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ul class="container-lg">
+                    <li>Por ser uma versão beta, o administrador desabilitou temporariamente a funcionalidade de filtrar por tipo.</li>
+                    <li>Este é um modelo Beta, disponível apenas para fins de teste para possíveis contratantes.</li>
+                    <li><a href="https://wa.me/5537999066606?text=Ol%C3%A1+vim+pelo+seu+sistema+de+controle+de+finan%C3%A7as%2C+gostaria+de+saber+mais+sobre+o+sistema." style="color: black;text-decoration: underline;">Clique aqui para obter mais informações sobre o sistema</a>.</li>
+                    <li>Novas funcionalidades podem ser adicionadas conforme as necessidades do contratante.</li>
+                    <li>A estilização e configurações podem ser personalizadas conforme suas preferências. <a style="color: black;text-decoration: underline;"href="https://wa.me/5537999066606?text=Ol%C3%A1+vim+pelo+seu+sistema+de+controle+de+finan%C3%A7as%2C+gostaria+de+saber+mais+sobre+o+sistema">Saiba mais</a>.</li>
+                    <li>No modelo beta, o sistema permite até 5 linhas na tabela.</li>
+                    <li>O sistema permite pesquisar transações por mês, dia, tipo e descrição, além de fornecer um controle detalhado sobre receitas, despesas e saldo.</li>
+                    <li>Este sistema é apenas para fins de demonstração e não deve ser utilizado para transações financeiras reais.</li>
+                    <li>Os dados ficarão salvos por 8 horas para fins de teste.</li>
+                    <li>É possível imprimir a tabela de forma resumida.</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Entendi</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
+
+        // Abre o modal automaticamente ao carregar a página
+        $(document).ready(function() {
+            $('#rulesModal').modal('show');
+        });
         // Função para imprimir as transações
         function printTransactions() {
             window.print();
