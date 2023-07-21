@@ -455,6 +455,14 @@ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
                     <label for="search">Buscar por descrição:</label>
                     <input type="text" class="form-control ml-2" id="search" name="search">
                 </div>
+                <div class="form-group mr-2">
+                    <label for="type">Filtrar por tipo:</label>
+                    <select class="form-control ml-2" id="type" name="type">
+                        <option value="">Todos</option>
+                        <option value="Receita">Receita</option>
+                        <option value="Despesa">Despesa</option>
+                    </select>
+                </div>
                 <button type="submit" class="btn btn-info"><i class="fas fa-search"></i></button>
                 <button type="button" class="btn btn-warning ml-2" onclick="printTransactions()"><i class="fas fa-print print-icon"></i></button>
             </form>
