@@ -4,243 +4,196 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WebDream</title>
+  <title>Document</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="shortcut icon" href="img/logo-icon.png" type="image/x-icon">
   <style>
-    body {
-      font-family: 'Open Sans', sans-serif;
+    @import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@300;700;900&display=swap");
+
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+
+
+    body {
+      font-family: "Exo 2", sans-serif;
+      /* background-color: #222222; */
+  background: linear-gradient(
+    142deg,
+    rgb(25, 163, 218) 0%,
+    rgba(252, 70, 168, 1) 100%
+  );
+      justify-content: center;
+      align-items: center;
+      background-position: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100vh;
+    }
+
+
+
+    .header {
+      max-width: 1200px;
+      margin: auto;
+      padding: 1rem;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+    .title-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: skew(0, -5deg);
+      /*border:1px solid lime;*/
+    }
+
+    .sweet,
+    .stuff {
+      /* border:1px solid red;*/
+      width: 100%;
+      display: block;
+    }
+
+    .sweet {
+      margin-top: 60px;
+    }
+
+    .sweet-title img{
+      width: 50vh};
+    .sweet-title {
+      color: #fde9ff;
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 0.75em;
+      text-align: center;
+      width: 100%;
+    }
+
+
+
+
+
+
+
+
+    a {
+      position: relative;
+      display: block;
+      padding: 20px;
+      margin: 60px auto 0px;
+      color: #03e9f4;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: 0.5s;
+      letter-spacing: 4px;
+      overflow: hidden;
+      width: 20rem;
+      text-align: center;
+    }
+
+    .ins{
+      background-image: linear-gradient(144deg, #ff6d40, #db3349 50%, #d45c54);
+    }
+    .wha{
+      background-image: linear-gradient(144deg, #40ffcf, #33db79 50%, #54d4c3);
+    }
+    .tel{
+      background-image: linear-gradient(144deg, #40ffcf, #33c7db 50%, #54d4ce);
+    }
+    a {
+      align-items: center;
+      background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+      border: 0;
+      border-radius: 8px;
+      box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+      box-sizing: border-box;
+      color: #FFFFFF;
+      display: flex;
+      font-family: Phantomsans, sans-serif;
+      font-size: 18px;
+      justify-content: center;
+      line-height: 1em;
+      max-width: 100%;
+      min-width: 140px;
+      padding: 3px;
+      text-decoration: none;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all .3s;
+    }
+
+    a:active,
+    a:hover {
+      outline: 0;
+    }
+
+    a span {
+      background-color: rgb(5, 6, 45);
+      padding: 16px 24px;
+      border-radius: 6px;
       width: 100%;
       height: 100%;
-      background: rgb(65, 65, 65);
-
+      transition: 300ms;
     }
 
-    body::-webkit-scrollbar {
-      width: 10px;
-      /* width of the entire scrollbar */
+    a:hover span {
+      background: none;
     }
 
-    body::-webkit-scrollbar-track {
-      background: rgba(70, 226, 200, 0);
-      /* color of the tracking area */
-    }
-
-    body::-webkit-scrollbar-thumb {
-      background-color: rgb(63, 63, 63);
-      /* color of the scroll thumb */
-      border-radius: 20px;
-      /* roundness of the scroll thumb */
-      border: 3px solid rgb(255, 255, 255);
-      /* creates padding around scroll thumb */
-    }
-
-    a:hover {
-      color: white;
-      text-decoration: none;
-    }
-
-    .wrap {
-      width: 100%;
-      max-width: 550px;
-      margin: 80px auto 0;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-    }
-
-    .profile img {
-      height: 100px;
-    }
-
-    .profile {
-      text-align: center;
-      color: #FFF;
-      font-size: 25px;
-    }
-
-    .profile_name {
-      font-weight: bold;
-      display: block;
-    }
-
-    .at {
-      font-size: 15px;
-    }
-
-    .links ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .links ul li {
-      margin: 14px 0;
-      margin-left: auto;
-      justify-content: center;
-      display: flex;
-    }
-
-    :root {
-      --blue: rgba(83, 221, 240, 0.849);
-    }
-
-    .linkr:hover {
-      background-color: rgba(240, 83, 109, 0.733);
-      border: 3px solid rgba(240, 83, 156, 0.911);
-    }
-
-    .linkr {
-      border: 3px solid rgb(253, 131, 131);
-      color: #ffffff;
-    }
-
-    .linkw:hover {
-      background-color: rgba(89, 235, 203, 0.849);
-      border: 3px solid rgba(0, 225, 255, 0.897);
-    }
-
-    .linkw {
-      border: 3px solid rgb(117, 245, 202);
-      color: #ffffff;
-    }
-
-    .linkd:hover {
-      background-color: rgb(97, 193, 231);
-      border-color: rgb(96, 175, 240);
-    }
-
-    .linkd {
-      border: 3px solid #54e1fa;
-      color: #ffffff;
-    }
-
-    .linkt:hover {
-      background-color: rgba(99, 191, 253, 0.829);
-      border-color: rgba(68, 175, 207, 0.89);
-    }
-
-    .linkt {
-      border: 3px solid rgb(131, 218, 252);
-      color: #ffffff;
-    }
-
-    .link {
-      padding: 20px;
-      display: block;
-      text-align: center;
-      text-decoration: none;
-      border-radius: 6px;
-      width: 80%;
-      transition: ease all 0.3s;
-    }
-
-    .link:hover {
-      opacity: 0.9;
-    }
-
-    .card {
-      padding: 10px;
-      background-color: #FFF;
-      border-radius: 4px;
-    }
-
-    .card h3 {
-      margin: 0;
-      color: #202024;
-    }
-
-    .card p {
-      margin: 5px 0;
-      font-size: 13px;
-      color: #202024;
-    }
-
-    .font {
-      color: #FFF;
-      font-size: 23px;
-      position: fixed;
-      font-family: Arial, Helvetica, sans-serif;
-      z-index: 99;
-    }
-
-    i {
-      justify-content: left;
-      margin: 0;
-      justify-content: end;
-      float: left;
-      color: rgb(247, 247, 247);
-      font-size: 25px;
-    }
-
-
-
-    .linktr:hover {
-      background-color: rgba(125, 41, 235, 0.733);
-      border-color: rgb(101, 22, 228);
-    }
-
-    .linktr {
-      border: 3px solid rgba(159, 76, 214, 0.849);
-      color: white;
-    }
-
-    .linktt:hover {
-      background: #db9d39d5;
-      border-color: rgba(236, 181, 77, 0.863);
-    }
-
-    .linktt {
-      border: 3px solid #F39C12;
-      color: white;
+    a:active {
+      transform: scale(0.9);
     }
   </style>
 </head>
 
 <body>
 
-  <div class="wrap">
-    <div class="profile">
-      <img src="img/logo-icon.png" class="photo"><br><br>
-      <span class="profile_name">WebDream</span>
-      <span class="at">@webdream.web</span><br>
+
+
+
+
+
+  <div class="header">
+    <div class="title-wrapper">
+      <h1 class="sweet-title">
+        <br>
+        <img src="img/logo.png" alt="" srcset="">
+
+      </h1>
     </div>
-    <div class="links">
-      <ul>
-        <li><a target="_blank" href="https://wa.me/5537999066606" class="linkw link"><i class="fab fa-whatsapp"></i>
-            WhatsApp</a></li>
-        <li><a target="_blank" href="https://t.me/cybergenn" class="linkt link"><i class="fab fa-telegram"></i>
-            Telegram</a>
-        </li>
-        <li><a target="_blank" href="https://joao.tiagofranca.com/portifolioJoao" class="link linkd"><i
-              class="fas fa-external-link-alt"></i> Site</a></li>
-        <li><a target="_blank" href="https://joao.tiagofranca.com/portifolioJoao/loja-cell-new/index.php" class="link linkr"><i
-              class="fas fa-chart-line"></i> Sistema Financeiro</a></li>
-              <li><a target="_blank" href="https://wa.me/5537999066606" class="link linktr"><i class="fas fa-link"></i>
-                Solicitar link tree personalizada</a></li>
-            <li><a target="_blank" href="https://wa.me/5537999066606" class="link linktt"><i class="fas fa-globe"></i>
-                Solicitar Site</a></li>
-      </ul>
 
-
-    </div> <br>
-
-  </div>
-
-
-
-
-
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <a href="http://jgsolution.online" target="_blank">
+      <span class="text">
+        <i class="fas fa-globe"></i>
+        site
+      </span>
+    </a>
+    <a href="https://www.instagram.com/jgsolution.web" target="_blank" class="ins">
+      <span class="text">
+        <i class="fab fa-instagram"></i>
+        Instagram
+      </span>
+    </a>
+    <a href="https://wa.me/5537999066606?text=+Ol%C3%A1%2C+cheguei+at%C3%A9+aqui+por+meio+do+link+do+Instagram.+Gostaria+de+obter+informa%C3%A7%C3%B5es+adicionais+sobre+os+servi%C3%A7os+que+voc%C3%AAs+oferecem." class="wha" target="_blank">
+      <span class="text">
+        <i class="fab fa-whatsapp"></i>
+        whatsapp
+      </span>
+    </a>
+    <a href="https://t.me/joaoguilhermesoares" class="tel" target="_blank">
+      <span class="text">
+        <i class="fab fa-brands fa-telegram fa-2xs" style="color: #ffffff;"></i>
+        telegram
+      </span>
+    </a>
 </body>
 
 </html>
