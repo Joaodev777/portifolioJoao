@@ -1,353 +1,360 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
 
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Newfiber Internet fibra | Provedor de internet, o melhor provedor da ciade de Itaúna!</title>
+    <title>Newfiber Internet fibra | Provedor de internet, o melhor provedor da ciade de Itaúna!</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-  <style>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@300;700;900&display=swap");
 
-    @import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@300;700;900&display=swap");
+        * {
 
-    * {
+            margin: 0;
 
-      margin: 0;
+            padding: 0;
 
-      padding: 0;
+            box-sizing: border-box;
 
-      box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Exo 2", sans-serif;
+            background: linear-gradient(45deg, rgba(58, 250, 202, 0.9) 0%, rgba(214, 134, 15, 0.9) 100%), url("/assets/img/hero-bg.jpg") center center no-repeat;
+
+            justify-content: center;
+            align-items: center;
+            background-position: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+            /* Change to 100vh to cover the entire viewport */
+            /* Remove default body margin */
+        }
+
+        .header {
+
+            margin: auto;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .new {
+            text-shadow: 3px 3px 5px #22c72a;
+            font-size: 25px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .title-wrapper {
+
+            display: flex;
+
+            align-items: center;
+            flex-direction: column;
+
+            justify-content: center;
+
+            /*border:1px solid lime;*/
+            color: white;
+            font-size: 20px;
+        }
+
+
+
+        .sweet {
+
+            margin-top: 60px;
+
+        }
+
+        .sweet-title img {
+
+            width: 40vh
+        }
+
+@media (max-width:700px) {
+    a{
+        margin-top: 10%;
 
     }
-    body {
-      font-family: "Exo 2", sans-serif;
-      background: linear-gradient(150deg, #34e3b9 50%, #12d183, #28b984);
-      justify-content: center;
-      align-items: center;
-      background-position: fixed;
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 100%; /* Change to 100vh to cover the entire viewport */
-      margin: 0; /* Remove default body margin */
+    .links{
+        height: 100%;
     }
-
-    .header {
-
-      max-width: 1200px;
-      margin: auto;
-      padding: 1rem;
-      align-items: center;
-      justify-content: center;
-
-    }
-.new{
-   text-shadow: 3px 3px 5px #c76122; 
-  font-size:25px;
 }
-    .title-wrapper {
 
-      display: flex;
+        .sweet-title {
 
-      align-items: center;
-      flex-direction:column;
+            color: #fde9ff;
 
-      justify-content: center;
+            font-weight: 900;
 
-      /*border:1px solid lime;*/
-color:white;
-      font-size:20px;
-    }
+            text-transform: uppercase;
 
-    .sweet,
+            line-height: 0.75em;
 
-    .stuff {
+            text-align: center;
 
-      /* border:1px solid red;*/
+            width: 100%;
 
-      width: 100%;
+        }
 
-      display: block;
+        .lin {
+            background-image: linear-gradient(144deg, #7e18f2, #a218f2 50%, #5218f2);
 
-    }
+        }
 
-    .sweet {
+        a {
 
-      margin-top: 60px;
+            position: relative;
 
-    }
+            display: block;
 
-    .sweet-title img{
+            padding: 20px;
 
-      width: 40vh};
+            margin: 30px auto 0px;
 
+            color: #03e9f4;
 
-    .sweet-title {
+            text-decoration: none;
 
-      color: #fde9ff;
+            text-transform: uppercase;
 
-      font-weight: 900;
+            transition: 0.5s;
 
-      text-transform: uppercase;
+            letter-spacing: 4px;
 
-      line-height: 0.75em;
+            overflow: hidden;
 
-      text-align: center;
+            width: 40rem;
 
-      width: 100%;
+            text-align: center;
 
-    }
-.lin{
-  background-image: linear-gradient(144deg, #7e18f2, #a218f2 50%, #5218f2);
-  
-}
-    a {
+        }
 
-      position: relative;
+        .ins {
 
-      display: block;
+            background-image: linear-gradient(144deg, #f29418, #f29418 50%, #f2d518);
+        }
 
-      padding: 20px;
+        .wha {
 
-      margin: 60px auto 0px;
+            background-image: linear-gradient(144deg, #40ffcf, #33db79 50%, #54d4c3);
 
-      color: #03e9f4;
+        }
 
-      text-decoration: none;
+        .tel {
 
-      text-transform: uppercase;
+            background-image: linear-gradient(144deg, #40ffcf, #33c7db 50%, #54d4ce);
 
-      transition: 0.5s;
+        }
 
-      letter-spacing: 4px;
+        .pan {
+            background: linear-gradient(#FF8C1A, #F68D56 50%, #F35F45)
+        }
 
-      overflow: hidden;
+        .face {
 
-      width: 30rem;
+            background: linear-gradient(144deg, #18b1f2, #18f2e0 50%, #18caf2);
 
-      text-align: center;
+        }
 
-    }
+        .ema {
+            background: linear-gradient(144deg, #4281f5, #1889f2 50%, #18d9f2);
+        }
 
-    .ins{
+        a {
 
-      background-image: linear-gradient(144deg, #f29418, #f29418 50%, #f2d518);
-    } 
+            align-items: center;
 
-    .wha{
+            background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
 
-      background-image: linear-gradient(144deg, #40ffcf, #33db79 50%, #54d4c3);
+            border: 0;
 
-    }
+            border-radius: 50px;
 
-    .tel{
+            box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
 
-      background-image: linear-gradient(144deg, #40ffcf, #33c7db 50%, #54d4ce);
+            box-sizing: border-box;
 
-    }
-.pan{ background:linear-gradient(#FF8C1A, #F68D56 50%,  #F35F45)}
-    .face{
+            color: #FFFFFF;
 
-      background:linear-gradient(144deg, #18b1f2 , #18f2e0 50%, #18caf2);
+            display: flex;
 
-    }
-.ema{
-  background:linear-gradient(144deg, #4281f5, #1889f2 50%, #18d9f2);
-    }
-    a {
+            font-family: Phantomsans, sans-serif;
 
-      align-items: center;
+            font-size: 18px;
 
-      background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+            justify-content: center;
 
-      border: 0;
+            line-height: 1em;
 
-      border-radius: 8px;
+            max-width: 100%;
 
-      box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+            min-width: 140px;
 
-      box-sizing: border-box;
+            padding: 3px;
 
-      color: #FFFFFF;
+            text-decoration: none;
 
-      display: flex;
+            user-select: none;
 
-      font-family: Phantomsans, sans-serif;
+            -webkit-user-select: none;
 
-      font-size: 18px;
+            touch-action: manipulation;
 
-      justify-content: center;
+            white-space: nowrap;
 
-      line-height: 1em;
+            cursor: pointer;
 
-      max-width: 100%;
+            transition: all .3s;
 
-      min-width: 140px;
+        }
 
-      padding: 3px;
+        a:active,
 
-      text-decoration: none;
+        a:hover {
 
-      user-select: none;
+            outline: 0;
 
-      -webkit-user-select: none;
+        }
 
-      touch-action: manipulation;
+        a span {
 
-      white-space: nowrap;
+            background-color: rgb(5, 6, 45);
 
-      cursor: pointer;
+            padding: 16px 24px;
 
-      transition: all .3s;
+            border-radius: 50px;
 
-    }
+            width: 100%;
 
-    a:active,
+            height: 100%;
 
-    a:hover {
+            transition: 300ms;
 
-      outline: 0;
+        }
 
-    }
+        a:hover span {
 
-    a span {
+            background: none;
 
-      background-color: rgb(5, 6, 45);
+        }
 
-      padding: 16px 24px;
+        a:active {
 
-      border-radius: 6px;
+            transform: scale(0.9);
 
-      width: 100%;
-
-      height: 100%;
-
-      transition: 300ms;
-
-    }
-
-    a:hover span {
-
-      background: none;
-
-    }
-
-    a:active {
-
-      transform: scale(0.9);
-
-    }
-
-  </style>
+        }
+    </style>
 
 </head>
 
 <body>
 
-  <div class="header">
+    <div class="header">
 
-    <div class="title-wrapper">
+        <div class="title-wrapper">
 
-      <h1 class="sweet-title">
+            <h1 class="sweet-title">
 
-        <br>
+                <br>
 
-        <img src="newfiber.png" alt="imagem não disponivel no momento" srcset="">
+                <img src="newfiber.png " alt="imagem não disponivel no momento" srcset="">
 
-      <h1 class="new">
-        Newfiber Internet
-      </h1>
+            </h1>
+            <h1 class="new">
+                Newfiber Internet
+            </h1>
+        </div>
+
+        <div class="links">
+            <a href="https://newfiber.com.br" target="_blank">
+
+                <span class="text">
+
+                    <i class="fas fa-globe"></i>
+
+                    site
+
+                </span>
+
+            </a>
+
+            <a href="https://www.instagram.com/newfiber_/" target="_blank" class="ins">
+
+                <span class="text">
+
+                    <i class="fab fa-instagram"></i>
+
+                    Instagram
+
+                </span>
+
+            </a>
+
+
+            <a href="https://wa.me/553732269519?text=Ol%C3%A1%2C+cheguei+at%C3%A9+aqui+por+meio+do+link+do+Instagram.+Gostaria+de+obter+informa%C3%A7%C3%B5es+adicionais+sobre+os+servi%C3%A7os+que+voc%C3%AAs+oferecem."
+                class="wha" target="_blank">
+
+                <span class="text">
+
+                    <i class="fab fa-whatsapp"></i>
+
+                    whatsapp
+
+                </span>
+
+            </a>
+
+            <a href="https://newfiber.com.br/index.html#extFeatures11-2k" class="pan" target="_blank">
+
+                <span class="text">
+
+                    <i class="fas fa-list-alt"></i>
+
+                    planos
+
+                </span>
+
+            </a>
+
+            <a href="mailto:contato@newfiber.com.br" class="ema" target="_blank">
+
+                <span class="text">
+
+                    <i class="fas fa-envelope"></i>
+
+                    E-mail
+
+                </span>
+
+            </a>
+            <a href="tel:03732269519" class="lin" target="_blank">
+
+                <span class="text">
+
+                    <i class="fas fa-phone"></i>
+
+                    Contatar
+
+                </span>
+
+            </a>
+        </div>
+
+
     </div>
-
-<div class="links">
-  <a href="https://newfiber.com.br" target="_blank">
-
-    <span class="text">
-
-      <i class="fas fa-globe"></i>
-
-      site
-
-    </span>
-
-  </a>
-
-  <a href="https://www.instagram.com/newfiber_/" target="_blank" class="ins">
-
-    <span class="text">
-
-      <i class="fab fa-instagram"></i>
-
-      Instagram
-
-    </span>
-
-  </a>
-
-   <a href="https://www.facebook.com/Newfiber-Internet-107894234819095" class="face" target="_blank">
-
-    <span class="text">
-
-      <i class="fab fa-facebook"></i>
-
-      Facebook 
-
-    </span>
-
-  </a>
-
-  <a href="https://wa.me/553732269519?text=Ol%C3%A1%2C+cheguei+at%C3%A9+aqui+por+meio+do+link+do+Instagram.+Gostaria+de+obter+informa%C3%A7%C3%B5es+adicionais+sobre+os+servi%C3%A7os+que+voc%C3%AAs+oferecem." class="wha" target="_blank">
-
-    <span class="text">
-
-      <i class="fab fa-whatsapp"></i>
-
-      whatsapp
-
-    </span>
-
-  </a>
-
-   <a href="https://newfiber.com.br/index.html#extFeatures11-2k" class="pan" target="_blank">
-
-    <span class="text">
-
-      <i class="fas fa-list-alt"></i>
-
-      planos
-
-    </span>
-
-  </a>
-
-   <a href="mailto:contato@newfiber.com.br" class="ema" target="_blank">
-
-    <span class="text">
-
-      <i class="fas fa-envelope"></i>
-
-      E-mail 
-
-    </span>
-
-  </a>
-     <a href="tel:03732269519" class="lin" target="_blank">
-
-    <span class="text">
-
-      <i class="fas fa-phone"></i>
-
-      Ligar
-
-    </span>
-
-  </a>
-</div>
+    <footer style="padding: 20px;hight: inherit;">
+        <hr>
+        <img src="/assets/img/newfiber.png" style="width: 150px" alt="">
+    </footer>
 </body>
 
 </html>
