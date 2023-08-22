@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
-            background: linear-gradient(90deg, rgba(38, 218, 188, 0.733) 0%, rgba(255, 154, 2, 0.9) 100%), url("hero-bg.jpg") center center no-repeat;
+            background: linear-gradient(90deg, rgba(38, 218, 188, 0.733) 0%, rgba(241, 151, 15, 0.9) 100%), url("/assets/img/hero-bg.jpg") center center no-repeat;
             /* font-family: 'Bricolage Grotesque', sans-serif; */
             font-family: 'Iceland', cursive;
             height: 100%;
@@ -33,13 +33,13 @@
 
         .link-logo {
             padding: 20px;
-            width: 400px;
+            width: 200px;
         }
 
         a.link-btn {
             text-align: center;
             padding: 25px;
-
+            background-color: #074726;
             margin: 5px 10px;
             width: 80%;
             margin-left: auto;
@@ -58,6 +58,7 @@
         .link-btn:hover {
             text-decoration: none;
             color: #fff;
+            background-color: #ea8e36;
             transition: 0.3s;
         }
 
@@ -107,7 +108,7 @@
         }
 
         .pan {
-            background: linear-gradient(#e21e8a, #fd0d91 50%);
+            background: linear-gradient(#FF8C1A, #F68D56 50%, #F35F45)
         }
 
         .face {
@@ -124,7 +125,7 @@
 
             align-items: center;
 
-            background: #AF40FF;
+            background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
 
             border: 0;
 
@@ -169,78 +170,44 @@
         }
 
         .logo-0 {
-            position: fixed;
-            left: 0;
-            right: 0;
-            bottom: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 99999;
-        }
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
 
-        .logo-0 img {
-            width: 250px;
-            position: fixed;
-        }
-        #copyButton{
-            margin-left:70%;
-            color: rgb(75, 75, 75);
-            position: fixed;    
-            padding: 10px;
-            background-color: rgba(255, 255, 255, 0.651);
-            border-radius: 50%;
-            height: 40px;
-            margin-top: 15px;        
-        }
+.logo-0 img {
+    width: 250px;
+    position: fixed;
+}
+
 
     </style>
 </head>
 
 <body>
 
-
-
-
+    <div class="logo-0">
+        <img src="logo-jg.png" alt="">
+    </div>
     <div class="container-fluid  text-center">
-        <div id="copyButton" class="text-end">
-            <div class="text-center"><i class="fas fa-share"></i>
-            </div>
-        </div>
         <img src="newfiber.png" class="link-logo">
         <h3>NewFiber Internet</h3>
         <br>
         <div class="row">
-            <a href="https://newfiber.net.br" target="_blank" class=" link-btn site">
+            <a href="" target="_blank" class=" link-btn site">
                 <i class="fas fa-globe"></i> &nbsp; site</a>
-            <a href="https://www.instagram.com/newfiber_/" target="_blank" class=" link-btn ins"><i
-                    class="fab fa-instagram"></i> &nbsp; Instagram</a>
-            <a href="https://wa.me/553732269519" target="_blank" class=" link-btn wha"><i class="fab fa-whatsapp"></i>
-                &nbsp; Whatsapp</a>
-            <a href="https://newfiber.com.br/index.html#extFeatures11-2k" target="_blank" class=" link-btn pan"><i
-                    class="fas fa-list-alt"></i> &nbsp; Planos</a>
-            <a href="mailto:contato@newfiber.com.br" target="_blank" class=" link-btn tel"><i
-                    class="fas fa-envelope"></i> &nbsp; E-mail</a>
-            <a href="tel:3732269519" target="_blank" class=" link-btn ema"><i class="fas fa-phone"></i> &nbsp;
-                Contato</a>
+            <a href="" target="_blank" class=" link-btn ins"><i class="fab fa-instagram"></i> &nbsp; Instagram</a>
+            <a href="" target="_blank" class=" link-btn wha"><i class="fab fa-whatsapp"></i> &nbsp; Whatsapp</a>
+            <a href="" target="_blank" class=" link-btn face"><i class="fas fa-list-alt"></i> &nbsp; Planos</a>
+            <a href="" target="_blank" class=" link-btn tel"><i class="fas fa-envelope"></i> &nbsp; E-mail</a>
+            <a href="" target="_blank" class=" link-btn ema"><i class="fas fa-phone"></i> &nbsp; Contato</a>
         </div>
     </div>
-    <script>
-        document.getElementById("copyButton").addEventListener("click", function () {
-            var linkToCopy = "https://lktbio.newfiber.net.br/";
-
-            var tempInput = document.createElement("input");
-            document.body.appendChild(tempInput);
-            tempInput.value = linkToCopy;
-            tempInput.select();
-            document.execCommand("copy");
-            document.body.removeChild(tempInput);
-
-            alert("Link copiado para a área de transferência: " + linkToCopy);
-        });
-    </script>
-
 </body>
 
 </html>
-
