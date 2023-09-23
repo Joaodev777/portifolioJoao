@@ -18,7 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Endereço de email para onde enviar as respostas
     $destinatario ="joaosocial1704@gmail.com";
-    $destinatario2 = "comercia@atualfibra.com.br";
 
 
     // Assunto do email
@@ -37,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mensagem .= "Resolução de Problemas: $resolucao_problemas\n";
 
     // Envie o email
-    $envio = mail($destinatario, $destinatario2, $assunto, $mensagem);
+    $envio = mail($destinatario, $assunto, $mensagem);
 
 
     if ($envio) {
