@@ -5,9 +5,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pesquisa de Satisfação - NewFiber</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
+        .group-sas {
+            position: relative;
+            display: inline-block;
+            margin: 5px;
+            flex-direction: column;
+        }
+
+        .group-sas input[type="radio"] {
+            display: none;
+        }
+
+        .group-sas label {
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .group-sas input[type="radio"]:checked+label {
+            background-color: green;
+            /* Ou qualquer outra cor que você preferir quando estiver selecionado */
+        }
+
+        /* Estilo para ocultar os botões originais de seleção */
+        .group-sasinput[type="radio"]+label::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+    .group-sas input[type="radio"] + .group-sas label {
+        padding: 5px;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .group-sas  input[type="radio"][value="1"] + label {
+        background-color: red;
+        color: white;
+    }
+
+    .group-sas  input[type="radio"][value="2"] + label {
+        background-color: #FD7D27; /* Um tom mais claro de vermelho */
+    }
+
+    .group-sas  input[type="radio"][value="3"] + label {
+        background-color: #FC7743; /* Um tom ainda mais claro de vermelho */
+    }
+
+
+    .group-sas  input[type="radio"][value="4"] + label {
+        background-color: #DBBF1D; /* Um tom ainda mais claro de vermelho */
+    }
+    
+    .group-sas  input[type="radio"][value="5"] + label {
+        background-color: #CBD813; /* Um tom ainda mais claro de vermelho */
+    }
+
+    
+    .group-sas  input[type="radio"][value="6"] + label {
+        background-color: #AAD82D; /* Um tom ainda mais claro de vermelho */
+    }
+    
+    .group-sas  input[type="radio"][value="7"] + label {
+        background-color: #3477F3; /* Um tom ainda mais claro de vermelho */
+    }
+    
+    .group-sas  input[type="radio"][value="8"] + label {
+        background-color: #3C30E4; /* Um tom ainda mais claro de vermelho */
+    }
+    
+    .group-sas  input[type="radio"][value="9"] + label {
+        background-color: #14C06A; /* Um tom ainda mais claro de vermelho */
+    }
+
+    /* Continue para os valores intermediários, ajustando as cores conforme necessário */
+
+    .group-sas  input[type="radio"][value="10"] + label {
+        background-color: limegreen; /* Verde para o valor 10 */
+        color: white;
+    }
+
+
+
+
         body {
             font-family: Roboto, sans-serif;
             font-size: 16px;
@@ -97,7 +188,7 @@
             font-size: 18px;
         }
 
-        .button{
+        .button {
             background-color: #fd761b;
             color: #fff;
             padding: 10px 20px;
@@ -142,110 +233,178 @@
         <form method="post" action="index.php">
             <div class="form-group">
                 <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required>
+                <input type="text" id="nome" name="nome" placeholder="José Soares" required>
             </div>
             <div class="form-group">
                 <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" placeholder="jose@exemple.com" name="email" required>
             </div>
             <div class="form-group">
                 <label for="email">Numero:</label>
-                <input type="text" id="email" name="email" required>
+                <input type="number" id="numero" placeholder="(XX) XXXXX-XXXX" name="numero" required>
             </div>
 
-<!-- Perguntas sobre a velocidade da conexão -->
-<hr><!-- Pergunta sobre satisfação geral -->
-<div class="form-group">
-    <label>Em uma escala de 1 a 10, onde 1 é muito insatisfeito e 10 é muito satisfeito, qual é o seu nível de satisfação geral com os serviços da NewFiber?</label>
-    <div class="group">
-        <input type="radio" id="satisfacao-1" name="satisfacao-geral" value="1">
-        <label for="satisfacao-1">1</label>
-    </div>
-    <div class="group">
-        <input type="radio" id="satisfacao-2" name="satisfacao-geral" value="2">
-        <label for="satisfacao-2">2</label>
-    </div>
-    <div class="group">
-        <input type="radio" id="satisfacao-3" name="satisfacao-geral" value="3">
-        <label for="satisfacao-3">3</label>
-    </div>
-    <!-- Repita para os números 4 a 10 -->
-</div>
+            <!-- Perguntas sobre a velocidade da conexão -->
+            <hr><!-- Pergunta sobre satisfação geral -->
+            <div class="form-group">
+                <label>Em uma escala de 1 a 10, onde 1 é muito insatisfeito e 10 é muito satisfeito, qual é o seu nível de satisfação geral com os serviços da NewFiber?</label>
+                <br>
+                <div class="group-sas">
+                    <input type="radio" id="satisfacao-1" name="satisfacao-geral" value="1">
+                    <label for="satisfacao-1">1</label>
+                </div>
+                <div class="group-sas">
+                    <input type="radio" id="satisfacao-2" name="satisfacao-geral" value="2">
+                    <label for="satisfacao-2">2</label>
+                </div>
+                <div class="group-sas">
+                    <input type="radio" id="satisfacao-3" name="satisfacao-geral" value="3">
+                    <label for="satisfacao-3">3</label>
+                </div>
+                <div class="group-sas">
+                    <input type="radio" id="satisfacao-4" name="satisfacao-geral" value="4">
+                    <label for="satisfacao-4">4</label>
+                </div>
 
-<!-- Perguntas sobre a velocidade da conexão -->
-<div class="form-group">
-    <label>Em uma escala de 1 a 10, como você avalia a velocidade da internet da NewFiber?</label>
-    <div class="group">
-        <input type="radio" id="velocidade-1" name="avaliacao-velocidade" value="1">
-        <label for="velocidade-1">1</label>
-    </div>
-    <div class="group">
-        <input type="radio" id="velocidade-2" name="avaliacao-velocidade" value="2">
-        <label for="velocidade-2">2</label>
-    </div>
-    <div class="group">
-        <input type="radio" id="velocidade-3" name="avaliacao-velocidade" value="3">
-        <label for="velocidade-3">3</label>
-    </div>
-    <!-- Repita para os números 4 a 10 -->
-</div>
+                <div class="group-sas">
+                    <input type="radio" id="satisfacao-5" name="satisfacao-geral" value="5">
+                    <label for="satisfacao-4">5</label>
+                </div>
+                <div class="group-sas">
+                    <input type="radio" id="satisfacao-6" name="satisfacao-geral" value="6">
+                    <label for="satisfacao-4">6</label>
+                </div>
+                <div class="group-sas">
+                    <input type="radio" id="satisfacao-7" name="satisfacao-geral" value="7">
+                    <label for="satisfacao-4">7</label>
+                </div>
+                <div class="group-sas">
+                    <input type="radio" id="satisfacao-8" name="satisfacao-geral" value="8">
+                    <label for="satisfacao-4">8</label>
+                </div>
+                <div class="group-sas">
+                    <input type="radio" id="satisfacao-9" name="satisfacao-geral" value="9">
+                    <label for="satisfacao-4">9</label>
+                </div>
+                <div class="group-sas">
+                    <input type="radio" id="satisfacao-10" name="satisfacao-geral" value="10">
+                    <label for="satisfacao-10">10</label>
+                </div>
 
-<div class="form-group">
-    <label>Você recebe consistentemente a velocidade que foi prometida em seu plano?</label>
-    <div class="group">
-        <input type="radio" id="consistencia-sim" name="consistencia-velocidade" value="sim">
-        <label for="consistencia-sim">Sim</label>
-    </div>
-    <div class="group">
-        <input type="radio" id="consistencia-nao" name="consistencia-velocidade" value="nao">
-        <label for="consistencia-nao">Não</label>
-    </div>
-</div>
+            </div>
 
-<!-- Perguntas sobre o atendimento ao cliente -->
-<div class="form-group">
-    <label>Você está satisfeito com o atendimento ao cliente da NewFiber?</label>
-    <div class="group">
-        <input type="radio" id="atendimento-sim" name="satisfacao-atendimento" value="sim">
-        <label for="atendimento-sim">Sim</label>
-    </div>
-    <div class="group">
-        <input type="radio" id="atendimento-nao" name="satisfacao-atendimento" value="nao">
-        <label for="atendimento-nao">Não</label>
-    </div>
-</div>
+            <!-- Perguntas sobre a velocidade da conexão -->
+            <div class="form-group">
+                <label>Em uma escala de 1 a 10, como você avalia a velocidade da internet da NewFiber?</label>
+                <div class="group">
+                    <input type="radio" id="velocidade-1" name="avaliacao-velocidade" value="1">
+                    <label for="velocidade-1">1</label>
+                </div>
+                <div class="group">
+                    <input type="radio" id="velocidade-2" name="avaliacao-velocidade" value="2">
+                    <label for="velocidade-2">2</label>
+                </div>
+                <div class="group">
+                    <input type="radio" id="velocidade-3" name="avaliacao-velocidade" value="3">
+                    <label for="velocidade-3">3</label>
+                </div>
+                <!-- Repita para os números 4 a 10 -->
+            </div>
 
-<div class="form-group">
-    <label>Qual é a principal melhoria que você gostaria de ver no atendimento ao cliente da NewFiber?</label>
-    <textarea id="melhoria-atendimento" name="melhoria-atendimento" rows="4"></textarea>
-</div>
+            <div class="form-group">
+                <label>Você recebe consistentemente a velocidade que foi prometida em seu plano?</label>
+                <div class="group">
+                    <input type="radio" id="consistencia-sim" name="consistencia-velocidade" value="sim">
+                    <label for="consistencia-sim">Sim</label>
+                </div>
+                <div class="group">
+                    <input type="radio" id="consistencia-nao" name="consistencia-velocidade" value="nao">
+                    <label for="consistencia-nao">Não</label>
+                </div>
+            </div>
 
-<!-- Perguntas sobre a assistência técnica -->
-<div class="form-group">
-    <label>Você já precisou de assistência técnica da NewFiber? Se sim, como você avalia a eficácia da assistência técnica?</label>
-    <div class="group">
-        <input type="radio" id="assistencia-sim" name="assistencia-tecnica" value="sim">
-        <label for="assistencia-sim">Sim</label>
-    </div>
-    <div class="group">
-        <input type="radio" id="assistencia-nao" name="assistencia-tecnica" value="nao">
-        <label for="assistencia-nao">Não</label>
-    </div>
-</div>
+            <!-- Perguntas sobre o atendimento ao cliente -->
+            <div class="form-group">
+                <label>Você está satisfeito com o atendimento ao cliente da NewFiber?</label>
+                <div class="group">
+                    <input type="radio" id="atendimento-sim" name="satisfacao-atendimento" value="sim">
+                    <label for="atendimento-sim">Sim</label>
+                </div>
+                <div class="group">
+                    <input type="radio" id="atendimento-nao" name="satisfacao-atendimento" value="nao">
+                    <label for="atendimento-nao">Não</label>
+                </div>
+            </div>
 
-<div class="form-group">
-    <label>A equipe técnica da NewFiber conseguiu resolver seus problemas de maneira satisfatória?</label>
-    <div class="group">
-        <input type="radio" id="resolucao-sim" name="resolucao-problemas" value="sim">
-        <label for="resolucao-sim">Sim</label>
-    </div>
-    <div class="group">
-        <input type="radio" id="resolucao-nao" name="resolucao-problemas" value="nao">
-        <label for="resolucao-nao">Não</label>
-    </div>
-</div>
+            <div class="form-group">
+                <label>Qual é a principal melhoria que você gostaria de ver no atendimento ao cliente da NewFiber?</label>
+                <textarea id="melhoria-atendimento" name="melhoria-atendimento" rows="4"></textarea>
+            </div>
 
-<!-- Restante das perguntas também pode ser reformulado com botões de seleção (radios) -->
+            <!-- Perguntas sobre a assistência técnica -->
+            <div class="form-group">
+                <label>Você já precisou de assistência técnica da NewFiber? Se sim, como você avalia a eficácia da assistência técnica?</label>
+                <div class="group">
+                <div class="group-sas">
+                    <input type="radio" id="tecnico-1" name="tecnico-geral" value="1">
+                    <label for="tecnico-1">1</label>
+                </div>
+                <div class="group-sas">
+                    <input type="radio" id="tecnico-2" name="tecnico-geral" value="2">
+                    <label for="tecnico-2">2</label>
+                </div>
+                <div class="group-sas">
+                    <input type="radio" id="tecnico-3" name="tecnico-geral" value="3">
+                    <label for="tecnico-3">3</label>
+                </div>
+                <div class="group-sas">
+                    <input type="radio" id="tecnico-4" name="tecnico-geral" value="4">
+                    <label for="tecnico-4">4</label>
+                </div>
+
+                <div class="group-sas">
+                    <input type="radio" id="tecnico-5" name="tecnico-geral" value="5">
+                    <label for="tecnico-4">5</label>
+                </div>
+                <div class="group-sas">
+                    <input type="radio" id="tecnico-6" name="tecnico-geral" value="6">
+                    <label for="tecnico-4">6</label>
+                </div>
+                <div class="group-sas">
+                    <input type="radio" id="tecnico-7" name="tecnico-geral" value="7">
+                    <label for="tecnico-4">7</label>
+                </div>
+                <div class="group-sas">
+                    <input type="radio" id="tecnico-8" name="tecnico-geral" value="8">
+                    <label for="tecnico-4">8</label>
+                </div>
+                <div class="group-sas">
+                    <input type="radio" id="tecnico-9" name="tecnico-geral" value="9">
+                    <label for="tecnico-4">9</label>
+                </div>
+                <div class="group-sas">
+                    <input type="radio" id="tecnico-10" name="tecnico-geral" value="10">
+                    <label for="satisfacao-10">10</label>
+                </div>
+
+
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label>A equipe técnica da NewFiber conseguiu resolver seus problemas de maneira satisfatória?</label>
+                <div class="group">
+                    <input type="radio" id="resolucao-sim" name="resolucao-problemas" value="sim">
+                    <label for="resolucao-sim">Sim</label>
+                </div>
+                <div class="group">
+                    <input type="radio" id="resolucao-nao" name="resolucao-problemas" value="nao">
+                    <label for="resolucao-nao">Não</label>
+                </div>
+            </div>
+
+            <!-- Restante das perguntas também pode ser reformulado com botões de seleção (radios) -->
 
 
 
@@ -273,27 +432,27 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             var form = document.getElementById("surveyForm");
             var alert = document.getElementById("alert");
-    
-            form.addEventListener("submit", function (event) {
+
+            form.addEventListener("submit", function(event) {
                 // Verifique se todos os campos obrigatórios estão preenchidos
                 var requiredFields = form.querySelectorAll("[required]");
                 var allFieldsFilled = true;
-    
-                requiredFields.forEach(function (field) {
+
+                requiredFields.forEach(function(field) {
                     if (field.value === "") {
                         allFieldsFilled = false;
                     }
                 });
-    
+
                 if (allFieldsFilled) {
                     // Se todos os campos estiverem preenchidos, mostre o alerta de sucesso
                     alert.style.display = "block";
-    
+
                     // Feche o alerta após alguns segundos (opcional)
-                    setTimeout(function () {
+                    setTimeout(function() {
                         alert.style.display = "none";
                     }, 5000); // Feche o alerta após 5 segundos (5000 milissegundos)
                 } else {
@@ -303,7 +462,7 @@
             });
         });
     </script>
-    
+
 
 </body>
 
