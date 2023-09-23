@@ -116,6 +116,115 @@
 
 
 
+        .group-sass {
+            position: relative;
+            display: inline-block;
+            margin: 5px;
+            flex-direction: column;
+        }
+
+
+/* Estilo para as opções de satisfação geral */
+
+/* Estilo para as opções de satisfação geral */
+.group-sass label {
+    display: inline-block;
+    padding: 10px;
+    background-color: #ccc; /* Cor de fundo padrão em cinza */
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.group-sass input[type="radio"]:checked + label {
+    background-color: blue; /* Cor de fundo azul quando selecionado */
+    color: white; /* Cor do texto branco quando selecionado */
+}
+
+.group-sass input[type="radio"] {
+    display: none; /* Esconda os inputs de rádio padrão */
+}
+
+
+        .group-sass label {
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .group-sass input[type="radio"]:checked+label {
+            background-color: green;
+            /* Ou qualquer outra cor que você preferir quando estiver selecionado */
+        }
+
+        /* Estilo para ocultar os botões originais de seleção */
+        .group-sass input[type="radio"]+label::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+    .group-sass input[type="radio"] + .group-sas label {
+        padding: 5px;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .group-sass  input[type="radio"][value="1"] + label {
+        background-color: red;
+        color: white;
+    }
+
+    .group-sass  input[type="radio"][value="2"] + label {
+        background-color: #FD7D27; /* Um tom mais claro de vermelho */
+    }
+
+    .group-sass  input[type="radio"][value="3"] + label {
+        background-color: #FC7743; /* Um tom ainda mais claro de vermelho */
+    }
+
+
+    .group-sass  input[type="radio"][value="4"] + label {
+        background-color: #DBBF1D; /* Um tom ainda mais claro de vermelho */
+    }
+    
+    .group-sass  input[type="radio"][value="5"] + label {
+        background-color: #CBD813; /* Um tom ainda mais claro de vermelho */
+    }
+
+    
+    .group-sass  input[type="radio"][value="6"] + label {
+        background-color: #AAD82D; /* Um tom ainda mais claro de vermelho */
+    }
+    
+    .group-sass  input[type="radio"][value="7"] + label {
+        background-color: #3477F3; /* Um tom ainda mais claro de vermelho */
+    }
+    
+    .group-sass  input[type="radio"][value="8"] + label {
+        background-color: #3C30E4; /* Um tom ainda mais claro de vermelho */
+    }
+    
+    .group-sass  input[type="radio"][value="9"] + label {
+        background-color: #14C06A; /* Um tom ainda mais claro de vermelho */
+    }
+
+    /* Continue para os valores intermediários, ajustando as cores conforme necessário */
+
+    .group-sass  input[type="radio"][value="10"] + label {
+        background-color: limegreen; /* Verde para o valor 10 */
+        color: white;
+    }
+
+
+
 
         body {
             font-family: Roboto, sans-serif;
@@ -268,51 +377,49 @@
                 <label>Em uma escala de 1 a 10, onde 1 é muito insatisfeito e 10 é muito satisfeito, qual é o seu nível de satisfação geral com os serviços da NewFiber?</label>
                 <br>
                 <div class="group-sas">
-                    <input type="radio" id="satisfacao-1" name="satisfacao-geral" value="1">
+                    <input type="radio" id="satisfacao-1" name="satisfacao-geral" value="1" onclick="atualizarCores(this)">
                     <label for="satisfacao-1">1</label>
                 </div>
                 <div class="group-sas">
-                    <input type="radio" id="satisfacao-2" name="satisfacao-geral" value="2">
+                    <input type="radio" id="satisfacao-2" name="satisfacao-geral" value="2" onclick="atualizarCores(this)">
                     <label for="satisfacao-2">2</label>
                 </div>
                 <div class="group-sas">
-                    <input type="radio" id="satisfacao-3" name="satisfacao-geral" value="3">
+                    <input type="radio" id="satisfacao-3" name="satisfacao-geral" value="3" onclick="atualizarCores(this)">
                     <label for="satisfacao-3">3</label>
                 </div>
                 <div class="group-sas">
-                    <input type="radio" id="satisfacao-4" name="satisfacao-geral" value="4">
+                    <input type="radio" id="satisfacao-4" name="satisfacao-geral" value="4" onclick="atualizarCores(this)">
                     <label for="satisfacao-4">4</label>
                 </div>
 
                 <div class="group-sas">
-                    <input type="radio" id="satisfacao-5" name="satisfacao-geral" value="5">
-                    <label for="satisfacao-4">5</label>
+                    <input type="radio" id="satisfacao-5" name="satisfacao-geral" value="5" onclick="atualizarCores(this)">
+                    <label for="satisfacao-5">5</label>
                 </div>
                 <div class="group-sas">
-                    <input type="radio" id="satisfacao-6" name="satisfacao-geral" value="6">
-                    <label for="satisfacao-4">6</label>
+                    <input type="radio" id="satisfacao-6" name="satisfacao-geral" value="6" onclick="atualizarCores(this)">
+                    <label for="satisfacao-6">6</label>
                 </div>
                 <div class="group-sas">
-                    <input type="radio" id="satisfacao-7" name="satisfacao-geral" value="7">
-                    <label for="satisfacao-4">7</label>
+                    <input type="radio" id="satisfacao-7" name="satisfacao-geral" value="7" onclick="atualizarCores(this)">
+                    <label for="satisfacao-7">7</label>
                 </div>
                 <div class="group-sas">
-                    <input type="radio" id="satisfacao-8" name="satisfacao-geral" value="8">
-                    <label for="satisfacao-4">8</label>
+                    <input type="radio" id="satisfacao-8" name="satisfacao-geral" value="8" onclick="atualizarCores(this)">
+                    <label for="satisfacao-8">8</label>
                 </div>
                 <div class="group-sas">
-                    <input type="radio" id="satisfacao-9" name="satisfacao-geral" value="9">
-                    <label for="satisfacao-4">9</label>
+                    <input type="radio" id="satisfacao-9" name="satisfacao-geral" value="9" onclick="atualizarCores(this)">
+                    <label for="satisfacao-9">9</label>
                 </div>
                 <div class="group-sas">
-                    <input type="radio" id="satisfacao-10" name="satisfacao-geral" value="10">
+                    <input type="radio" id="satisfacao-10" name="satisfacao-geral" value="10" onclick="atualizarCores(this)">
                     <label for="satisfacao-10">10</label>
                 </div>
 
             </div>
 
-            <!-- Perguntas sobre a velocidade da conexão -->
-        
             <div class="form-group">
                 <label>Você recebe consistentemente a velocidade que foi prometida em seu plano?</label>
                 <div class="group">
@@ -346,45 +453,45 @@
             <!-- Perguntas sobre a assistência técnica -->
             <div class="form-group">
                 <label>Você já precisou de assistência técnica da NewFiber? Se sim, como você avalia a eficácia da assistência técnica?</label>
-                <div class="group-sas">
-                    <input type="radio" id="tecnico-1" name="tecnico-geral" value="1">
+                <div class="group-sass">
+                    <input type="radio" id="tecnico-1" name="tecnico-geral" value="1" onclick="atualizarCoress(this)">
                     <label for="tecnico-1">1</label>
                 </div>
-                <div class="group-sas">
-                    <input type="radio" id="tecnico-2" name="tecnico-geral" value="2">
+                <div class="group-sass">
+                    <input type="radio" id="tecnico-2" name="tecnico-geral" value="2" onclick="atualizarCoress(this)">
                     <label for="tecnico-2">2</label>
                 </div>
-                <div class="group-sas">
-                    <input type="radio" id="tecnico-3" name="tecnico-geral" value="3">
+                <div class="group-sass">
+                    <input type="radio" id="tecnico-3" name="tecnico-geral" value="3" onclick="atualizarCoress(this)">
                     <label for="tecnico-3">3</label>
                 </div>
-                <div class="group-sas">
-                    <input type="radio" id="tecnico-4" name="tecnico-geral" value="4">
+                <div class="group-sass">
+                    <input type="radio" id="tecnico-4" name="tecnico-geral" value="4" onclick="atualizarCoress(this)">
                     <label for="tecnico-4">4</label>
                 </div>
 
-                <div class="group-sas">
-                    <input type="radio" id="tecnico-5" name="tecnico-geral" value="5">
-                    <label for="tecnico-4">5</label>
+                <div class="group-sass">
+                    <input type="radio" id="tecnico-5" name="tecnico-geral" value="5"  onclick="atualizarCoress(this)">
+                    <label for="tecnico-5">5</label>
                 </div>
-                <div class="group-sas">
-                    <input type="radio" id="tecnico-6" name="tecnico-geral" value="6">
-                    <label for="tecnico-4">6</label>
+                <div class="group-sass">
+                    <input type="radio" id="tecnico-6" name="tecnico-geral" value="6" onclick="atualizarCoress(this)">
+                    <label for="tecnico-6">6</label>
                 </div>
-                <div class="group-sas">
-                    <input type="radio" id="tecnico-7" name="tecnico-geral" value="7">
-                    <label for="tecnico-4">7</label>
+                <div class="group-sass">
+                    <input type="radio" id="tecnico-7" name="tecnico-geral" value="7" onclick="atualizarCoress(this)">
+                    <label for="tecnico-7">7</label>
                 </div>
-                <div class="group-sas">
-                    <input type="radio" id="tecnico-8" name="tecnico-geral" value="8">
-                    <label for="tecnico-4">8</label>
+                <div class="group-sass">
+                    <input type="radio" id="tecnico-8" name="tecnico-geral" value="8" onclick="atualizarCoress(this)">
+                    <label for="tecnico-8">8</label>
                 </div>
-                <div class="group-sas">
-                    <input type="radio" id="tecnico-9" name="tecnico-geral" value="9">
-                    <label for="tecnico-4">9</label>
+                <div class="group-sass">
+                    <input type="radio" id="tecnico-9" name="tecnico-geral" value="9" onclick="atualizarCoress(this)">
+                    <label for="tecnico-9">9</label>
                 </div>
-                <div class="group-sas">
-                    <input type="radio" id="tecnico-10" name="tecnico-geral" value="10">
+                <div class="group-sass">
+                    <input type="radio" id="tecnico-10" name="tecnico-geral" value="10"  onclick="atualizarCoress(this)">
                     <label for="tecnico-10">10</label>
                 </div>
 
@@ -479,10 +586,37 @@
             }
         }
 
+
+
+        function atualizarCores(selectedInput) {
+        const groupSASList = document.querySelectorAll('.group-sas');
+
+        // Define a cor de fundo cinza para todos
+        groupSASList.forEach(item => {
+            item.querySelector('label').style.backgroundColor = '#ccc';
+        });
+
+        // Define a cor de fundo azul apenas para o selecionado
+        selectedInput.parentElement.querySelector('label').style.backgroundColor = 'blue';
+    }
+
+        function atualizarCoress(selectedInput) {
+        const groupSASListl = document.querySelectorAll('.group-sass');
+
+        // Define a cor de fundo cinza para todos
+        groupSASListl.forEach(item => {
+            item.querySelector('label').style.backgroundColor = '#ccc';
+        });
+
+        // Define a cor de fundo azul apenas para o selecionado
+        selectedInput.parentElement.querySelector('label').style.backgroundColor = 'blue';
+    }
+
+
     </script>
 
 
 
 </body>
 
-                </html>
+</html>
