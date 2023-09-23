@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sugestoes = $_POST["sugestoes"];
     
     // Endereço de email para onde enviar as respostas
-    $destinatario = "jgnewfiber@gmail.com";
+    $destinatario = "joaosocial1704@gmail.com";
     
     // Assunto do email
     $assunto = "Resposta Pesquisa de Satisfação  de $nome";
