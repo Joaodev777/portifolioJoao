@@ -14,9 +14,27 @@
             flex-direction: column;
         }
 
-        .group-sas input[type="radio"] {
-            display: none;
-        }
+
+/* Estilo para as opções de satisfação geral */
+
+/* Estilo para as opções de satisfação geral */
+.group-sas label {
+    display: inline-block;
+    padding: 10px;
+    background-color: #ccc; /* Cor de fundo padrão em cinza */
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.group-sas input[type="radio"]:checked + label {
+    background-color: blue; /* Cor de fundo azul quando selecionado */
+    color: white; /* Cor do texto branco quando selecionado */
+}
+
+.group-sas input[type="radio"] {
+    display: none; /* Esconda os inputs de rádio padrão */
+}
+
 
         .group-sas label {
             background-color: red;
@@ -133,7 +151,6 @@
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             border-radius: 10px;
-            margin-top: 30px;
             margin-bottom: 10px;
         }
 
@@ -216,6 +233,7 @@
             background-color: #999;
         }
 
+
         .group {
             display: flex;
             text-align: center;
@@ -230,18 +248,18 @@
         <h1>Pesquisa de Satisfação - NewFiber</h1>
         <h6 class="text-center">Nos ajude respondendo nossa pesquisa de satisfação.</h6>
         <br>
-        <form method="post" action="index.php">
+        <form method="post" action="ind.php">
             <div class="form-group">
                 <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" placeholder="José Soares" required>
+                <input type="text" id="nome" name="nome" placeholder="Exemplo: José Soares" required>
             </div>
             <div class="form-group">
                 <label for="email">E-mail:</label>
-                <input type="email" id="email" placeholder="jose@exemple.com" name="email" required>
+                <input type="email" id="email" placeholder="Exemplo: jose@exemple.com" name="email" required>
             </div>
             <div class="form-group">
                 <label for="email">Numero:</label>
-                <input type="number" id="numero" placeholder="(XX) XXXXX-XXXX" name="numero" required>
+                <input type="text" id="numero" placeholder="Exemplo: (XX) XXXXX-XXXX" name="numero" oninput="formatarTelefone()" required>
             </div>
 
             <!-- Perguntas sobre a velocidade da conexão -->
@@ -294,23 +312,7 @@
             </div>
 
             <!-- Perguntas sobre a velocidade da conexão -->
-            <div class="form-group">
-                <label>Em uma escala de 1 a 10, como você avalia a velocidade da internet da NewFiber?</label>
-                <div class="group">
-                    <input type="radio" id="velocidade-1" name="avaliacao-velocidade" value="1">
-                    <label for="velocidade-1">1</label>
-                </div>
-                <div class="group">
-                    <input type="radio" id="velocidade-2" name="avaliacao-velocidade" value="2">
-                    <label for="velocidade-2">2</label>
-                </div>
-                <div class="group">
-                    <input type="radio" id="velocidade-3" name="avaliacao-velocidade" value="3">
-                    <label for="velocidade-3">3</label>
-                </div>
-                <!-- Repita para os números 4 a 10 -->
-            </div>
-
+        
             <div class="form-group">
                 <label>Você recebe consistentemente a velocidade que foi prometida em seu plano?</label>
                 <div class="group">
@@ -344,7 +346,6 @@
             <!-- Perguntas sobre a assistência técnica -->
             <div class="form-group">
                 <label>Você já precisou de assistência técnica da NewFiber? Se sim, como você avalia a eficácia da assistência técnica?</label>
-                <div class="group">
                 <div class="group-sas">
                     <input type="radio" id="tecnico-1" name="tecnico-geral" value="1">
                     <label for="tecnico-1">1</label>
@@ -388,7 +389,6 @@
                 </div>
 
 
-                </div>
 
             </div>
 
@@ -461,9 +461,28 @@
                 }
             });
         });
+
+        function formatarTelefone() {
+            const campoTelefone = document.getElementById('numero');
+            let numeroTelefone = campoTelefone.value;
+
+            // Remove todos os caracteres não numéricos
+            numeroTelefone = numeroTelefone.replace(/\D/g, '');
+
+            // Formata o número no formato desejado
+            if (numeroTelefone.length <= 2) {
+                campoTelefone.value = `(${numeroTelefone}`;
+            } else if (numeroTelefone.length <= 7) {
+                campoTelefone.value = `(${numeroTelefone.slice(0, 2)}) ${numeroTelefone.slice(2)}`;
+            } else {
+                campoTelefone.value = `(${numeroTelefone.slice(0, 2)}) ${numeroTelefone.slice(2, 7)}-${numeroTelefone.slice(7)}`;
+            }
+        }
+
     </script>
+
 
 
 </body>
 
-                        </html>
+                </html>
