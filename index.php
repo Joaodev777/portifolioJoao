@@ -25,10 +25,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $assunto = "Resposta Pesquisa de Satisfação";
 
     // Mensagem de email
-    $mensagem = "Nome: $nome";
-    $mensagem = "E-mail: $email";
-    $mensagem = "Numero: $number";
-    $mensagem = "Satisfação Geral: $satisfacao_geral\n";
+    $mensagem .= "Nome: $nome";
+    $mensagem .= "E-mail: $email";
+    $mensagem .= "Numero: $number";
+    $mensagem .= "Satisfação Geral: $satisfacao_geral\n";
     $mensagem .= "Avaliação da Velocidade: $avaliacao_velocidade\n";
     $mensagem .= "Consistência da Velocidade: $consistencia_velocidade\n";
     $mensagem .= "Satisfação com o Atendimento: $satisfacao_atendimento\n";
@@ -37,11 +37,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mensagem .= "Resolução de Problemas: $resolucao_problemas\n";
 
     // Envie o email
-    $envio = mail($destinatario, $assunto, $mensagem);
-    $envio2 = mail($destinatario2, $assunto, $mensagem);
+    $envio = mail($destinatario, $destinatario2, $assunto, $mensagem);
 
 
-    if ($envio, $envio2) {
+    if ($envio) {
         echo "Resposta enviada com sucesso!";
     } else {
         echo "Erro ao enviar a resposta.";
