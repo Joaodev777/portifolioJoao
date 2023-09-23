@@ -48,14 +48,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if ($envio2) {
         echo "Resposta enviada com sucesso!";
-        echo "<a href='https://joao.tiagofranca.com/portifolioJoao/newfiber.html' style='color:black;font-family: Roboto, sans-serif;'>Clique aqui para voltar</a>";
-
+        
     } else {
-
         
         echo "Erro ao enviar a resposta.";
-        echo "<a href='https://joao.tiagofranca.com/portifolioJoao/newfiber.html' style='color:black;font-family: Roboto, sans-serif;'>Clique aqui para voltar</a>";
-
+        
     }
 
 
