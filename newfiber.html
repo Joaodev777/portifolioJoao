@@ -1,206 +1,310 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Newfiber Internet fibra | Provedor de internet, o melhor provedor da cidade de Itaúna!</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz@10..48&family=Iceland&display=swap"
-        rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Pesquisa de Satisfação - NewFiber</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
         body {
-            background: linear-gradient(90deg, rgba(38, 218, 188, 0.733) 0%, rgba(241, 151, 15, 0.9) 100%), url("hero-bg.jpg") center center no-repeat;
-            /* font-family: 'Bricolage Grotesque', sans-serif; */
-            font-family: 'Iceland', cursive;
-            height: 100%;
+            font-family: Roboto, sans-serif;
+            font-size: 16px;
+            background-color: #ddfff2;
         }
 
-        h3 {
-            font-family: 'Iceland', cursive;
-            font-size: 35px;
-            color: white;
+        .KHCwJ.ErmvL {
+            max-height: 22.5vw;
+            max-width: 90vw;
+            height: 160px;
+            width: 640px;
         }
 
-        i {
-            font-size: 20px;
+        .KHCwJ {
+            background-image: url(https://lh5.googleusercontent.com/dK0MoLolJcR5vuC7sDQqJKNuosXWIAHbVOCpxbZtaYDLOHX5_fL0lsoudwPhWFoSARS4hXULdWpL3WtlsdR3jA1oORoZeHmZWTq4uR4tlTXGGNiJMqWEVvEaEMVAQLMRsQ=w1496);
+            background-size: cover;
+            background-position: center;
         }
 
-        .link-logo {
-            padding: 20px;
-            width: 200px;
-        }
-
-        a.link-btn {
-            text-align: center;
-            padding: 25px;
-            margin: 5px 10px;
-            width: 80%;
+        .vnFTpb {
+            border-radius: 8px;
+            margin-top: 12px;
             margin-left: auto;
             margin-right: auto;
-            color: #fff;
-            font-family: 'Bricolage Grotesque', sans-serif;
-
-
-            font-size: 18px;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            border-radius: 50px;
+            margin-bottom: 30px;
         }
 
-
-        a {
-
-            position: relative;
-
-            display: block;
-
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
             padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
 
-            margin: 30px auto 0px;
-
-            color: #03e9f4;
-
-            text-decoration: none;
-
-            text-transform: uppercase;
-
-            transition: 0.5s;
-
-            letter-spacing: 4px;
-
-            overflow: hidden;
-
-            width: 40rem;
-
-            cursor:pointer;
-            
+        .header {
+            background-color: #ff9900;
+            height: 250px;
+            width: 800px;
             text-align: center;
-
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
         }
 
-        .ins {
 
-            background-image: linear-gradient(144deg, #f29418, #f29418 50%, #f2d518);
+        h1 {
+            text-align: center;
+            color: #333;
         }
 
-        .wha {
-
-            background-image: linear-gradient(144deg, #40ffcf, #33db79 50%, #54d4c3);
-
+        .form-group {
+            margin-bottom: 20px;
         }
 
-        .tel {
-
-            background-image: linear-gradient(144deg, #40ffcf, #33c7db 50%, #54d4ce);
-
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
         }
 
-        .pan {
-            background: linear-gradient(#ff1a85, #f656a6 50%)
+        input[type="radio"] {
+            margin-right: 5px;
         }
 
-        .face {
-
-            background: linear-gradient(144deg, #18b1f2, #18bff2 50%, #18caf2);
-
-        }
-
-        .ema {
-            background: linear-gradient(144deg, #4281f5, #1889f2 50%, #18d9f2);
-        }
-
-        a {
-
-            align-items: center;
-
-            background:#AF40FF;
-
-            border: 0;
-
-            border-radius: 50px;
-
-            box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-
-            box-sizing: border-box;
-
-            color: #FFFFFF;
-
-            display: flex;
-
-            font-family: Phantomsans, sans-serif;
-
+        input[type="text"],
+        input[type="email"],
+        input[type="number"] {
+            width: 97%;
+            outline: none;
+            padding: 10px;
+            border: none;
+            /* Remova todas as bordas */
+            border-bottom: 1px solid black;
+            /* Adicione apenas a borda inferior */
             font-size: 18px;
-
-            justify-content: center;
-
-            line-height: 1em;
-
-            max-width: 100%;
-
-            min-width: 140px;
-
-            padding: 3px;
-
-            text-decoration: none;
-
-            user-select: none;
-
-            -webkit-user-select: none;
-
-            touch-action: manipulation;
-
-            white-space: nowrap;
-
-            cursor: pointer;
-
-            transition: all .3s;
-
         }
 
-        .logo-0 {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 99999;
-}
+        textarea {
+            width: 97%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 18px;
+        }
 
-.logo-0 img {
-    width: 250px;
-    position: fixed;
-}
+        .button{
+            background-color: #fd761b;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
 
+        .button:hover {
+            background-color: #fd751be5;
+        }
 
+        input[type="reset"] {
+            background-color: #aaa;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        input[type="reset"]:hover {
+            background-color: #999;
+        }
+
+        .group {
+            display: flex;
+            text-align: center;
+            margin-top: auto;
+        }
     </style>
 </head>
 
 <body>
-
-
-    <div class="container-fluid  text-center">
-        <img src="newfiber.png" class="link-logo">
-        <h3>NewFiber Internet</h3>
+    <div class="container">
+        <div class="vnFTpb teQAzf ErmvL KHCwJ"></div>
+        <h1>Pesquisa de Satisfação - NewFiber</h1>
+        <h6 class="text-center">Nos ajude respondendo nossa pesquisa de satisfação.</h6>
         <br>
-        <div class="row">
-            <a href="https://newfiber.com.br/" target="_blank" class=" link-btn site">
-                <i class="fas fa-globe"></i> &nbsp; site</a>
-            <a href="https://www.instagram.com/newfiberfibra/" target="_blank" class=" link-btn ins"><i class="fab fa-instagram"></i> &nbsp; Instagram</a>
-            <a href="https://wa.me/553732269519" target="_blank" class=" link-btn wha"><i class="fab fa-whatsapp"></i> &nbsp; Whatsapp</a>
-            <a href="https://newfiber.com.br/index.html#extFeatures11-2k" target="_blank" class=" link-btn pan"><i class="fas fa-list-alt"></i> &nbsp; Planos</a>
-            <a href="mailto:contato@newfiber.com.br" target="_blank" class=" link-btn tel"><i class="fas fa-envelope"></i> &nbsp; E-mail</a>
-            <a href="tel:3732269519" target="_blank" class=" link-btn ema"><i class="fas fa-phone"></i> &nbsp; Contato</a>
-        </div>
+        <form method="post" action="index.php">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Numero:</label>
+                <input type="text" id="email" name="email" required>
+            </div>
+
+<!-- Perguntas sobre a velocidade da conexão -->
+<hr><!-- Pergunta sobre satisfação geral -->
+<div class="form-group">
+    <label>Em uma escala de 1 a 10, onde 1 é muito insatisfeito e 10 é muito satisfeito, qual é o seu nível de satisfação geral com os serviços da NewFiber?</label>
+    <div class="group">
+        <input type="radio" id="satisfacao-1" name="satisfacao-geral" value="1">
+        <label for="satisfacao-1">1</label>
     </div>
+    <div class="group">
+        <input type="radio" id="satisfacao-2" name="satisfacao-geral" value="2">
+        <label for="satisfacao-2">2</label>
+    </div>
+    <div class="group">
+        <input type="radio" id="satisfacao-3" name="satisfacao-geral" value="3">
+        <label for="satisfacao-3">3</label>
+    </div>
+    <!-- Repita para os números 4 a 10 -->
+</div>
+
+<!-- Perguntas sobre a velocidade da conexão -->
+<div class="form-group">
+    <label>Em uma escala de 1 a 10, como você avalia a velocidade da internet da NewFiber?</label>
+    <div class="group">
+        <input type="radio" id="velocidade-1" name="avaliacao-velocidade" value="1">
+        <label for="velocidade-1">1</label>
+    </div>
+    <div class="group">
+        <input type="radio" id="velocidade-2" name="avaliacao-velocidade" value="2">
+        <label for="velocidade-2">2</label>
+    </div>
+    <div class="group">
+        <input type="radio" id="velocidade-3" name="avaliacao-velocidade" value="3">
+        <label for="velocidade-3">3</label>
+    </div>
+    <!-- Repita para os números 4 a 10 -->
+</div>
+
+<div class="form-group">
+    <label>Você recebe consistentemente a velocidade que foi prometida em seu plano?</label>
+    <div class="group">
+        <input type="radio" id="consistencia-sim" name="consistencia-velocidade" value="sim">
+        <label for="consistencia-sim">Sim</label>
+    </div>
+    <div class="group">
+        <input type="radio" id="consistencia-nao" name="consistencia-velocidade" value="nao">
+        <label for="consistencia-nao">Não</label>
+    </div>
+</div>
+
+<!-- Perguntas sobre o atendimento ao cliente -->
+<div class="form-group">
+    <label>Você está satisfeito com o atendimento ao cliente da NewFiber?</label>
+    <div class="group">
+        <input type="radio" id="atendimento-sim" name="satisfacao-atendimento" value="sim">
+        <label for="atendimento-sim">Sim</label>
+    </div>
+    <div class="group">
+        <input type="radio" id="atendimento-nao" name="satisfacao-atendimento" value="nao">
+        <label for="atendimento-nao">Não</label>
+    </div>
+</div>
+
+<div class="form-group">
+    <label>Qual é a principal melhoria que você gostaria de ver no atendimento ao cliente da NewFiber?</label>
+    <textarea id="melhoria-atendimento" name="melhoria-atendimento" rows="4"></textarea>
+</div>
+
+<!-- Perguntas sobre a assistência técnica -->
+<div class="form-group">
+    <label>Você já precisou de assistência técnica da NewFiber? Se sim, como você avalia a eficácia da assistência técnica?</label>
+    <div class="group">
+        <input type="radio" id="assistencia-sim" name="assistencia-tecnica" value="sim">
+        <label for="assistencia-sim">Sim</label>
+    </div>
+    <div class="group">
+        <input type="radio" id="assistencia-nao" name="assistencia-tecnica" value="nao">
+        <label for="assistencia-nao">Não</label>
+    </div>
+</div>
+
+<div class="form-group">
+    <label>A equipe técnica da NewFiber conseguiu resolver seus problemas de maneira satisfatória?</label>
+    <div class="group">
+        <input type="radio" id="resolucao-sim" name="resolucao-problemas" value="sim">
+        <label for="resolucao-sim">Sim</label>
+    </div>
+    <div class="group">
+        <input type="radio" id="resolucao-nao" name="resolucao-problemas" value="nao">
+        <label for="resolucao-nao">Não</label>
+    </div>
+</div>
+
+<!-- Restante das perguntas também pode ser reformulado com botões de seleção (radios) -->
+
+
+
+
+
+            <div class="form-group">
+                <button class="button" type="submit" value="Enviar" onclick="showAlert()">
+                    Enviar
+                </button>
+            </div>
+            <div class="fixed-top alert alert-success" id="alert" style="display: none;">
+                Sucesso! Sua resposta foi enviada.
+            </div>
+
+    </div>
+
+    </form>
+    </div>
+
+    <div class="alert-ok alert-succesly" style="width: 10%;"></div>
+
+    <!-- Inclua o link para a biblioteca Bootstrap JS (jQuery é necessário) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var form = document.getElementById("surveyForm");
+            var alert = document.getElementById("alert");
+    
+            form.addEventListener("submit", function (event) {
+                // Verifique se todos os campos obrigatórios estão preenchidos
+                var requiredFields = form.querySelectorAll("[required]");
+                var allFieldsFilled = true;
+    
+                requiredFields.forEach(function (field) {
+                    if (field.value === "") {
+                        allFieldsFilled = false;
+                    }
+                });
+    
+                if (allFieldsFilled) {
+                    // Se todos os campos estiverem preenchidos, mostre o alerta de sucesso
+                    alert.style.display = "block";
+    
+                    // Feche o alerta após alguns segundos (opcional)
+                    setTimeout(function () {
+                        alert.style.display = "none";
+                    }, 5000); // Feche o alerta após 5 segundos (5000 milissegundos)
+                } else {
+                    // Se algum campo obrigatório estiver em branco, não envie o formulário
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
+    
+
 </body>
 
-</html>
+    </html>
