@@ -1,4 +1,39 @@
-🕒 Atendimento: Seg-Sex, 8h às 18h
-📞 Suporte: (37) 3226-9519
+<?php
+// Verifique se o formulário foi enviado
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Recupere os dados do formulário
+    $nome = $_POST["nome"];
+    $email = $_POST["email"];
+    $numero = $_POST["numero"];
+    $velocidade = $_POST["velocidade"];
+    $atendimento = $_POST["atendimento"];
+    $estabilidade = $_POST["estabilidade"];
+    $resolucao_problemas = $_POST["resolucao-problemas"];
+    $sugestoes = $_POST["sugestoes"];
+    
+    // Endereço de email para onde enviar as respostas
+    $destinatario = "jgnewfiber@gmail.com";
+    
+    // Assunto do email
+    $assunto = "Resposta Pesquisa de Satisfação  de $nome";
+    
+    // Mensagem de email
+    $mensagem = "Nome: $nome\n";
+    $mensagem .= "Email: $email\n";
+    $mensagem .= "Número: $numero\n";
+    $mensagem .= "Velocidade: $velocidade\n";
+    $mensagem .= "Atendimento: $atendimento\n";
+    $mensagem .= "Estabilidade: $estabilidade\n";
+    $mensagem .= "Resolução de Problemas: $resolucao_problemas\n";
+    $mensagem .= "Sugestões/Comentários:\n$sugestoes\n";
 
-Bem-vindo(a) à nossa página! Estamos aqui para ajudar de segunda a sexta, das 8h às 18h. Para qualquer suporte necessário, por favor, entre em contato conosco pelo número (37) 3226-9519. Sua satisfação é nossa prioridade!
+    // Envie o email
+    $envio = mail($destinatario, $assunto, $mensagem);
+
+    if ($envio) {
+        echo "Resposta enviada com sucesso!";
+    } else {
+        echo "Erro ao enviar a resposta.";
+    }
+}
+?>
