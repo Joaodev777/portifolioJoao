@@ -24,9 +24,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $assunto = "Resposta Pesquisa de Satisfação";
 
     // Mensagem de email
-    $mensagem .= "Nome: $nome";
-    $mensagem .= "E-mail: $email";
-    $mensagem .= "Numero: $number";
+    $mensagem .= "Nome: $nome\n";
+    $mensagem .= "E-mail: $email\n";
+    $mensagem .= "Numero: $number\n";
     $mensagem .= "Satisfação Geral: $satisfacao_geral\n";
     $mensagem .= "Avaliação da Velocidade: $avaliacao_velocidade\n";
     $mensagem .= "Consistência da Velocidade: $consistencia_velocidade\n";
