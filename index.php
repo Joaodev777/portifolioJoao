@@ -2,6 +2,10 @@
 // Verifique se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recupere os dados do formulário
+
+    $nome = &$_POST["nome"];
+    $email = &$_POST["email"];
+    $number = &$_POST["numero"];
     $satisfacao_geral = $_POST["satisfacao-geral"];
     $avaliacao_velocidade = $_POST["avaliacao-velocidade"];
     $consistencia_velocidade = $_POST["consistencia-velocidade"];
@@ -14,11 +18,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Endereço de email para onde enviar as respostas
     $destinatario ="joaosocial1704@gmail.com";
-    
+    $destinatario2 = "comercia@atualfibra.com.br";
+
+
     // Assunto do email
     $assunto = "Resposta Pesquisa de Satisfação";
 
     // Mensagem de email
+    $mensagem = "Nome: $nome\n";
+    $mensagem = "E-mail: $email\n";
+    $mensagem = "Numero: $number\n";
     $mensagem = "Satisfação Geral: $satisfacao_geral\n";
     $mensagem .= "Avaliação da Velocidade: $avaliacao_velocidade\n";
     $mensagem .= "Consistência da Velocidade: $consistencia_velocidade\n";
@@ -29,10 +38,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Envie o email
     $envio = mail($destinatario, $assunto, $mensagem);
+    $envio2 = mail($destinatario2, $assunto, $mensagem);
+
 
     if ($envio) {
         echo "Resposta enviada com sucesso!";
     } else {
         echo "Erro ao enviar a resposta.";
     }
+    
+    if ($envio2) {
+        echo "Resposta enviada com sucesso!";
+    } else {
+        echo "Erro ao enviar a resposta.";
+    }
+
+
 }
+?>
