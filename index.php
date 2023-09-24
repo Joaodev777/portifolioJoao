@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $resolucao_problemas = $_POST["resolucao-problemas"];
 
     // Endereço de email para onde enviar as respostas
-    $destinatario = "joaosocial1704@gmail.com";
+    $destinatario = "joaosocial@gmail.com";
 
     // Assunto do email
     $assunto = "Resposta Pesquisa de Satisfação";
@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     );
 
     // Abra o arquivo CSV para escrita
-    $arquivo = fopen("dados.csv", "a");
+    $arquivo = fopen("dados.xlsx", "a");
 
     // Escreva os dados no arquivo CSV
     fputcsv($arquivo, $dados);
