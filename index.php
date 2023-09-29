@@ -3,62 +3,85 @@
 // Verifique se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recupere os dados do formulário
-
     $nome = $_POST["nome"];
     $email = $_POST["email"];
-    $number = $_POST["numero"];
-    $satisfacao_geral = $_POST["satisfacao-geral"];
-    $consistencia_velocidade = $_POST["consistencia-velocidade"];
-    $satisfacao_atendimento = $_POST["satisfacao-atendimento"];
-    $melhoria_atendimento = $_POST["melhoria-atendimento"];
-    $assistencia_tecnica = $_POST["tecnico-geral"];
-    $resolucao_problemas = $_POST["resolucao-problemas"];
+    $numero = $_POST["numero"];
+    $idade = $_POST["idade"];
+    $sobre_a_pessoa = $_POST["sobre-a-pessoa"];
+    $curso_livro = $_POST["curso-livro"];
+    $ponto_fraco = $_POST["ponto-fraco"];
+    $motivo_saida_emprego = $_POST["motivo-saida-emprego"];
+    $interesse_vaga = $_POST["interesse-vaga"];
+    $qualidades = $_POST["qualidades"];
+    $porque_contratar = $_POST["porque-contratar"];
+    $onde_em_cinco_anos = $_POST["onde-em-cinco-anos"];
+    $pressao = $_POST["pressao"];
+    $trabalho_em_equipe = $_POST["trabalho-em-equipe"];
+    $realizacao_profissional = $_POST["realizacao-profissional"];
+    $experiencias = $_POST["experiencias"];
+    $enterese_vendas = isset($_POST["vendas"]) ? $_POST["vendas"] : "";
+    $enterese_caixa = isset($_POST["operador-de-caixa"]) ? $_POST["operador-de-caixa"] : "";
+    $enterese_cobranca = isset($_POST["operador-de-cobranca"]) ? $_POST["operador-de-cobranca"] : "";
+    $enterese_administrativo = isset($_POST["auxiliar-administrativo"]) ? $_POST["auxiliar-administrativo"] : "";
 
-    // Endereço de email para onde enviar as respostas
-    $destinatario = "joaosocial1704@gmail.com";
+    // Dados do arquivo de currículo
+    $nomeArquivo = $_FILES["curriculo"]["name"];
+    $tipoArquivo = $_FILES["curriculo"]["type"];
+    $tamanhoArquivo = $_FILES["curriculo"]["size"];
+    $tempArquivo = $_FILES["curriculo"]["tmp_name"];
 
-    // Assunto do email
-    $assunto = "Resposta Pesquisa de Satisfação";
+    // Diretório de destino para salvar o currículo (certifique-se de que o diretório existe)
+    $diretorioDestino = "uploads/";
 
-    // Mensagem de email
-    $mensagem .= "Nome: $nome\n";
-    $mensagem .= "E-mail: $email\n";
-    $mensagem .= "Numero: $number\n";
-    $mensagem .= "Satisfação Geral: $satisfacao_geral\n";
-    $mensagem .= "Consistência da Velocidade: $consistencia_velocidade\n";
-    $mensagem .= "Satisfação com o Atendimento: $satisfacao_atendimento\n";
-    $mensagem .= "Melhoria no Atendimento: $melhoria_atendimento\n";
-    $mensagem .= "Avaliação de assistência técnica: $assistencia_tecnica\n";
-    $mensagem .= "Resolução de Problemas: $resolucao_problemas\n";
+    // Nome do arquivo final para evitar conflitos
+    $nomeArquivoFinal = $diretorioDestino . uniqid() . "_" . $nomeArquivo;
 
-    // Envie o email
-    $envio = mail($destinatario, $assunto, $mensagem);
+    // Verifica se o arquivo foi carregado com sucesso
+    if (move_uploaded_file($tempArquivo, $nomeArquivoFinal)) {
+        // Endereço de email para onde enviar as respostas
+        $destinatario = "vagasdisponiveis414@gmail.com";
 
-    if ($envio) {
-        echo "Resposta enviada com sucesso!";
+        // Assunto do email
+        $assunto = "Resposta Pesquisa de Satisfação";
+
+        // Mensagem de email (incluindo o link para o currículo)
+        $mensagem = "Nome: $nome\n";
+        $mensagem .= "E-mail: $email\n";
+        $mensagem .= "Número: $numero\n";
+        $mensagem .= "Idade: $idade\n";
+        $mensagem .= "Interesse em Administrativo: $enterese_administrativo\n";
+        $mensagem .= "Interesse em Operador de Caixa: $enterese_caixa\n";
+        $mensagem .= "Interesse em Vendas: $enterese_vendas\n";
+        $mensagem .= "Interesse em Operador de Cobrança: $enterese_cobranca\n";
+        $mensagem .= "Sobre a pessoa: $sobre_a_pessoa\n";
+        $mensagem .= "Curso ou livro: $curso_livro\n";
+        $mensagem .= "Pontos fracos: $ponto_fraco\n";
+        $mensagem .= "Motivo saída emprego anterior: $motivo_saida_emprego\n";
+        $mensagem .= "Interesse na vaga: $interesse_vaga\n";
+        $mensagem .= "Principais qualidades: $qualidades\n";
+        $mensagem .= "Por que contratar: $porque_contratar\n";
+        $mensagem .= "Onde estar em cinco anos: $onde_em_cinco_anos\n";
+        $mensagem .= "Lida com pressão: $pressao\n";
+        $mensagem .= "Trabalho em equipe: $trabalho_em_equipe\n";
+        $mensagem .= "Realização profissional: $realizacao_profissional\n";
+        $mensagem .= "Experiências anteriores: $experiencias\n";
+
+        // Adiciona o link para o currículo na mensagem
+        $mensagem .= "Currículo: $nomeArquivoFinal";
+
+        // Envie o email
+        $envio = mail($destinatario, $assunto, $mensagem);
+
+        if ($envio) {
+            echo "Resposta enviada com sucesso!";
+            echo "Por favor, fique de olho em seu email, lhe mandaremos a resposta por lá";
+
+        } else {
+            echo "Erro ao enviar a resposta.";
+        }
     } else {
-        echo "Erro ao enviar a resposta.";
+        echo "Erro ao fazer upload do currículo.";
     }
-
-    // Agora, armazene os dados em um arquivo CSV
-    $dados = array(
-        $nome,
-        $email,
-        $number,
-        $satisfacao_geral,
-        $consistencia_velocidade,
-        $satisfacao_atendimento,
-        $melhoria_atendimento,
-        $assistencia_tecnica,
-        $resolucao_problemas
-    );
-
-    // Abra o arquivo CSV para escrita
-    $arquivo = fopen("dados.xlsx", "a");
-
-    // Escreva os dados no arquivo CSV
-    fputcsv($arquivo, $dados);
-
-    // Feche o arquivo
-    fclose($arquivo);
 }
+
+?>
