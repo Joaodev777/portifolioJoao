@@ -24,6 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $enterese_caixa = $_POST["operador-de-caixa"];
     $enterese_cobranca = $_POST["operador-de-cobranca"];
     $enterese_administrativo = $_POST["auxiliar-administrativo"];
+    $enterese_tec = $_POST["tecnico"];
 
 
     // Endereço de email para onde enviar as respostas
@@ -41,6 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mensagem .= "interesse em:  $enterese_caixa\n";
     $mensagem .= "interesse em:  $enterese_vendas\n";
     $mensagem .= "interesse em:  $enterese_cobranca\n";
+    $mensagem .= "interesse em:  $enterese_tec\n";
     $mensagem .= "Sobre a pessoa: $sobre_a_pessoa\n";
     $mensagem .= "Curso ou livro: $curso_livro\n";
     $mensagem .= "Pontos fracos: $ponto_fraco\n";
