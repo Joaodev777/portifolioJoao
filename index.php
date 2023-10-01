@@ -134,11 +134,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mensagem .= "Trabalho em equipe: $trabalho_em_equipe\n\n";
     $mensagem .= "Realização profissional: $realizacao_profissional\n\n";
     $mensagem .= "Experiências anteriores: $experiencias\n\n";
-    
-    // Verifique se um arquivo foi enviado
-    if (!empty($nomeFoto)) {
-        $mensagem .= "Foto enviada: $nomeFotoUnico\n";
-    }
+    $mensagem .= "Foto enviada: $nomeFotoUnico\n";
     
 
     // Envie o email
