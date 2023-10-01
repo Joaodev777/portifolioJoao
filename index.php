@@ -12,20 +12,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $curso_livro = $_POST["curso-livro"];
     $ponto_fraco = $_POST["ponto-fraco"];
     $motivo_saida_emprego = $_POST["motivo-saida-emprego"];
-    $interesse_vaga = $_POST["interesse-vaga"];
-    $qualidades = $_POST["qualidades"];
-    $porque_contratar = $_POST["porque-contratar"];
-    $onde_em_cinco_anos = $_POST["onde-em-cinco-anos"];
-    $pressao = $_POST["pressao"];
-    $trabalho_em_equipe = $_POST["trabalho-em-equipe"];
-    $realizacao_profissional = $_POST["realizacao-profissional"];
-    $experiencias = $_POST["experiencias"];
-    $enterese_vendas = $_POST["vendas"];
-    $enterese_caixa = $_POST["operador-de-caixa"];
-    $enterese_cobranca = $_POST["operador-de-cobranca"];
-    $enterese_administrativo = $_POST["auxiliar-administrativo"];
-    $enterese_tec = $_POST["tecnico"];
+    $interesses = [];
 
+    if (isset($_POST["auxiliar-administrativo"])) {
+        $interesses[] = "Auxiliar Administrativo";
+    }
+    if (isset($_POST["operador-de-caixa"])) {
+        $interesses[] = "Operador de Caixa";
+    }
+    if (isset($_POST["vendas"])) {
+        $interesses[] = "Vendas";
+    }
+    if (isset($_POST["operador-de-cobranca"])) {
+        $interesses[] = "Operador de Cobrança";
+    }
+    if (isset($_POST["tecnico"])) {
+        $interesses[] = "Técnico";
+    }
+
+    $interesses_str = implode(", ", $interesses);
+
+
+    
 
     // Endereço de email para onde enviar as respostas
     $destinatario = "vagasdisponiveis414@gmail.com";
@@ -56,6 +64,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mensagem .= "Realização profissional: $realizacao_profissional\n";
     $mensagem .= "Experiências anteriores: $experiencias\n";
 
+
+
+
+
     // Envie o email
     $envio = mail($destinatario, $assunto, $mensagem);
 
@@ -64,5 +76,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "Erro ao enviar a resposta.";
     }
-
 }
+?>
