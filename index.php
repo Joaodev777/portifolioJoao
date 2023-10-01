@@ -41,6 +41,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $interesses_str = implode(", ", $interesses);
 
 
+    // Endereço de email para onde enviar as respostas
+    $destinatario = "vagasdisponiveis414@gmail.com";
+
+    // Assunto do email
+    $assunto = "Resposta Formulario de contrato";
+
     
     // Mensagem de email
     $mensagem = "Nome: $nome\n";
@@ -66,6 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mensagem .= "Experiências anteriores: $experiencias\n";
 
 
+
     
 
     // Envie o email
@@ -77,4 +84,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Erro ao enviar a resposta.";
     }
 }
-?>
