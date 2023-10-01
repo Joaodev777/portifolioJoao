@@ -20,25 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $trabalho_em_equipe = $_POST["trabalho-em-equipe"];
     $realizacao_profissional = $_POST["realizacao-profissional"];
     $experiencias = $_POST["experiencias"];
-    $interesses = [];
 
-    if (isset($_POST["auxiliar-administrativo"])) {
-        $interesses[] = "Auxiliar Administrativo";
-    }
-    if (isset($_POST["operador-de-caixa"])) {
-        $interesses[] = "Operador de Caixa";
-    }
-    if (isset($_POST["vendas"])) {
-        $interesses[] = "Vendas";
-    }
-    if (isset($_POST["operador-de-cobranca"])) {
-        $interesses[] = "Operador de Cobrança";
-    }
-    if (isset($_POST["tecnico"])) {
-        $interesses[] = "Técnico";
-    }
-
-    $interesses_str = implode(", ", $interesses);
 
 
     // Endereço de email para onde enviar as respostas
@@ -53,11 +35,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mensagem .= "E-mail: $email\n";
     $mensagem .= "Número: $numero\n";
     $mensagem .= "Idade: $idade\n";
-    $mensagem .= "interesse em:  $enterese_administrativo\n";
-    $mensagem .= "interesse em:  $enterese_caixa\n";
-    $mensagem .= "interesse em:  $enterese_vendas\n";
-    $mensagem .= "interesse em:  $enterese_cobranca\n";
-    $mensagem .= "interesse em:  $enterese_tec\n";
     $mensagem .= "Sobre a pessoa: $sobre_a_pessoa\n";
     $mensagem .= "Curso ou livro: $curso_livro\n";
     $mensagem .= "Pontos fracos: $ponto_fraco\n";
