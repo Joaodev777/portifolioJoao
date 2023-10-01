@@ -21,8 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $realizacao_profissional = $_POST["realizacao-profissional"];
     $experiencias = $_POST["experiencias"];
 
-
-
     // Endereço de email para onde enviar as respostas
     $destinatario = "vagasdisponiveis414@gmail.com";
 
@@ -31,22 +29,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     
     // Mensagem de email
-    $mensagem = "Nome: $nome\n";
-    $mensagem .= "E-mail: $email\n";
-    $mensagem .= "Número: $numero\n";
-    $mensagem .= "Idade: $idade\n";
-    $mensagem .= "Sobre a pessoa: $sobre_a_pessoa\n";
-    $mensagem .= "Curso ou livro: $curso_livro\n";
-    $mensagem .= "Pontos fracos: $ponto_fraco\n";
-    $mensagem .= "Motivo saída emprego anterior: $motivo_saida_emprego\n";
-    $mensagem .= "Interesse na vaga: $interesse_vaga\n";
-    $mensagem .= "Principais qualidades: $qualidades\n";
-    $mensagem .= "Por que contratar: $porque_contratar\n";
-    $mensagem .= "Onde estar em cinco anos: $onde_em_cinco_anos\n";
-    $mensagem .= "Lida com pressão: $pressao\n";
-    $mensagem .= "Trabalho em equipe: $trabalho_em_equipe\n";
-    $mensagem .= "Realização profissional: $realizacao_profissional\n";
-    $mensagem .= "Experiências anteriores: $experiencias\n";
+    $mensagem = "Nome: $nome\n\n";
+    $mensagem .= "E-mail: $email\n\n";
+    $mensagem .= "Número: $numero\n\n";
+    $mensagem .= "Idade: $idade\n\n";
+    $mensagem .= "Sobre a pessoa: $sobre_a_pessoa\n\n";
+    $mensagem .= "Curso ou livro: $curso_livro\n\n";
+    $mensagem .= "Pontos fracos: $ponto_fraco\n\n";
+    $mensagem .= "Motivo saída emprego anterior: $motivo_saida_emprego\n\n";
+    $mensagem .= "Interesse na vaga: $interesse_vaga\n\n";
+    $mensagem .= "Principais qualidades: $qualidades\n\n";
+    $mensagem .= "Por que contratar: $porque_contratar\n\n";
+    $mensagem .= "Onde estar em cinco anos: $onde_em_cinco_anos\n\n";
+    $mensagem .= "Lida com pressão: $pressao\n\n";
+    $mensagem .= "Trabalho em equipe: $trabalho_em_equipe\n\n";
+    $mensagem .= "Realização profissional: $realizacao_profissional\n\n";
+    $mensagem .= "Experiências anteriores: $experiencias\n\n";
 
 
 
