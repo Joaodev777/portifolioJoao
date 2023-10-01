@@ -245,7 +245,7 @@
         }
 
         .KHCwJ {
-            background-image: url('img/estamos contratando.png');
+            background-image: url(https://lh4.googleusercontent.com/ccqStbvczXnau5wxnhoST06RIY8bMGv4h_xO7VsRQtmCWISY8w9rnEGAWBe_4o5Vi9Sm_1GNVrpr4QLVVaKkzRJpk_zU05JdGBlA6P0rIQzBPE23ZQ4GgJXEYD7J782p0CZ0GVS2bV3zNHszqzuiEYOHCbZgmQ);
             background-size: cover;
             background-position: center;
         }
@@ -308,6 +308,7 @@
             border: none;
             /* Remova todas as bordas */
             border-bottom: 1px solid black;
+
             /* Adicione apenas a borda inferior */
             font-size: 18px;
         }
@@ -358,14 +359,61 @@
 </head>
 
 <body>
+<form action="index.php" method="post">
+    <!-- Modal -->
+<div class="modal fade" id="meuModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Em qual vaga você tem interesse? </h5>
+                <button type="button" style="background-color: transparent;border: none;font-size: 35px;" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="form-group">
+                    <div class="group">
+                        <input type="radio" id="auxiliar-administrativo" name="interesse"  value="auxiliar-administrativo">
+                        <label for="auxiliar-administrativo">Auxiliar administrativo </label>
+                    </div>
+                    <div class="group">
+                        <input type="radio" id="operador-de-caixa" name="interesse" required value="Operador_de_caixa">
+                        <label for="operador-de-caixa">Operador de caixa</label>
+                    </div>
+                    <div class="group">
+                        <input type="radio" id="operador-de-cobranca" name="interesse" required value="operador_de_cobranca">
+                        <label for="operador-de-cobranca">Operador de cobrança </label>
+                    </div>
+                    <div class="group"> 
+                        <input type="radio" id="vendas" name="interesse" required value="Vendas">
+                        <label for="vendas">Vendas</label>
+                    </div>
+                    <div class="group"> 
+                        <input type="radio" id="tecnico" name="interesse" required value="tecnico">
+                        <label for="tecnico">Tecnico</label>
+                    </div>
+       
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</form>
+
     <div class="container">
         <div class="vnFTpb teQAzf ErmvL KHCwJ"></div>
         <h1>Vagas Disponiveis!</h1>
         <br>
         <form method="post" action="index.php">
+
+            
             <div class="form-group">
                 <label for="nome">Nome:<span class="text-danger">*</span></label>
-                <input type="text" id="nome" name="nome" placeholder="Exemplo: José Soares" required>
+                <input type="text" id="nome" name="nome" placeholder="Exemplo: Jose Felipe Paiva" required>
             </div>
             <div class="form-group">
                 <label for="email">E-mail:<span class="text-danger">*</span></label>
@@ -396,21 +444,10 @@
             </div>
 
 
-            <div class="form-group">
-                <label>Quais você considera seus pontos fracos?<span class="text-danger">*</span></label>
-                <input type="text" id="ponto-fraco"  name="ponto-fraco"  required>
 
-
-            </div>
-            <div class="form-group">
-                <label>Por que deixou seu último emprego?<span class="text-danger">*</span></label>
-                <input type="text" id="ponto-fraco"  name="ponto-fraco"  required>
-
-
-            </div>
             <div class="form-group">
                 <label>Por que se interessou nessa vaga?<span class="text-danger">*</span></label>
-                <input type="text" id="ponto-fraco"  name="ponto-fraco"  required>
+                <input type="text" id="interesse-vaga"  name="interesse-vaga"  required>
 
 
             </div>
@@ -421,43 +458,50 @@
 
             </div>
             <div class="form-group">
-                <label>Por que devemos contratar você?<span class="text-danger">*</span></label>
-                <input type="text" id="pq-cont"  name="pq-cont"  required>
+                <label>Quais você considera seus pontos fracos?<span class="text-danger">*</span></label>
+                <input type="text" id="ponto-fraco"  name="ponto-fraco"  required>
+
 
             </div>
             <div class="form-group">
-                <label>Onde quer estar em cinco anos?</label>
+                <label>Por que deixou seu último emprego?<span class="text-danger">*</span></label>
+                <input type="text" id="motivo-saida-emprego"  name="motivo-saida-emprego"  required>
+
+            </div>
+
+
+            <div class="form-group">
+                <label>Por que devemos contratar você?<span class="text-danger">*</span></label>
+                <input type="text" id="porque-contratar"  name="porque-contratar"  required>
+
+            </div>
+            <div class="form-group">
+                <label>Onde quer estar em cinco anos?<span class="text-danger">*</span></label>
                 <input type="text" id="em-cinco"  name="em-cinco"  required>
 
             </div>
             <div class="form-group">
                 <label>Como você lida com pressão?<span class="text-danger">*</span></label>
-                <input type="text" id="presao" name="presao"  required>
+                <input type="text" id="pressao" name="pressao"  required>
 
             </div>
             <div class="form-group">
                 <label>Você trabalha bem em equipe? Sabe lidar com as diferenças individuais?<span class="text-danger">*</span></label>
-                <input type="text" id="lidar-equipe"  name="lidar-equipe"  required>
+                <input type="text" id="trabalho-em-equipe"  name="trabalho-em-equipe"  required>
 
             </div>
             <div class="form-group">
                 <label>Qual realização profissional faz você sentir mais orgulho?<span class="text-danger">*</span></label>
-                <input type="text" id="orgulho"  name="orgulho"  required>
+                <input type="text" id="realizacao-profissional"  name="realizacao-profissional"  required>
 
             </div>
 
             <!-- Perguntas sobre o atendimento ao cliente -->
             <div class="form-group">
                 <label>Conte-nos suas experiências anteriores:<span class="text-danger">*</span></label>
-                <input type="text" id="experiencias" placeholder="Exemplo: Trabalhei com marketing" name="experiencias"  required>
+                <textarea id="experiencias" name="experiencias" rows="4" required placeholder="Exemplo: Trabalhei com marketing e rede social"></textarea>
             </div>
 
-
-
-            <div class="form-group">
-                <label>Envie seu curriculo:<span class="text-danger">*</span></label>
-<input type="file" placeholder="Seu curriculo" id="curriculo" name="curriculo">  
-                </div>
 
 
                 <div class="form-group">
@@ -486,42 +530,6 @@
     </div>
 
 
-<!-- Modal -->
-<div class="modal fade" id="meuModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Em qual vaga você tem interesse? </h5>
-                <button type="button" style="background-color: transparent;border: none;font-size: 35px;" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-
-                <div class="form-group">
-                    <div class="group">
-                        <input type="radio" id="auxiliar-administrativo" name="auxiliar-administrativo"  value="auxiliar-administrativo">
-                        <label for="auxiliar-administrativo">Auxiliar administrativo </label>
-                    </div>
-                    <div class="group">
-                        <input type="radio" id="operador-de-caixa" name="resolucao-problemas" required value="operador-de-caixa">
-                        <label for="operador-de-caixa">Operador de caixa</label>
-                    </div>
-                    <div class="group">
-                        <input type="radio" id="operador-de-cobranca " name="operador-de-cobranca " required value="operador-de-cobranca ">
-                        <label for="operador-de-cobranca ">Operador de cobrança </label>
-                    </div>
-                    <div class="group">
-                        <input type="radio" id="vendas" name="vendas" required value="vendas">
-                        <label for="vendas">Vendas</label>
-                    </div>
-       
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
 
 
 <script>
