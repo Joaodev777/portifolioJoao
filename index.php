@@ -6,49 +6,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $nome = $_POST["nome"];
     $email = $_POST["email"];
-    $numero = $_POST["numero"];
-    $idade = $_POST["idade"];
-    $sobre_a_pessoa = $_POST["sobre-a-pessoa"];
-    $curso_livro = $_POST["curso-livro"];
-    $ponto_fraco = $_POST["ponto-fraco"];
-    $motivo_saida_emprego = $_POST["motivo-saida-emprego"];
-    $interesse_vaga = $_POST["interesse-vaga"];
-    $qualidades = $_POST["qualidades"];
-    $porque_contratar = $_POST["porque-contratar"];
-    $onde_em_cinco_anos = $_POST["onde-em-cinco-anos"];
-    $pressao = $_POST["pressao"];
-    $trabalho_em_equipe = $_POST["trabalho-em-equipe"];
-    $realizacao_profissional = $_POST["realizacao-profissional"];
-    $experiencias = $_POST["experiencias"];
+    $number = $_POST["numero"];
+    $satisfacao_geral = $_POST["satisfacao-geral"];
+    $consistencia_velocidade = $_POST["consistencia-velocidade"];
+    $satisfacao_atendimento = $_POST["satisfacao-atendimento"];
+    $melhoria_atendimento = $_POST["melhoria-atendimento"];
+    $assistencia_tecnica = $_POST["tecnico-geral"];
+    $resolucao_problemas = $_POST["resolucao-problemas"];
 
     // Endereço de email para onde enviar as respostas
-    $destinatario = "vagasdisponiveis414@gmail.com";
+    $destinatario = "joaosocial@gmail.com";
 
     // Assunto do email
-    $assunto = "Resposta Formulario de contrato";
+    $assunto = "Resposta Pesquisa de Satisfação";
 
-    
     // Mensagem de email
-    $mensagem = "Nome: $nome\n\n";
-    $mensagem .= "E-mail: $email\n\n";
-    $mensagem .= "Número: $numero\n\n";
-    $mensagem .= "Idade: $idade\n\n";
-    $mensagem .= "Sobre a pessoa: $sobre_a_pessoa\n\n";
-    $mensagem .= "Curso ou livro: $curso_livro\n\n";
-    $mensagem .= "Pontos fracos: $ponto_fraco\n\n";
-    $mensagem .= "Motivo saída emprego anterior: $motivo_saida_emprego\n\n";
-    $mensagem .= "Interesse na vaga: $interesse_vaga\n\n";
-    $mensagem .= "Principais qualidades: $qualidades\n\n";
-    $mensagem .= "Por que contratar: $porque_contratar\n\n";
-    $mensagem .= "Onde estar em cinco anos: $onde_em_cinco_anos\n\n";
-    $mensagem .= "Lida com pressão: $pressao\n\n";
-    $mensagem .= "Trabalho em equipe: $trabalho_em_equipe\n\n";
-    $mensagem .= "Realização profissional: $realizacao_profissional\n\n";
-    $mensagem .= "Experiências anteriores: $experiencias\n\n";
-
-
-
-    
+    $mensagem .= "Nome: $nome\n";
+    $mensagem .= "E-mail: $email\n";
+    $mensagem .= "Numero: $number\n";
+    $mensagem .= "Satisfação Geral: $satisfacao_geral\n";
+    $mensagem .= "Consistência da Velocidade: $consistencia_velocidade\n";
+    $mensagem .= "Satisfação com o Atendimento: $satisfacao_atendimento\n";
+    $mensagem .= "Melhoria no Atendimento: $melhoria_atendimento\n";
+    $mensagem .= "Avaliação de assistência técnica: $assistencia_tecnica\n";
+    $mensagem .= "Resolução de Problemas: $resolucao_problemas\n";
 
     // Envie o email
     $envio = mail($destinatario, $assunto, $mensagem);
@@ -58,91 +39,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "Erro ao enviar a resposta.";
     }
-}
 
+    // Agora, armazene os dados em um arquivo CSV
+    $dados = array(
+        $nome,
+        $email,
+        $number,
+        $satisfacao_geral,
+        $consistencia_velocidade,
+        $satisfacao_atendimento,
+        $melhoria_atendimento,
+        $assistencia_tecnica,
+        $resolucao_problemas
+    );
 
-// Verifique se o formulário foi enviado
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Recupere os dados do formulário
+    // Abra o arquivo CSV para escrita
+    $arquivo = fopen("dados.xlsx", "a");
 
-    $nome = $_POST["nome"];
-    $email = $_POST["email"];
-    $numero = $_POST["numero"];
-    $idade = $_POST["idade"];
-    $sobre_a_pessoa = $_POST["sobre-a-pessoa"];
-    $curso_livro = $_POST["curso-livro"];
-    $ponto_fraco = $_POST["ponto-fraco"];
-    $motivo_saida_emprego = $_POST["motivo-saida-emprego"];
-    $interesse_vaga = $_POST["interesse-vaga"];
-    $qualidades = $_POST["qualidades"];
-    $porque_contratar = $_POST["porque-contratar"];
-    $onde_em_cinco_anos = $_POST["onde-em-cinco-anos"];
-    $pressao = $_POST["pressao"];
-    $trabalho_em_equipe = $_POST["trabalho-em-equipe"];
-    $realizacao_profissional = $_POST["realizacao-profissional"];
-    $experiencias = $_POST["experiencias"];
+    // Escreva os dados no arquivo CSV
+    fputcsv($arquivo, $dados);
 
-
-    // Processamento do upload de foto
-    $nomeFoto = $_FILES["foto"]["name"];
-    $tamanhoFoto = $_FILES["foto"]["size"];
-    $tipoFoto = $_FILES["foto"]["type"];
-    $tempFoto = $_FILES["foto"]["tmp_name"];
-
-    // Verifique se um arquivo foi enviado
-    if (!empty($nomeFoto)) {
-        // Pasta de destino para salvar a foto (certifique-se de que a pasta exista e tenha permissões de escrita)
-        $pastaDestino = "uploads/";
-
-        // Crie um nome único para a foto usando timestamp para evitar conflitos
-        $nomeFotoUnico = time() . "_" . $nomeFoto;
-
-        // Caminho completo do arquivo de destino
-        $caminhoFoto = $pastaDestino . $nomeFotoUnico;
-
-        // Verifique se o upload foi bem-sucedido
-        if (move_uploaded_file($tempFoto, $caminhoFoto)) {
-            // Foto foi carregada com sucesso
-            $mensagem .= "Foto enviada com sucesso!\n";
-        } else {
-            // Erro no upload da foto
-            $mensagem .= "Erro ao enviar a foto.\n";
-        }
-    }
-
-    // Endereço de email para onde enviar as respostas
-    $destinatario = "vagasdisponiveis414@gmail.com";
-
-    // Assunto do email
-    $assunto = "Resposta Formulario de contrato";
-
-    
-    // Mensagem de email
-    $mensagem = "Nome: $nome\n\n";
-    $mensagem .= "E-mail: $email\n\n";
-    $mensagem .= "Número: $numero\n\n";
-    $mensagem .= "Idade: $idade\n\n";
-    $mensagem .= "Sobre a pessoa: $sobre_a_pessoa\n\n";
-    $mensagem .= "Curso ou livro: $curso_livro\n\n";
-    $mensagem .= "Pontos fracos: $ponto_fraco\n\n";
-    $mensagem .= "Motivo saída emprego anterior: $motivo_saida_emprego\n\n";
-    $mensagem .= "Interesse na vaga: $interesse_vaga\n\n";
-    $mensagem .= "Principais qualidades: $qualidades\n\n";
-    $mensagem .= "Por que contratar: $porque_contratar\n\n";
-    $mensagem .= "Onde estar em cinco anos: $onde_em_cinco_anos\n\n";
-    $mensagem .= "Lida com pressão: $pressao\n\n";
-    $mensagem .= "Trabalho em equipe: $trabalho_em_equipe\n\n";
-    $mensagem .= "Realização profissional: $realizacao_profissional\n\n";
-    $mensagem .= "Experiências anteriores: $experiencias\n\n";
-    $mensagem .= "Foto enviada: $nomeFotoUnico\n";
-    
-
-    // Envie o email
-    $envio = mail($destinatario, $assunto, $mensagem);
-
-    if ($envio) {
-        echo "Resposta enviada com sucesso!";
-    } else {
-        echo "Erro ao enviar a resposta.";
-    }
+    // Feche o arquivo
+    fclose($arquivo);
 }
