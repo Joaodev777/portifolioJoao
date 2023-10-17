@@ -51,3 +51,5 @@ echo $grafico_area_resolucao_problemas->render();
 // Feche a conexão com o banco de dados
 $db = null;
 
+
+print("ola")
