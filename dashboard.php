@@ -5,7 +5,7 @@ use \GuzzleHttp\Client;
 use \GuzzleHttp\Exception\RequestException;
 
 // Crie uma conexão com o banco de dados
-$db = new PDO("sqlite:dados.db");
+$db = new PDO("sqlite:https://joao.tiagofranca.com/portifolioJoao/dados.db");
 
 // Crie um cliente HTTP
 $client = new Client();
