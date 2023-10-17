@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $resolucao_problemas = $_POST["resolucao-problemas"];
 
     // Crie um arquivo de banco de dados SQLite
-    $db = new SQLite3('respostas_pesquisa.db');
+    $db = new SQLite3('dados.db');
 
     // Crie a tabela se ela não existir
     $db->exec('CREATE TABLE IF NOT EXISTS respostas (
