@@ -31,53 +31,76 @@
 // ?>
 
 
-
 <?php
-// Inclua a biblioteca pChart
-require_once("pChart2.1.4/class/pData.class.php");
-require_once("pChart2.1.4/class/pDraw.class.php");
-require_once("pChart2.1.4/class/pPie.class.php");
-require_once("pChart2.1.4/class/pLine.class.php");
-
 // Dados de exemplo para os gráficos
-$data = array(
+$data = [
     "Satisfeito" => 60,
     "Insatisfeito" => 40
-);
+];
 
-$lineData = array(3, 5, 4, 2, 6);
+$lineData = [3, 5, 4, 2, 6];
 
-$areaData = array(10, 20, 15, 30, 25);
+$areaData = [10, 20, 15, 30, 25];
 
-// Gráfico de Pizza
-$PieChart = new pPie(400, 250);
-$PieChart->addData($data);
-$PieChart->setLabel(array_keys($data));
-$PieChart->draw2DPie(200, 125, array("WriteValues" => TRUE, "DataGapAngle" => 10, "DataGapRadius" => 6));
+// Crie um gráfico de pizza
+$width = 400;
+$height = 250;
+$pieChart = imagecreatetruecolor($width, $height);
 
-$PieChart->Render("grafico_pizza.png");
+$backgroundColor = imagecolorallocate($pieChart, 255, 255, 255);
+imagefill($pieChart, 0, 0, $backgroundColor);
 
-// Gráfico de Linha
-$LineChart = new pImage(400, 250);
-$LineChart->setFontProperties(array("FontName" => "pChart2.1.4/fonts/verdana.ttf", "FontSize" => 8));
-$LineChart->setGraphArea(50, 30, 350, 200);
-$LineChart->drawScale();
-$LineChart->drawLineChart(array("DisplayValues" => TRUE, "DisplayColor" => DISPLAY_AUTO), $lineData);
-$LineChart->Render("grafico_linha.png");
+$colors = [imagecolorallocate($pieChart, 0, 128, 0), imagecolorallocate($pieChart, 255, 0, 0)];
 
-// Gráfico de Área
-$AreaChart = new pImage(400, 250);
-$AreaChart->setFontProperties(array("FontName" => "pChart2.1.4/fonts/verdana.ttf", "FontSize" => 8));
-$AreaChart->setGraphArea(50, 30, 350, 200);
-$AreaChart->drawScale();
-$AreaChart->drawAreaChart(array("DisplayValues" => TRUE, "DisplayColor" => DISPLAY_AUTO), $areaData);
-$AreaChart->Render("grafico_area.png");
+$startAngle = 0;
+foreach ($data as $label => $value) {
+    $endAngle = $startAngle + (360 * $value / 100);
+    imagefilledarc($pieChart, $width / 2, $height / 2, $width, $height, $startAngle, $endAngle, $colors[$startAngle], IMG_ARC_PIE);
+    $startAngle = $endAngle;
+}
+
+// Crie um gráfico de linha
+$lineChart = imagecreatetruecolor($width, $height);
+$backgroundColor = imagecolorallocate($lineChart, 255, 255, 255);
+imagefill($lineChart, 0, 0, $backgroundColor);
+$lineColor = imagecolorallocate($lineChart, 0, 0, 255);
+
+$minValue = min($lineData);
+$maxValue = max($lineData);
+$numPoints = count($lineData);
+$intervalX = $width / ($numPoints - 1);
+
+for ($i = 1; $i < $numPoints; $i++) {
+    $x1 = ($i - 1) * $intervalX;
+    $y1 = $height - (($lineData[$i - 1] - $minValue) / ($maxValue - $minValue) * $height);
+    $x2 = $i * $intervalX;
+    $y2 = $height - (($lineData[$i] - $minValue) / ($maxValue - $minValue) * $height);
+    imageline($lineChart, $x1, $y1, $x2, $y2, $lineColor);
+}
+
+// Crie um gráfico de área
+$areaChart = imagecreatetruecolor($width, $height);
+$backgroundColor = imagecolorallocate($areaChart, 255, 255, 255);
+imagefill($areaChart, 0, 0, $backgroundColor);
+$areaColor = imagecolorallocatealpha($areaChart, 0, 0, 255, 63);
+
+imagefilledpolygon($areaChart, [0, $height], 0, 0, 0, $height);
+for ($i = 0; $i < $numPoints; $i++) {
+    $x = $i * $intervalX;
+    $y = $height - (($lineData[$i] - $minValue) / ($maxValue - $minValue) * $height);
+    imagefilledrectangle($areaChart, $x, $y, $x + $intervalX, $height, $areaColor);
+}
 
 // Exiba os gráficos
-echo '<img src="grafico_pizza.png" alt="Gráfico de Pizza">';
-echo '<img src="grafico_linha.png" alt="Gráfico de Linha">';
-echo '<img src="grafico_area.png" alt="Gráfico de Área">';
+header("Content-Type: image/png");
+imagepng($pieChart);
+imagedestroy($pieChart);
+
+header("Content-Type: image/png");
+imagepng($lineChart);
+imagedestroy($lineChart);
+
+header("Content-Type: image/png");
+imagepng($areaChart);
+imagedestroy($areaChart);
 ?>
-
-
-
