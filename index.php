@@ -20,10 +20,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Assunto do email
     $assunto = "Resposta Pesquisa de Satisfação";
 
+function line(){
+    print("___________") * 30;
+}
+
+
     // Mensagem de email
     $mensagem .= "Nome: $nome\n";
     $mensagem .= "E-mail: $email\n";
     $mensagem .= "Numero: $number\n";
+    print("\n")
+    line()
+    print("\n")
     $mensagem .= "Satisfação Geral: $satisfacao_geral\n";
     $mensagem .= "Consistência da Velocidade: $consistencia_velocidade\n";
     $mensagem .= "Satisfação com o Atendimento: $satisfacao_atendimento\n";
