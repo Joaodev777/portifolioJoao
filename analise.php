@@ -1,19 +1,17 @@
 <?php
 
-// Importe as bibliotecas necessárias
-require_once("vendor/autoload.php");
 
 use \GuzzleHttp\Client;
 use \GuzzleHttp\Exception\RequestException;
 
 // Crie uma conexão com o banco de dados
-$db = new PDO("sqlite:dados.db");
+$db = new PDO("sqlite:https://joao.tiagofranca.com/portifolioJoao/dadps.db");
 
 // Crie um cliente HTTP
 $client = new Client();
 
 // Obtenha os dados do banco de dados
-$response = $client->get("http://localhost/pesquisa-satisfacao/api/dados");
+$response = $client->get("http://joao.tiagofranca.com/portifolioJoao/teste.php");
 
 // Converta a resposta JSON em um array
 $dados = json_decode($response->getBody(), true);
