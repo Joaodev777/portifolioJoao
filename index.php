@@ -30,7 +30,7 @@ function line(){
     $mensagem .= "E-mail: $email\n";
     $mensagem .= "Numero: $number\n";
     print("\n")
-    line()
+    print(line())
     print("\n")
     $mensagem .= "Satisfação Geral: $satisfacao_geral\n";
     $mensagem .= "Consistência da Velocidade: $consistencia_velocidade\n";
