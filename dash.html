@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Pesquisa</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <canvas id="satisfacaoGeralChart"></canvas>
+            </div>
+            <div class="col-md-6">
+                <canvas id="consistenciaVelocidadeChart"></canvas>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <canvas id="resolucaoProblemasChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Recupere os dados do arquivo PHP
+        fetch('dashboard.php')
+            .then(response => response.json())
+            .then(data => {
+                // Dados recuperados do banco de dados
+                var satisfacaoGeralData = data.satisfacaoGeral;
+                var consistenciaVelocidadeData = data.consistenciaVelocidade;
+                var resolucaoProblemasData = data.resolucaoProblemas;
+
+                // ... (crie os gráficos Chart.js com base nos dados)
+            })
+            .catch(error => {
+                console.error('Erro ao recuperar dados do banco de dados:', error);
+            });
+    </script>
+</body>
+</html>
