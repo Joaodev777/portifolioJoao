@@ -30,77 +30,52 @@
 // echo json_encode($data);
 // ?>
 
-
 <?php
-// Dados de exemplo para os gráficos
-$data = [
-    "Satisfeito" => 60,
-    "Insatisfeito" => 40
-];
+// Crie um banco de dados SQLite
+$db = new SQLite3('dados.db');
 
-$lineData = [3, 5, 4, 2, 6];
+// Crie uma tabela para armazenar os dados da pesquisa
+$db->exec('CREATE TABLE IF NOT EXISTS pesquisa (
+    id INTEGER PRIMARY KEY,
+    nome TEXT,
+    satisfacao_geral INTEGER,
+    consistencia_velocidade INTEGER,
+    satisfacao_atendimento INTEGER,
+    melhoria_atendimento TEXT,
+    assistencia_tecnica INTEGER,
+    resolucao_problemas INTEGER
+)');
 
-$areaData = [10, 20, 15, 30, 25];
+// Insira dados de exemplo na tabela (você pode substituir por dados reais)
+$db->exec("INSERT INTO pesquisa (nome, satisfacao_geral, consistencia_velocidade, satisfacao_atendimento, melhoria_atendimento, assistencia_tecnica, resolucao_problemas)
+VALUES
+('Cliente A', 4, 3, 5, 'Mais suporte telefônico', 4, 5),
+('Cliente B', 5, 4, 4, 'Melhorias no site', 5, 5),
+('Cliente C', 3, 2, 4, 'Nenhum', 3, 2)");
 
-// Crie um gráfico de pizza
-$width = 400;
-$height = 250;
-$pieChart = imagecreatetruecolor($width, $height);
-
-$backgroundColor = imagecolorallocate($pieChart, 255, 255, 255);
-imagefill($pieChart, 0, 0, $backgroundColor);
-
-$colors = [imagecolorallocate($pieChart, 0, 128, 0), imagecolorallocate($pieChart, 255, 0, 0)];
-
-$startAngle = 0;
-foreach ($data as $label => $value) {
-    $endAngle = $startAngle + (360 * $value / 100);
-    imagefilledarc($pieChart, $width / 2, $height / 2, $width, $height, $startAngle, $endAngle, $colors[$startAngle], IMG_ARC_PIE);
-    $startAngle = $endAngle;
-}
-
-// Crie um gráfico de linha
-$lineChart = imagecreatetruecolor($width, $height);
-$backgroundColor = imagecolorallocate($lineChart, 255, 255, 255);
-imagefill($lineChart, 0, 0, $backgroundColor);
-$lineColor = imagecolorallocate($lineChart, 0, 0, 255);
-
-$minValue = min($lineData);
-$maxValue = max($lineData);
-$numPoints = count($lineData);
-$intervalX = $width / ($numPoints - 1);
-
-for ($i = 1; $i < $numPoints; $i++) {
-    $x1 = ($i - 1) * $intervalX;
-    $y1 = $height - (($lineData[$i - 1] - $minValue) / ($maxValue - $minValue) * $height);
-    $x2 = $i * $intervalX;
-    $y2 = $height - (($lineData[$i] - $minValue) / ($maxValue - $minValue) * $height);
-    imageline($lineChart, $x1, $y1, $x2, $y2, $lineColor);
-}
-
-// Crie um gráfico de área
-$areaChart = imagecreatetruecolor($width, $height);
-$backgroundColor = imagecolorallocate($areaChart, 255, 255, 255);
-imagefill($areaChart, 0, 0, $backgroundColor);
-$areaColor = imagecolorallocatealpha($areaChart, 0, 0, 255, 63);
-
-imagefilledpolygon($areaChart, [0, $height], 0, 0, 0, $height);
-for ($i = 0; $i < $numPoints; $i++) {
-    $x = $i * $intervalX;
-    $y = $height - (($lineData[$i] - $minValue) / ($maxValue - $minValue) * $height);
-    imagefilledrectangle($areaChart, $x, $y, $x + $intervalX, $height, $areaColor);
-}
-
-// Exiba os gráficos
-header("Content-Type: image/png");
-imagepng($pieChart);
-imagedestroy($pieChart);
-
-header("Content-Type: image/png");
-imagepng($lineChart);
-imagedestroy($lineChart);
-
-header("Content-Type: image/png");
-imagepng($areaChart);
-imagedestroy($areaChart);
+$db->close();
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráficos</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <?php
+    // Recupere os dados do banco de dados SQLite
+    $db = new SQLite3('pesquisa.db');
+    $result = $db->query("SELECT * FROM pesquisa");
+    $data = [];
+    while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
+        $data[] = $row;
+    }
+    $db->close();
+    ?>
+
+    <!-- Aqui você pode usar os dados para criar gráficos em PHP ou JavaScript -->
+</body>
+</html>
