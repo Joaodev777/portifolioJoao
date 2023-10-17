@@ -3,7 +3,6 @@
 // Verifique se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recupere os dados do formulário
-
     $nome = $_POST["nome"];
     $email = $_POST["email"];
     $number = $_POST["numero"];
@@ -14,73 +13,41 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $assistencia_tecnica = $_POST["tecnico-geral"];
     $resolucao_problemas = $_POST["resolucao-problemas"];
 
-    // Endereço de email para onde enviar as respostas
-    $destinatario = "joaosocial1704@gmail.com";
+    // Crie um arquivo de banco de dados SQLite
+    $db = new SQLite3('respostas_pesquisa.db');
 
-    // Assunto do email
-    $assunto = "Resposta Pesquisa de Satisfação";
+    // Crie a tabela se ela não existir
+    $db->exec('CREATE TABLE IF NOT EXISTS respostas (
+        nome TEXT,
+        email TEXT,
+        numero INTEGER,
+        satisfacao_geral TEXT,
+        consistencia_velocidade TEXT,
+        satisfacao_atendimento TEXT,
+        melhoria_atendimento TEXT,
+        assistencia_tecnica TEXT,
+        resolucao_problemas TEXT
+    )');
 
-    // Mensagem de email
-    $mensagem = "
+    // Insira os dados na tabela
+    $stmt = $db->prepare('INSERT INTO respostas (nome, email, numero, satisfacao_geral, consistencia_velocidade, satisfacao_atendimento, melhoria_atendimento, assistencia_tecnica, resolucao_problemas) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)');
+    $stmt->bindValue(1, $nome, SQLITE3_TEXT);
+    $stmt->bindValue(2, $email, SQLITE3_TEXT);
+    $stmt->bindValue(3, $number, SQLITE3_INTEGER);
+    $stmt->bindValue(4, $satisfacao_geral, SQLITE3_TEXT);
+    $stmt->bindValue(5, $consistencia_velocidade, SQLITE3_TEXT);
+    $stmt->bindValue(6, $satisfacao_atendimento, SQLITE3_TEXT);
+    $stmt->bindValue(7, $melhoria_atendimento, SQLITE3_TEXT);
+    $stmt->bindValue(8, $assistencia_tecnica, SQLITE3_TEXT);
+    $stmt->bindValue(9, $resolucao_problemas, SQLITE3_TEXT);
 
-**Pesquisa de Satisfação**
-
-Nome: $nome
-E-mail: $email
-Numero: $number
-
-**Satisfação Geral**
-$satisfacao_geral
-
-**Consistência da Velocidade**
-$consistencia_velocidade
-
-**Satisfação com o Atendimento**
-$satisfacao_atendimento
-
-**Melhoria no Atendimento**
-$melhoria_atendimento
-
-**Avaliação de assistência técnica**
-$assistencia_tecnica
-
-**Resolução de Problemas**
-$resolucao_problemas
-
-
-**Obrigado pela sua participação!**
-
-";
-
-    // Envie o email
-    $envio = mail($destinatario, $assunto, $mensagem);
-
-    if ($envio) {
-        echo "Resposta enviada com sucesso!";
+    if ($stmt->execute()) {
+        echo "Resposta enviada com sucesso e armazenada no banco de dados!";
     } else {
-        echo "Erro ao enviar a resposta.";
+        echo "Erro ao enviar a resposta e armazenar no banco de dados.";
     }
 
-    // Agora, armazene os dados em um arquivo CSV
-    $dados = array(
-        $nome,
-        $email,
-        $number,
-        $satisfacao_geral,
-        $consistencia_velocidade,
-        $satisfacao_atendimento,
-        $melhoria_atendimento,
-        $assistencia_tecnica,
-        $resolucao_problemas
-    );
-
-    // Abra o arquivo CSV para escrita
-    $arquivo = fopen("dados.csv", "a");
-
-    // Escreva os dados no arquivo CSV
-    fputcsv($arquivo, $dados);
-
-    // Feche o arquivo
-    fclose($arquivo);
+    // Feche o banco de dados
+    $db->close();
 }
-
+?>
