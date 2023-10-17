@@ -1,55 +1,31 @@
 <?php
+// Conexão com o banco de dados (substitua pelos seus próprios detalhes)
+$db = new SQLite3('dados.db');
 
+// Consulta para obter os dados da pesquisa
+$query = "SELECT satisfacao_geral, consistencia_velocidade, resolucao_problemas FROM respostas";
+$result = $db->query($query);
 
-use \GuzzleHttp\Client;
-use \GuzzleHttp\Exception\RequestException;
+// Inicialize arrays para armazenar os dados
+$satisfacaoGeralData = [];
+$consistenciaVelocidadeData = [];
+$resolucaoProblemasData = [];
 
-// Crie uma conexão com o banco de dados
-$db = new PDO("sqlite:https://joao.tiagofranca.com/portifolioJoao/dados.db");
-
-// Crie um cliente HTTP
-$client = new Client();
-
-// Obtenha os dados do banco de dados
-$response = $client->get("https://joao.tiagofranca.com/portifolioJoao/teste.php");
-
-// Converta a resposta JSON em um array
-$dados = json_decode($response->getBody(), true);
-
-// Crie um gráfico pizza de satisfação geral
-$grafico_pizza_satisfacao_geral = new PieChart($dados["satisfacao_geral"]);
-$grafico_pizza_satisfacao_geral->setTitle("Satisfação Geral");
-
-// Crie um gráfico de linha de satisfação com o atendimento
-$grafico_linha_satisfacao_atendimento = new LineChart($dados["satisfacao_atendimento"]);
-$grafico_linha_satisfacao_atendimento->setTitle("Satisfação com o Atendimento");
-
-// Crie um gráfico de área de satisfação com o atendimento
-$grafico_area_satisfacao_atendimento = new AreaChart($dados["satisfacao_atendimento"]);
-$grafico_area_satisfacao_atendimento->setTitle("Satisfação com o Atendimento");
-
-// Crie um gráfico pizza de avaliação de assistência técnica
-$grafico_pizza_assistencia_tecnica = new PieChart($dados["assistencia_tecnica"]);
-$grafico_pizza_assistencia_tecnica->setTitle("Avaliação de Assistência Técnica");
-
-// Crie um gráfico de linha de resolução de problemas
-$grafico_linha_resolucao_problemas = new LineChart($dados["resolucao_problemas"]);
-$grafico_linha_resolucao_problemas->setTitle("Resolução de Problemas");
-
-// Crie um gráfico de área de resolução de problemas
-$grafico_area_resolucao_problemas = new AreaChart($dados["resolucao_problemas"]);
-$grafico_area_resolucao_problemas->setTitle("Resolução de Problemas");
-
-// Exiba os gráficos
-echo $grafico_pizza_satisfacao_geral->render();
-echo $grafico_linha_satisfacao_atendimento->render();
-echo $grafico_area_satisfacao_atendimento->render();
-echo $grafico_pizza_assistencia_tecnica->render();
-echo $grafico_linha_resolucao_problemas->render();
-echo $grafico_area_resolucao_problemas->render();
+while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
+    $satisfacaoGeralData[] = $row['satisfacao_geral'];
+    $consistenciaVelocidadeData[] = $row['consistencia_velocidade'];
+    $resolucaoProblemasData[] = $row['resolucao_problemas'];
+}
 
 // Feche a conexão com o banco de dados
-$db = null;
+$db->close();
 
+// Converta os arrays em JSON para enviar à página HTML
+$data = [
+    'satisfacaoGeral' => $satisfacaoGeralData,
+    'consistenciaVelocidade' => $consistenciaVelocidadeData,
+    'resolucaoProblemas' => $resolucaoProblemasData,
+];
 
-print("ola")
+echo json_encode($data);
+?>
