@@ -11,7 +11,7 @@ $db = new PDO("sqlite:dados.db");
 $client = new Client();
 
 // Obtenha os dados do banco de dados
-$response = $client->get("teste.php");
+$response = $client->get("teste.");
 
 // Converta a resposta JSON em um array
 $dados = json_decode($response->getBody(), true);
