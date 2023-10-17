@@ -20,24 +20,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Assunto do email
     $assunto = "Resposta Pesquisa de Satisfação";
 
-function line(){
-    print("___________") * 30;
-}
-
-
     // Mensagem de email
-    $mensagem .= "Nome: $nome\n";
-    $mensagem .= "E-mail: $email\n";
-    $mensagem .= "Numero: $number\n";
-    print("\n")
-    print(line())
-    print("\n")
-    $mensagem .= "Satisfação Geral: $satisfacao_geral\n";
-    $mensagem .= "Consistência da Velocidade: $consistencia_velocidade\n";
-    $mensagem .= "Satisfação com o Atendimento: $satisfacao_atendimento\n";
-    $mensagem .= "Melhoria no Atendimento: $melhoria_atendimento\n";
-    $mensagem .= "Avaliação de assistência técnica: $assistencia_tecnica\n";
-    $mensagem .= "Resolução de Problemas: $resolucao_problemas\n";
+    $mensagem = "
+
+**Pesquisa de Satisfação**
+
+Nome: $nome
+E-mail: $email
+Numero: $number
+
+**Satisfação Geral**
+$satisfacao_geral
+
+**Consistência da Velocidade**
+$consistencia_velocidade
+
+**Satisfação com o Atendimento**
+$satisfacao_atendimento
+
+**Melhoria no Atendimento**
+$melhoria_atendimento
+
+**Avaliação de assistência técnica**
+$assistencia_tecnica
+
+**Resolução de Problemas**
+$resolucao_problemas
+
+
+**Obrigado pela sua participação!**
+
+";
 
     // Envie o email
     $envio = mail($destinatario, $assunto, $mensagem);
@@ -62,7 +75,7 @@ function line(){
     );
 
     // Abra o arquivo CSV para escrita
-    $arquivo = fopen("dados.xlsx", "a");
+    $arquivo = fopen("dados.csv", "a");
 
     // Escreva os dados no arquivo CSV
     fputcsv($arquivo, $dados);
@@ -70,3 +83,4 @@ function line(){
     // Feche o arquivo
     fclose($arquivo);
 }
+
