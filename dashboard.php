@@ -75,6 +75,7 @@ $db->close();
     }
     $db->close();
     ?>
+teste
 
     <!-- Aqui você pode usar os dados para criar gráficos em PHP ou JavaScript -->
 </body>
