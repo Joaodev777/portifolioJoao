@@ -27,19 +27,66 @@
 
     <script>
         // Recupere os dados do arquivo PHP
-        fetch('dashboard.php')
-            .then(response => response.json())
-            .then(data => {
-                // Dados recuperados do banco de dados
-                var satisfacaoGeralData = data.satisfacaoGeral;
-                var consistenciaVelocidadeData = data.consistenciaVelocidade;
-                var resolucaoProblemasData = data.resolucaoProblemas;
+// Recupere os dados do arquivo PHP
+fetch('dashboard.php')
+    .then(response => response.json())
+    .then(data => {
+        // Dados recuperados do banco de dados
+        var satisfacaoGeralData = data.satisfacaoGeral;
+        var consistenciaVelocidadeData = data.consistenciaVelocidade;
+        var resolucaoProblemasData = data.resolucaoProblemas;
 
-                // ... (crie os gráficos Chart.js com base nos dados)
-            })
-            .catch(error => {
-                console.error('Erro ao recuperar dados do banco de dados:', error);
-            });
+        // Gráfico de Pizza para Satisfação Geral
+        var ctxSatisfacaoGeral = document.getElementById("satisfacaoGeralChart").getContext("2d");
+        var satisfacaoGeralChart = new Chart(ctxSatisfacaoGeral, {
+            type: "doughnut",
+            data: {
+                labels: ["Satisfeito", "Insatisfeito"],
+                datasets: [{
+                    data: [
+                        satisfacaoGeralData.filter(value => value === 'Satisfeito').length,
+                        satisfacaoGeralData.filter(value => value === 'Insatisfeito').length
+                    ],
+                    backgroundColor: ["green", "red"]
+                }]
+            }
+        });
+
+        // Gráfico de Linha para Consistência de Velocidade
+        var ctxConsistenciaVelocidade = document.getElementById("consistenciaVelocidadeChart").getContext("2d");
+        var consistenciaVelocidadeChart = new Chart(ctxConsistenciaVelocidade, {
+            type: "line",
+            data: {
+                labels: ["1", "2", "3", "4", "5"], // Personalize os rótulos aqui
+                datasets: [{
+                    label: "Consistência de Velocidade",
+                    data: consistenciaVelocidadeData,
+                    borderColor: "blue",
+                    fill: false
+                }]
+            }
+        });
+
+        // Gráfico de Área para Resolução de Problemas
+        var ctxResolucaoProblemas = document.getElementById("resolucaoProblemasChart").getContext("2d");
+        var resolucaoProblemasChart = new Chart(ctxResolucaoProblemas, {
+            type: "line", // Use "line" para gráfico de área
+            data: {
+                labels: ["1", "2", "3", "4", "5"], // Personalize os rótulos aqui
+                datasets: [{
+                    label: "Resolução de Problemas",
+                    data: resolucaoProblemasData,
+                    backgroundColor: "rgba(0, 123, 255, 0.2)",
+                    borderColor: "blue",
+                    fill: true
+                }]
+            }
+        });
+    })
+    .catch(error => {
+        console.error('Erro ao recuperar dados do banco de dados:', error);
+    });
+
     </script>
 </body>
 </html>
