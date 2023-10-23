@@ -1,0 +1,131 @@
+html {
+    height: 100%;
+  }
+  body {
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    background: linear-gradient(#ff9006, #fda232);
+  }
+  
+  .login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 30px;
+    transform: translate(-50%, -50%);
+    background: rgb(255, 255, 255);
+    box-sizing: border-box;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+  
+  .login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #000000;
+    text-align: center;
+  }
+  .login-box h2 img{
+    width: 250px;
+  }
+  
+  .login-box .user-box {
+    position: relative;
+  }
+  
+  .login-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #000000;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #000000;
+    outline: none;
+    background: transparent;
+  }
+  .login-box .user-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #000000;
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .login-box .user-box input:focus ~ label,
+  .login-box .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #000000;
+    font-size: 12px;
+  }
+  
+  .login-box form a {
+    color: #000000;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-top: 20px;
+    letter-spacing: 4px;
+    background: #ff9006;
+    width: 90%;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+
+  
+  .login-box a span {
+    position: absolute;
+    display: block;
+  }
+  
+  .button {
+    background: #fff;
+    border: none;
+    padding: 10px 20px;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    width: 120px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transform: skew(-21deg);
+  }
+  
+  span {
+    display: inline-block;
+    transform: skew(0deg); /* Isso vai fazer com que o texto fique com a fonte reta */
+  }
+  
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  left: 0;
+  background: rgb(35, 255, 152);
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.5s;
+}
+
+.button:hover {
+  color: #000000;
+}
+
+.button:hover::before {
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
